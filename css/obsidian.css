@@ -999,7 +999,7 @@ footer .copyright a {
   border-bottom: 1px solid var(--dark);
 }
 
-footer span #logo {
+footer #logo img {
   width: 25px;
   height: 25px;
   border-radius: 50%;
