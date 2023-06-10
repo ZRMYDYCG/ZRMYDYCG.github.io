@@ -5,15 +5,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>ES6 Class 的基本语法 - WebDesiner-计流年</title>
+    <title>Promise - WebDesiner-计流年</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="TriDiamond Obsidian,"> 
-    <meta name="description" content="类的由来JavaScript 语言中,生成实例对象的传统方法是通过构造函数，咱来看看这个例子: 
-&amp;lt;script&amp;gt;
-    function Point(x, y) &amp;#123;
-   ,"> 
+    <meta name="description" content="笔记Promise 的状态实例对象中的一个属性 【PromiseState】
+
+pending 未决定的
+
+resolved &amp;#x2F; fullfilled 成功
+
+rejected 失败
+
+
+,"> 
     <meta name="author" content="早起的闽儿"> 
     <link rel="alternative" href="atom.xml" title="WebDesiner-计流年" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -77,7 +83,7 @@
     <div class="navigation animated fadeIn fast delay-1s">
         <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://example.com">
         <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-        <h3 class="subtitle">ES6 Class 的基本语法</h3>
+        <h3 class="subtitle">Promise</h3>
         <div class="social">
             <!--        <div class="like-icon">-->
             <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -109,16 +115,16 @@
                 
                 <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
                 
-                June 09, 2023
+                June 10, 2023
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2023/06/09/hello-world/" title="ES6 Class 的基本语法" class="">ES6 Class 的基本语法</a>
+            <h3 class="post-title animated fadeInDown"><a href="/2023/06/10/arcical/" title="Promise" class="">Promise</a>
             </h3>
             
             <p class="post-count animated fadeInDown">
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>Words count</i>
-                    9.8k
+                    10k
                 </span>
                 
                 
@@ -156,321 +162,360 @@
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn">
-            <h2 id="类的由来"><a href="#类的由来" class="headerlink" title="类的由来"></a>类的由来</h2><p>JavaScript 语言中,生成实例对象的传统方法是通过构造函数，咱来看看这个例子: <br></p>
-<pre><code class="javascript">&lt;script&gt;
-    function Point(x, y) &#123;
-        // 属性挂载到this上面
-        this.x = x;
-        this.y = y;
-    &#125;
+            <h1 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h1><h2 id="Promise-的状态"><a href="#Promise-的状态" class="headerlink" title="Promise 的状态"></a>Promise 的状态</h2><p>实例对象中的一个属性 【PromiseState】<br></p>
+<ul>
+<li><p>pending 未决定的</p>
+</li>
+<li><p>resolved &#x2F; fullfilled 成功</p>
+</li>
+<li><p>rejected 失败</p>
+</li>
+</ul>
+<p>这是 Promise 实例对象的一个内置属性<br><br>其变化方式:</p>
+<ul>
+<li><p>pending 变为 resolved</p>
+</li>
+<li><p>pending 变为 rejected</p>
+</li>
+</ul>
+<p>说明:<br><br>只有这 2 种变化,且一个 promise 对象只能改变一次<br><br>无论变成成功还是失败,都会有一个结果数据<br><br>成功的结果数据一般称为 value, 失败的结果数据一般称为 reason</p>
+<h2 id="Promise-对象的值"><a href="#Promise-对象的值" class="headerlink" title="Promise 对象的值"></a>Promise 对象的值</h2><p>实例对象中的另一个属性 【PromiseResult】<br>保存的是异步任务【成功&#x2F;失败】的结果</p>
+<ul>
+<li><p>resolve</p>
+</li>
+<li><p>reject</p>
+</li>
+</ul>
+<h2 id="Promise-工作流程"><a href="#Promise-工作流程" class="headerlink" title="Promise 工作流程"></a>Promise 工作流程</h2><img src = "C:\Users\86151\Desktop\MarkDown‘笔记本\Promise\Promise工作流程.png">
 
-    // 方法挂载到原型上面
-    let string = null
-    Point.prototype.toString = function () &#123;
-        string = `$&#123;this.x&#125;和$&#123;this.y&#125;是一对好朋友`;
-    &#125;
+<p>先创建一个 Promise 对象,在 Promise 对象内部封装异步操作,如果异步操作成功,则调用 resolve 函数,resolve 函数一调,则将 Promise 函数状态改为 resolved（成功）,因此在之后调用 then 方法时将调用的是第一个参数（也即是第一个回调函数中的代码）,然后返回一个新的 Promise 对象（then 方法返回的 Promise 对象）。</p>
+<h2 id="Promise-相关的-API"><a href="#Promise-相关的-API" class="headerlink" title="Promise 相关的 API"></a>Promise 相关的 API</h2><ol>
+<li>Promise 的构造函数:Promise（excutor）{ }</li>
+</ol>
+<ul>
+<li><p>executor 函数: 执行器（resolve , reject）&#x3D;&gt; { }</p>
+</li>
+<li><p>resolve 函数: 内部定义成功时我们调用的函数 value &#x3D;&gt;{ }</p>
+</li>
+<li><p>reject 函数: 内部定义失败时我们调用的函数 reson &#x3D;&gt;{ }</p>
+</li>
+</ul>
+<p>说明: executor 会在 Promise 内部立即同步调用,异步操作在执行器中执行。</p>
+<ol start="2">
+<li>Promise.prototype.then 方法:（onRseolved,onRejected）&#x3D;&gt; { }</li>
+</ol>
+<ul>
+<li><p>onResolved 函数: 成功的回调函数 (value) &#x3D;&gt; { }</p>
+</li>
+<li><p>onRejected 函数: 失败的回调函数 (reason) &#x3D;&gt; { }</p>
+</li>
+</ul>
+<p>说明: 指定用于得到成功 value 的成功回调函数和用于得到失败 reason 的失败回调函数返回一个新的 promise 对象。</p>
+<ol start="3">
+<li>Promise.prototype.catch 方法: (onRejected) &#x3D;&gt; { }</li>
+</ol>
+<ul>
+<li><p>onReject 函数: 失败的回调函数 (reason) &#x3D;&gt; { }</p>
+</li>
+<li><p>catch 方法只能指定失败的回调</p>
+</li>
+</ul>
+<pre><code class="js">&lt;script&gt;
+    const p = new Promise((resolve, reject) =&gt; &#123;
+        reject(&#39;catch 方法只在失败时执行回调&#39;)
+    &#125;);
 
-    let Point1 = new Point(1, 2);
-
-    Point1.toString()
-
-    console.log(string)
+    p.catch(reason =&gt; &#123;
+        console.log(reason);
+    &#125;);
 &lt;/script&gt;
 </code></pre>
-<p>控制台:</p>
-<img src = "C:\Users\86151\Desktop\MarkDown‘笔记本\JavaScript进阶\10-ES6-类\类01.png">
+<img src = "C:\Users\86151\Desktop\MarkDown‘笔记本\Promise\catch方法.png">
 
-<p>追溯一段历史:<br><br>上面的这种写法的确是在面向对象,但是其和传统的面向对象语言(Java&#x2F;C++)的差异很大,很容易让人觉得这凭什么啊,所以设计JavaScript的老头子们,希望这个JavaScript也可以更加接近传统语言,所以引入（Class）类的概念,但由于很多原因,受到外界的很多反对和质疑,所以迟迟没有推出,直到ES6,就真正把这个Clas（类）这个概念引入啦。</p>
-<p>JavaScript璀璨的今天:<br><br>ES6 提供了更接近传统语言的写法，引入了<b> Class（类）</b>这个概念，作为对象的模板。通过class关键字，可以定义类。<br></p>
-<p>基本上，ES6 的class可以看作<b>只是一个语法糖</b>，它的绝大部分功能，ES5 都可以做到，<b>新的class写法只是让对象原型的写法更加清晰、更像面向对象编程的语法而已。</b> <br></p>
-<p>上面的代码用 ES6 的class改写，就是下面这样。<br></p>
-<pre><code class="javascript">&lt;script&gt;
-    let string = null
-    class Point &#123;
-      // 属性挂载到 constructor 上
-        constructor(x, y) &#123;
-            this.x = x;
-            this.y = y;
-        &#125;
-        toString() &#123;
-            string = `$&#123;this.x&#125;和$&#123;this.y&#125;是一对好朋友`;
-        &#125;
-    &#125;
-
-    let Point1 = new Point(1, 2);
-
-    Point1.toString();
-
-    console.log(string);  // 1和2是一对好朋友
+<ol start="4">
+<li>Promise.resolve 方法 : (value) &#x3D;&gt; { }</li>
+</ol>
+<ul>
+<li><p>这个方法比较特殊,它是属于这个 Promise 方法函数的对象,并不属于 Promise 实例对象</p>
+</li>
+<li><p>value: 成功的数据或 promise 对象<br>（说明: 返回一个成功&#x2F;失败的 promise 对象）</p>
+</li>
+<li><p>如果传入的参数为 非 Peomise 类型的对象,则返回的结果为成功 promise 对象</p>
+</li>
+</ul>
+<pre><code class="js">&lt;script&gt;
+    const p1 = Promise.resolve(521);
+    console.log(p1);
 &lt;/script&gt;
 </code></pre>
-<p>上面的代码就定义了一个 “类” ,咱可以看到里面是有一个 constructor() 方法,这玩意就是构造方法, 这个方式是特定的，名字不能修改,必须叫 constructor,而 this 关键字代表的则是实例对象 Point1。这种新的 Class 写法,其<b>本质与咱开头写的 ES5 的构造函数 Point 是一致的。</b></p>
-<p>咱再看,这个 Point 类除了构造方法,它还定义了一个 toString() 方法。但是这个定义toString()方法的写法要注意,他不可以用ES5函数的完整写法,也就是前面不需要加上 function 这个关键字, 直接把函数定义了放进去就可以了,另外,方法和方法之间不需要逗号分隔,加了会报错。<br></p>
-<p>因此<br><br>ES6 的类,完全可以看作构造函数的另一种写法。</p>
-<pre><code class="javascript">&lt;script&gt;
-    class PointA&#123;
-        // ...
-    &#125;
+<img src = "C:\Users\86151\Desktop\MarkDown‘笔记本\Promise\resolve方法.png">
 
-    function PointB() &#123;
-        // ...
-    &#125;
-    console.log(typeof PointA,typeof PointB);
-    console.log(PointA === PointA.prototype.constructor)
-    console.log(PointB === PointB.prototype.constructor)
+<ul>
+<li>如果传入的参数为 Promise 类型的对象,则参数的结果决定了 resolve 的结果</li>
+</ul>
+<pre><code class="js">&lt;script&gt;
+    const p2 = Promise.resolve(new Promise((resolve, reject) =&gt; &#123;
+        resolve(&#39;ok&#39;);
+    &#125;));
+
+    console.log(p2);
+
+    const p3 = Promise.resolve(new Promise((resolve, reject) =&gt; &#123;
+        reject(&#39;Error&#39;)
+    &#125;));
+    
+    console.log(p3);
+
+    p3.catch(reason =&gt; &#123;
+        console.log(reason);
+    &#125;);
 &lt;/script&gt;
 </code></pre>
-<img src = "C:\Users\86151\Desktop\MarkDown‘笔记本\JavaScript进阶\10-ES6-类\类03.png">
+<img src = "C:\Users\86151\Desktop\MarkDown‘笔记本\Promise\resolve方法03.png">
 
-<p>上面代码表明，类的数据类型就是函数，<b>类本身就指向构造函数。</b><br><br>使用的时候，也是直接对类使用new命令，跟构造函数的用法完全一致。<br></p>
-<pre><code class="javascript">class Bar &#123;
-  doStuff() &#123;
-    console.log(&#39;stuff&#39;);
-  &#125;
-&#125;
-const b = new Bar();
-b.doStuff() // &quot;stuff&quot;
+<ol start="5">
+<li>Promise.reject 方法: (reason) &#x3D;&gt; { }</li>
+</ol>
+<ul>
+<li><p>它是属于 Promise 函数对象的方法,不是属于 Promise 实例对象的方法</p>
+</li>
+<li><p>reason: 失败的原因<br>（说明: 返回一个失败的 promise 对象）</p>
+</li>
+</ul>
+<pre><code class="js">&lt;script&gt;
+    let p = Promise.reject(521)
+    let p1 = Promise.reject(new Promise((resolve, reject) =&gt; &#123;
+        resolve(&#39;OK&#39;);
+    &#125;));
+    console.log(p);
+    console.log(p1);
+&lt;/script&gt;
 </code></pre>
-<p>通过上面代码,构造函数的prototype属性，在 ES6 的“类”上面继续存在。事实上，<b>类的所有方法都定义在<b>类的原型对象prototype属性上面</b>,因此我们能够看到 new 出来的实例对象可以使用calss类里面定义的方法</b></p>
-<pre><code class="javascript">class Point &#123;
-  constructor() &#123;
-    // ...
-  &#125;
+<img src = "C:\Users\86151\Desktop\MarkDown‘笔记本\Promise\reject方法01.png">
 
-  toString() &#123;
-    // ...
-  &#125;
+<ol start="6">
+<li>Promise.all 方法: (promise) &#x3D;&gt; { }</li>
+</ol>
+<ul>
+<li><p>Promise 函数对象的一个方法, 不是 Promise 实例对象的方法 </p>
+</li>
+<li><p>promise: 包含 n 个 promise 数组，也就是每一个都是 promise 对象<br>（说明: 返回一个新的 promise,只有所有的 promise 都成功时才成功,只要有一个失败了就直接失败）</p>
+</li>
+</ul>
+<pre><code class="js">&lt;script&gt;
+    // 设置 3 个成功的 Promise 对象
+    let p1 = new Promise((resolve, reject) =&gt; &#123;
+        resolve(&#39;OK&#39;);
+    &#125;);
 
-  toValue() &#123;
-    // ...
-  &#125;
-&#125;
+    let p2 = Promise.resolve(&#39;success&#39;);
 
-// 等同于  所以上面就是语法糖的好处 
+    let p3 = Promise.resolve(&#39;Pass&#39;);
 
-Point.prototype = &#123;
-  constructor() &#123;&#125;,
-  toString() &#123;&#125;,
-  toValue() &#123;&#125;,
-&#125;;
+    let result = Promise.all([p1, p2, p3]);
+
+    console.log(result);
+&lt;/script&gt;
 </code></pre>
-<p>上面代码中，constructor()、toString()、toValue()这三个方法，其实都是定义在Point.prototype（原型对象）上面。<br></p>
-<p>因此: 在类的实例上调用方法,其实就是调用原型对象上的方法。</p>
-<pre><code class="javascript">class B &#123;&#125;
-const b = new B();
+<img src = "C:\Users\86151\Desktop\MarkDown‘笔记本\Promise\all方法.png">
 
-b.constructor === B.prototype.constructor // true
+<p>从上面代码和控制台的打印结果,我们可以看到 all 方法会返回一个 promise 对象,只有当 p1,p2,p3 都成功的情况下,才会返回一个成功的 promise 对象,其结果值为 p1 p2 p3 这三个 promise 对象成功的结果组成的数组。<br></p>
+<p>现在咱将其中一个设置为失败<br></p>
+<pre><code class="js">&lt;script&gt;
+    let p1 = new Promise((resolve, reject) =&gt; &#123;
+        resolve(&#39;OK&#39;);
+    &#125;);
+
+    let p2 = Promise.reject(&#39;Error&#39;);
+
+    let p3 = Promise.resolve(&#39;Pass&#39;);
+
+    let result = Promise.all([p1, p2, p3]);
+
+    console.log(result);
+&lt;/script&gt;
 </code></pre>
-<p>上面代码中，b是B类的实例对象，它的constructor()方法就是B类原型的constructor()方法。<br></p>
-<p>由于类的方法都定义在prototype对象上面，所以类的新方法可以添加在prototype对象上面,但是当我们采用赋值方法一次添加多个新方法时,这样修改后的原型对象 conctructor 就不再指向当前构造函数了,此时,我们可以在修改后的原型对象中,添加一个 constructor 指向原来的构造函数而Object.assign()方法可以很方便地一次向类添加多个方法。<br></p>
-<pre><code class="javascript">class Point &#123;
-  constructor()&#123;
-    // ...
-  &#125;
-&#125;
+<img src = "C:\Users\86151\Desktop\MarkDown‘笔记本\Promise\all方法02.png">
 
-Object.assign(Point.prototype, &#123;
-  toString()&#123;&#125;,
-  toValue()&#123;&#125;
-&#125;);
+<p>从上面代码和控制台的打印结果,我们可以看到 all 方法会返回一个 promise 对象,当 p1 p2 p3 中不全成功的情况下,会返回一个失败的 promise 对象,其结果值为失败的那个promise值的结果值。<br></p>
+<ol start="7">
+<li>Promise.race 方法: (promise) &#x3D;&gt; { }</li>
+</ol>
+<ul>
+<li>promise: 包含 n 个 promise 的数组<br>（说明:返回一个新的 promise 对象, 第一个完成的 promise 的结果状态就是最终的结果状态）</li>
+</ul>
+<pre><code class="js">&lt;script&gt;
+    let p1 = new Promise((resolve, reject) =&gt; &#123;
+        resolve(&#39;OK&#39;);
+    &#125;);
+
+    let p2 = Promise.reject(&#39;Error&#39;);
+
+    let p3 = Promise.resolve(&#39;Pass&#39;);
+
+    let result = Promise.all([p1, p2, p3]);
+
+    console.log(result);
+&lt;/script&gt;
 </code></pre>
-<p>prototype 原型对象的 constructor 属性，直接指向“类”的本身，这与 ES5 的构造函数的行为是一致的。<br></p>
-<pre><code class="javascript">Point.prototype.constructor === Point // true
+<img src = "C:\Users\86151\Desktop\MarkDown‘笔记本\Promise\race方法.png">
+
+<p>由于是 p1 先改变状态,所以 result 的状态和值就是由 p1 来决定。</p>
+<pre><code class="js">&lt;script&gt;
+    let p1 = new Promise((resolve, reject) =&gt; &#123;
+        setTimeout(() =&gt; &#123;
+            resolve(&#39;OK&#39;);
+        &#125;, 1000)
+    &#125;);
+
+    let p2 = Promise.reject(&#39;Error&#39;);
+
+    let p3 = Promise.resolve(&#39;Pass&#39;);
+
+    let result = Promise.all([p1, p2, p3]);
+
+    console.log(result);
+&lt;/script&gt;
 </code></pre>
-<p>另外，类的内部所有定义的方法，都是不可枚举的（non-enumerable）。<br></p>
-<pre><code class="javascript">class Point &#123;
-  constructor(x, y) &#123;
-    // ...
-  &#125;
+<img src="C:\Users\86151\Desktop\MarkDown‘笔记本\Promise\race方法02.png">
 
-  toString() &#123;
-    // ...
-  &#125;
-&#125;
-
-Object.keys(Point.prototype)
-// []
-Object.getOwnPropertyNames(Point.prototype)
-// [&quot;constructor&quot;,&quot;toString&quot;]
+<p>这里 p2 是最先改变状态的</p>
+<h2 id="Promise-的几个关键问题"><a href="#Promise-的几个关键问题" class="headerlink" title="Promise 的几个关键问题"></a>Promise 的几个关键问题</h2><ol>
+<li>如何改变 promise 的状态</li>
+</ol>
+<p>(a) 调用 resolve 函数 pending -&gt; fulfilled</p>
+<pre><code class="js">&lt;script&gt;
+    let p = new Promise((resolve, reject) =&gt; &#123;
+        resolve(&#39;OK&#39;);
+    &#125;);
+    console.log(p);
+&lt;/script&gt;
 </code></pre>
-<p>上面代码中，toString()方法是Point类内部定义的方法，它是不可枚举的。这一点与 ES5 的行为不一致。<br></p>
-<pre><code class="javascript">var Point = function (x, y) &#123;
-  // ...
-&#125;;
-
-Point.prototype.toString = function () &#123;
-  // ...
-&#125;;
-
-Object.keys(Point.prototype)
-// [&quot;toString&quot;]
-Object.getOwnPropertyNames(Point.prototype)
-// [&quot;constructor&quot;,&quot;toString&quot;]
+<p>(b) 调用 reject 函数 pending -&gt; rejected</p>
+<pre><code class="js">&lt;script&gt;
+    let p = new Promise((resolve, reject) =&gt; &#123;
+        reject(&#39;Error&#39;);
+    &#125;);
+    console.log(p);
+&lt;/script&gt;
 </code></pre>
-<p>上面代码采用 ES5 的写法，toString()方法就是可枚举的。<br></p>
-<h2 id="constructor-方法"><a href="#constructor-方法" class="headerlink" title="constructor() 方法"></a>constructor() 方法</h2><h1 id="ES6继承"><a href="#ES6继承" class="headerlink" title="ES6继承"></a>ES6继承</h1><p>ES6继承比咱以前学的原型继承的写法更加简洁<br></p>
-<pre><code class="javascript">    &lt;script&gt;
-       // 父类
-        class Person &#123;
-            constructor(name, age) &#123;
-                this.name = name
-                this.age = age
-            &#125;
-
-            say() &#123;
-                console.log(&quot;hello&quot;);
-            &#125;
-        &#125;
-       // 子类
-       class Student extends Person &#123;
-
-        &#125;
-
-        let obj = new Student()
-
-        console.log(obj)
-    &lt;/script&gt;
+<p>(c) throw 抛出错误  pending -&gt; rejected</p>
+<pre><code class="js">&lt;script&gt;
+    let p = new Promise((resolve, reject) =&gt; &#123;
+        throw &#39;出问题了&#39;;
+    &#125;);
+    console.log(p);
+&lt;/script&gt;
 </code></pre>
-<p>通过上面的代码可以使得 Student 继承到 Person 中的方法。</p>
-<img src = "C:\Users\86151\Desktop\MarkDown‘笔记本\JavaScript进阶\10-ES6-类\类继承04.png">
+<ol start="2">
+<li>一个 promise 指定多个成功&#x2F;失败回调函数,都会调用吗?</li>
+</ol>
+<p>当 promise 改变为对应状态时都会调用。</p>
+<pre><code class="js">&lt;script&gt;
+    let p = new Promise((resolve, reject) =&gt; &#123;
+        resolve(&#39;OK&#39;);
+    &#125;);
 
+    // 指定回调 - 1
 
-<p>那如果咱要是想继承到父类中的属性呢?<br><br>方法还是有的<br></p>
-<pre><code class="javascript">    &lt;script&gt;
-        class Person &#123;
-            constructor(name, age) &#123;
-                this.name = name
-                this.age = age
-            &#125;
+    p.then(value =&gt; &#123;
+        console.log(value);
+    &#125;);
 
-            say() &#123;
-                console.log(&quot;hello&quot;);
-            &#125;
-        &#125;
+    // 指定回调 - 2
 
-        class Student extends Person &#123;
-            constructor(name, age, grade) &#123;
-                super(name, age)
-                this.grade = grade
-            &#125;
-        &#125;
-
-        let obj = new Student(&quot;kw&quot;, &quot;12&quot;, &quot;100&quot;)
-
-        console.log(obj)
-
-        obj.say()
-
-        console.log(obj.name)
-    &lt;/script&gt;
+    p.then(value =&gt; &#123;
+        alert(value);
+    &#125;);
+&lt;/script&gt;
 </code></pre>
-<img src = "C:\Users\86151\Desktop\MarkDown‘笔记本\JavaScript进阶\10-ES6-类\类继承05.png">
+<img src = "C:\Users\86151\Desktop\MarkDown‘笔记本\Promise\执行多个回调.png">
 
-<p>需求:<br><br>既然可以在 class Student extends Person 中继承父类的属性和方法,那么可不可以,将上面代码父类中的say方法给覆盖掉呢?当然是可以的,并且还可以在覆盖之前使用super方法,将父类中的方法调用一次。</p>
-<pre><code class="javascript">    &lt;script&gt;
-        class Person &#123;
-            constructor(name, age) &#123;
-                this.name = name
-                this.age = age
-            &#125;
+<ol start="3">
+<li>改变promise状态 和 指定回调函数(注意: 指定不是执行) 谁先谁后?</li>
+</ol>
+<p><b>这里的谁先谁后指的是执行的谁先谁后,也就可以简化理解为是promise状态改变先执行还是then方法指定回调先执行</b></p>
+<p>(a) 都有可能,正常情况下是先指定回调再改变状态,但也可以先改变状态再指定回调。</p>
+<pre><code class="js">&lt;script&gt;
+    let p = new Promise((resolve, reject) =&gt; &#123;
+        setInterval(() =&gt; &#123;
+            resolve(&#39;OK&#39;)
+        &#125;, 1000);
+    &#125;);
+    p.then(value =&gt; &#123;
 
-            say() &#123;
-                console.log(&quot;hello&quot;);
-            &#125;
-        &#125;
+    &#125;, reason =&gt; &#123;
 
-        class Student extends Person &#123;
-            constructor(name, age, grade) &#123;
-                super(name, age)
-                this.grade = grade
-            &#125;
-
-            say() &#123;
-                super.say() // 语法糖
-                console.log(&quot;覆盖&quot;)
-            &#125;
-        &#125;
-
-        let obj = new Student(&quot;kw&quot;, &quot;12&quot;, &quot;100&quot;)
-
-        obj.say()
-    &lt;/script&gt;
+    &#125;);
+&lt;/script&gt;
 </code></pre>
-<img src = "C:\Users\86151\Desktop\MarkDown‘笔记本\JavaScript进阶\10-ES6-类\类继承06.png">
+<p>(b) 如何先改变状态再指定回调?</p>
+<ul>
+<li>在执行器中直接调用 resolve() &#x2F; reject(),也即是同步任务</li>
+</ul>
+<pre><code class="js">&lt;script&gt;
+    let p = new Promise((resolve, reject) =&gt; &#123;
+        resolve(&#39;OK&#39;)
+    &#125;);
+    p.then(value =&gt; &#123;
 
-<p>这语法糖可真甜,连 this 指向都不用管,直接拿到 Person 中的 say 方法就执行了。</p>
-<pre><code class="html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
+    &#125;, reason =&gt; &#123;
 
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Class类继承&lt;/title&gt;
-&lt;/head&gt;
-
-&lt;body&gt;
-    &lt;div class=&quot;box1&quot;&gt;
-        &lt;h1&gt;&lt;/h1&gt;
-        &lt;ul&gt;&lt;/ul&gt;
-    &lt;/div&gt;
-
-    &lt;div class=&quot;box2&quot;&gt;
-        &lt;h1&gt;&lt;/h1&gt;
-        &lt;img src=&quot;&quot; alt=&quot;&quot; style=&quot;width: 100px&quot;&gt;
-        &lt;ul&gt;&lt;/ul&gt;
-    &lt;/div&gt;
-    &lt;script&gt;
-        let data1 = &#123;
-            title: &quot;体育&quot;,
-            list: [&quot;体育-1&quot;, &quot;体育-2&quot;, &quot;体育-3&quot;]
-        &#125;
-
-        let data2 = &#123;
-            title: &quot;综艺&quot;,
-            url: &quot;xiaohei.jpg&quot;,
-            list: [&quot;综艺-1&quot;, &quot;综艺-2&quot;, &quot;综艺-3&quot;]
-        &#125;
-
-        class CreatBox &#123;
-            constructor(select, data) &#123;
-                this.ele = document.querySelector(select)
-                this.title = data.title
-                this.list = data.list
-                this.render()
-            &#125;
-
-            render() &#123;
-                let oh1 = this.ele.querySelector(&quot;h1&quot;)
-                let oul = this.ele.querySelector(&quot;ul&quot;)
-
-                oh1.innerHTML = this.title
-                oul.innerHTML = this.list.map(item =&gt; `&lt;li&gt;$&#123;item&#125;&lt;/li&gt;`).join(&quot;&quot;)
-            &#125;
-        &#125;
-
-        new CreatBox(&quot;.box1&quot;, data1)
-
-        class CreateImgBox extends CreatBox &#123;
-            constructor(select, data) &#123;
-                super(select, data)
-                this.imgUrl = data.url
-                this.render()
-            &#125;
-
-            render() &#123;
-                super.render()
-                let oimg = this.ele.querySelector(&quot;img&quot;)
-                oimg.src = this.imgUrl
-            &#125;
-        &#125;
-
-        new CreateImgBox(&quot;.box2&quot;, data2)
-    &lt;/script&gt;
-&lt;/body&gt;
-
-&lt;/html&gt;
+    &#125;);
+&lt;/script&gt;
 </code></pre>
+<ul>
+<li>延长更长的时间调用 then</li>
+</ul>
+<pre><code class="js">&lt;script&gt;
+    let p = new Promise((resolve, reject) =&gt; &#123;
+        setInterval(() =&gt; &#123;
+            resolve(&#39;OK&#39;);
+        &#125;, 1000);
+    &#125;);
+
+    setInterval(() =&gt; &#123;
+        p.then(value =&gt; &#123;
+
+        &#125;, reason =&gt; &#123;
+
+        &#125;);
+    &#125;, 2000)
+&lt;/script&gt;
+</code></pre>
+<p>(c) 什么时候才能得到数据?<br><br>其实也就是指 这个 then 指定的回调什么时候执行,其实关键的是先指定了回调,后改变状态,必须状态改变后才进入异步队列执行回调函数。<br>例:<br></p>
+<pre><code class="js">&lt;script&gt;
+    let p = new Promise((resolve, reject) =&gt; &#123;
+        setInterval(() =&gt; &#123;
+            resolve(&#39;OK&#39;)
+        &#125;, 1000);
+    &#125;);
+    p.then(value =&gt; &#123;
+
+    &#125;, reason =&gt; &#123;
+
+    &#125;);
+&lt;/script&gt;
+</code></pre>
+<ol start="4">
+<li>promise.then() 返回的新 promise 的结果状态由什么决定?</li>
+</ol>
+<p>(a) 简单表达:由 then() 指定的回调函数执行的结果决定</p>
+<p>(b) 详细表达:</p>
+<ul>
+<li><p>如果抛出异常,新 promise 变为 rejected,reason 为抛出异常</p>
+</li>
+<li><p>如果返回的是非 promise 的任意值,新 promise 变为resloved,value 为返回的值</p>
+</li>
+<li><p>如果返回的是另一个新 promise,此 promise 的结果就会成为新 promise 的结果</p>
+</li>
+</ul>
+<ol start="5">
+<li>promise 如何串连多个操作任务?</li>
+</ol>
+<p>(a) promise 的 then() 返回一个新的promise,可以开成then()的链式调用</p>
+<p>(b) 通过 then() 的链式调用串连多个同步&#x2F;异步任务</p>
+<p>“ 简 单 的 人”</p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls"
@@ -531,7 +576,7 @@ Object.getOwnPropertyNames(Point.prototype)
             <div class="box sticky animated fadeInRight faster">
                 <div id="toc" class="subbox">
                     <h4>Contents</h4>
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB%E7%9A%84%E7%94%B1%E6%9D%A5"><span class="toc-number">1.</span> <span class="toc-text">类的由来</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#constructor-%E6%96%B9%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">constructor() 方法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ES6%E7%BB%A7%E6%89%BF"><span class="toc-number"></span> <span class="toc-text">ES6继承</span></a>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Promise-%E7%9A%84%E7%8A%B6%E6%80%81"><span class="toc-number">1.1.</span> <span class="toc-text">Promise 的状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Promise-%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%80%BC"><span class="toc-number">1.2.</span> <span class="toc-text">Promise 对象的值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Promise-%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-number">1.3.</span> <span class="toc-text">Promise 工作流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Promise-%E7%9B%B8%E5%85%B3%E7%9A%84-API"><span class="toc-number">1.4.</span> <span class="toc-text">Promise 相关的 API</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Promise-%E7%9A%84%E5%87%A0%E4%B8%AA%E5%85%B3%E9%94%AE%E9%97%AE%E9%A2%98"><span class="toc-number">1.5.</span> <span class="toc-text">Promise 的几个关键问题</span></a></li></ol></li></ol>
                 </div>
             </div>
             
