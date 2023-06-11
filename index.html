@@ -1,6 +1,6 @@
+
 <!DOCTYPE html>
 <html lang="en" class="loading">
-
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -9,52 +9,51 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
-    <meta name="keywords" content="TriDiamond Obsidian,">
+    <meta name="keywords" content="TriDiamond Obsidian,"> 
+    
+    <meta name="author" content="早起的闽儿"> 
+    <link rel="alternative" href="atom.xml" title="WebDesiner-计流年" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
 
-    <meta name="author" content="早起的闽儿">
-    <link rel="alternative" href="atom.xml" title="WebDesiner-计流年" type="application/atom+xml">
-    <link rel="icon" href="/img/favicon.png">
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
 
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+    
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
 
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
 
-    <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
 
+    
+<link rel="stylesheet" href="/css/obsidian.css">
 
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+    
+<link rel="stylesheet" href="/css/ball-atom.min.css">
 
+    
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
-
-
-    <link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
-
-
-    <link rel="stylesheet" href="/css/obsidian.css">
-
-
-    <link rel="stylesheet" href="/css/ball-atom.min.css">
-
-
-
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
-
-
+    
     <script>var musiclist = ""</script>
-
-    <script src="/js/loadaplayer.js"></script>
+    
+<script src="/js/loadaplayer.js"></script>
 
     <!-- 引用依赖 -->
+    
+<link rel="stylesheet" href="/aplayer/dist/APlayer.min.css">
 
-    <link rel="stylesheet" href="/aplayer/dist/APlayer.min.css">
+    
+<script src="/aplayer/dist/APlayer.min.js"></script>
+<script src="/js/Meting.min.js"></script>
 
-
-    <script src="/aplayer/dist/APlayer.min.js"></script>
-    <script src="/js/Meting.min.js"></script>
-
-
-    <meta name="generator" content="Hexo 6.3.0">
-</head>
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body class="loading">
@@ -69,173 +68,153 @@
     <span id="config-title" style="display:none">WebDesiner-计流年</span>
     <div id="loader"></div>
     <div class="nav">
-        <ul id="menu-menu" class="menu">
+    <ul id="menu-menu" class="menu">
+        
+        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+            <a href="/page/" title="PAGE" external="false">PAGE</a>
+        </li>
+        
+    </ul>
+    <p class="copyright" id="copyright">
+        &copy; 2023 早起的闽儿.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+    </p>
+</div>
 
-            <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
-                <a href="/page/" title="PAGE" external="false">导航</a>
-            </li>
-
-        </ul>
-        <p class="copyright" id="copyright">
-            &copy; 早起的闽儿.
-            变 <a href="#" title="Hexo" target="_blank" rel="noopener">门儿</a>
-            致敬 <a href="#" title="Obsidian" target="_blank" rel="noopener">奥德赛岁月</a>
-        </p>
+<div id="container">
+    
+<div class="search-box">
+    <form class="site-search-form">
+        <span class="iconfont icon-search"></span>
+        <input type="text" id="local-search-input" class="st-search-input" />
+        <div class="iconfont icon-cross search-box-close"></div>
+    </form>
+    <div class="search-scrollable">
+        <div id="local-search-result" class="local-search-result-cls" data-initialise="Initialising search index..."
+            data-start="Please input search keywords." data-empty="No result found, please try other keywords.">
+            <span>Please input search keywords.</span>
+        </div>
     </div>
-
-    <div id="container">
-
-        <div class="search-box">
-            <form class="site-search-form">
-                <span class="iconfont icon-search"></span>
-                <input type="text" id="local-search-input" class="st-search-input" />
-                <div class="iconfont icon-cross search-box-close"></div>
-            </form>
-            <div class="search-scrollable">
-                <div id="local-search-result" class="local-search-result-cls"
-                    data-initialise="Initialising search index..." data-start="Please input search keywords."
-                    data-empty="No result found, please try other keywords.">
-                    <span>Please input search keywords.</span>
-                </div>
-            </div>
+</div>
+<div id="header">
+    <div>
+        <div class="logo animated fadeInDown">
+            <img src="/img/favicon.png" alt="">
+            <a class="image-logo" href="/"></a>
         </div>
-        <div id="header">
-            <div>
-                <div class="logo animated fadeInDown">
-                    <img src="/img/favicon.png" alt="">
-                    <a class="image-logo" href="/"></a>
-                </div>
-                <ul id="menu-menu" class="menu text-menu">
-
-                    <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
-                        <a href="/page/" title="PAGE" external="false" class="menu-link">PAGE</a>
-                    </li>
-
-
-                    <li class="animated fadeInDown search-bar iconfont icon-search"></li>
-
-                </ul>
-                <div class="iconfont icon-menu switchmenu gradient-text animated fadeInDown"></div>
-            </div>
-        </div>
-        <div id="screen">
-            <div id="mark">
-                <div class="cover animated fadeIn" style="
+        <ul id="menu-menu" class="menu text-menu">
+            
+            <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
+                <a href="/page/" title="PAGE" external="false" class="menu-link">PAGE</a>
+            </li>
+            
+            
+            <li class="animated fadeInDown search-bar iconfont icon-search"></li>
+            
+        </ul>
+        <div class="iconfont icon-menu switchmenu gradient-text animated fadeInDown"></div>
+    </div>
+</div>
+<div id="screen">
+    <div id="mark">
+        <div class="cover animated fadeIn" style="
             animation-delay: 900ms;
             animation-duration: 2.8s;
             background-image:
                 radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.56), #100e17),
                 url(/img/cover.jpg);">
-                </div>
-            </div>
-
-            <div id="post0" class="else">
-                <p class="animated fadeInDown">
-
-                    <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
-
-                    June 10, 2023
-                </p>
-                <h3 class="post-title animated fadeInDown">
-                    <a href="/2023/06/10/arcical/" title="Promise" class="posttitle">Promise</a>
-                </h3>
-
-                <p class="post-count animated fadeInDown">
-
-                    <span>
-                        <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        10k
-                    </span>
-
-
-                    <span>
-                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                        9 mins.
-                    </span>
-
-
-                </p>
-
-
-                <div class="md-content animated fadeIn">
-
-                    <h1 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h1>
-                    <h2 id="Promise-的状态"><a href="#Promise-的状态" class="headerlink" title="Promise 的状态"></a>Promise 的状态
-                    </h2>
-                    <p>实例对象中的一个属性 【PromiseState】<br></p>
-                    <ul>
-                        <li>
-                            <p>pending 未决定的</p>
-                        </li>
-                        <li>
-                            <p>resolved &#x2F; fullfilled 成功</p>
-                        </li>
-                        <li>
-                            <p>rejected 失败</p>
-                        </li>
-                    </ul>
-                    <p>这...</p>
-
-                    <span class="read-more"><a href="/2023/06/10/arcical/" title="Read article" class="posttitle">Read
-                            article</a>
-                        <b class="iconfont icon-arrow-right- gradient-text"></b></span>
-                </div>
-            </div>
-
         </div>
+    </div>
+    
+    <div id="post0" class="else">
+        <p class="animated fadeInDown">
+            
+            <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+            
+            June 11, 2023
+        </p>
+        <h3 class="post-title animated fadeInDown">
+            <a href="/2023/06/11/artical04/" title="Module 语法" class="posttitle">Module 语法</a></h3>
+        
+        <p class="post-count animated fadeInDown">
+            
+            <span>
+                <b class="iconfont icon-text2"></b> <i>Words count</i>
+                6.5k
+            </span>
+            
+            
+            <span>
+                <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                6 mins.
+            </span>
+            
+            
+        </p>
+        
+        
+        <div class="md-content animated fadeIn">
+            
+            <h1 id="Module-语法"><a href="#Module-语法" class="headerlink" title="Module 语法"></a>Module 语法</h1><p>历史上，JavaScript 一直没有模块（module）体系，无法将一个大程序拆分成互相依赖的小文件，再用简单的方法拼装起来。其他语言都有这项功能，比如 Ruby 的require...</p>
+            
+            <span class="read-more"><a href="/2023/06/11/artical04/" title="Read article" class="posttitle">Read article</a>
+                <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
+    </div>
+    
+</div>
 
-        <div class="screen-gradient-after">
-            <div class="screen-gradient-content">
-                <div class="screen-gradient-content-inside">
-                    <div class="bold-underline-links screen-gradient-sponsor">
-                        <p>
-                            <span class="typed-text"></span>
-                        </p>
-                    </div>
-                </div>
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="typed-text"></span>
+                </p>
             </div>
         </div>
+    </div>
+</div>
 
-        <div id="primary">
-
-            <div class="post" id="post">
-                <div class="post-cover animated fadeIn" style="
+    <div id="primary">
+        
+<div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
             background-image:
             radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
             url(/img/welcome-cover.jpg);">
-                </div>
-                <div class="else">
-                    <p class="animated fadeInDown">
-
-                        <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
-
-                        June 09, 2023
-                    </p>
-                    <h3 class="post-title animated fadeInDown"><a href="/2023/06/09/hello-world/"
-                            title="ES6 Class 的基本语法" class="posttitle">ES6 Class 的基本语法</a></h3>
-
-                    <p class="post-count animated fadeInDown">
-
-                        <span>
-                            <b class="iconfont icon-text2"></b> <i>Words count</i>
-                            9.8k
-                        </span>
-
-
-                        <span>
-                            <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                            9 mins.
-                        </span>
-
-
-                    </p>
-
-
-                    <div class="md-content animated fadeIn">
-
-                        <h2 id="类的由来"><a href="#类的由来" class="headerlink" title="类的由来"></a>类的由来</h2>
-                        <p>JavaScript 语言中,生成实例对象的传统方法是通过构造函数，咱来看看这个例子: <br></p>
-                        <pre><code class="javascript">&lt;script&gt;
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+            
+            June 11, 2023
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2023/06/11/artical03/" title="ES6 类" class="posttitle">ES6 类</a></h3>
+        
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        12k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        11 mins.
+                    </span>
+                
+                
+            </p>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <h1 id="ES6-类"><a href="#ES6-类" class="headerlink" title="ES6  类"></a>ES6  类</h1><h2 id="类的由来"><a href="#类的由来" class="headerlink" title="类的由来"></a>类的由来</h2><p>JavaScript 语言中,生成实例对象的传统方法是通过构造函数，咱来看看这个例子: <br></p>
+<pre><code class="javascript">&lt;script&gt;
     function Point(x, y) &#123;
         // 属性挂载到this上面
         this.x = x;
@@ -245,20 +224,69 @@
     // 方法挂载到原型上面
     let string = null
     Point.prototype.toString = function () &#123;
-        string = `$&#123;this.x&#125;和$&#123...</code></pre>
-
-                        <span class="read-more"><a href="/2023/06/09/hello-world/" title="Read article"
-                                class="posttitle">Read article</a> <b
-                                class="iconfont icon-arrow-right- gradient-text"></b></span>
-                    </div>
-                </div>
-            </div>
-
-
+        string = `$&#123;this.x&#125;和...</code></pre>
+            
+            <span class="read-more"><a href="/2023/06/11/artical03/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
         </div>
+    </div>
+</div>
+
+
+<div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+            
+            June 11, 2023
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2023/06/11/artical02/" title="一文理解原型" class="posttitle">一文理解原型</a></h3>
+        
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        16k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        14 mins.
+                    </span>
+                
+                
+            </p>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <h1 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h1><p>封装是面向对象思想中比较重要的一部分,js面向对象可以通过构造函数实现封装,构造函数方法虽然好用,但是存在浪费内存问题。</p>
+<pre><code class="javascript">&lt;script&gt;
+    function Star(name, age) &#123;
+        this.name = name
+        this.age = age
+        this.sing = function () &#123;
+            console.log(&quot;唱歌&quot;);
+        &#125;
+    &#125;
+    const p1 = new Star(&quot;刘德华&quot...</code></pre>
+            
+            <span class="read-more"><a href="/2023/06/11/artical02/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
+    </div>
+</div>
+
 
     </div>
-    <div id="preview"></div>
+    
+</div>
+<div id="preview"></div>
 
     <div id="back-to-top" class="animated fadeIn faster">
         <div class="flow"></div>
@@ -268,141 +296,137 @@
 </body>
 <footer>
     <p class="copyright" id="copyright">
-        &copy;
+        &copy; 2023
         <span class="gradient-text">
             早起的闽儿
         </span>.
-        变 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">门儿,</a>
-        致敬
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
         <span class="gradient-text">
-            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank"
-                rel="noopener">奥德赛</a>
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
         </span>
-        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.9.3"
-                target="_blank" rel="noopener">岁月</a></small>
-
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.9.3" target="_blank" rel="noopener">v1.4.9.3</a></small>
+        
         </br>
-
+        
         <span class="gradient-text">
-            <a href="https://developer.mozilla.org/zh-CN/docs/MDN/Community/Contributing/Getting_started"
-                title="欢迎访问我的小栈" target="_blank" rel="noopener">这是我的电台</a>
+            <a href="https://beian.miit.gov.cn/" title="beian.miit.gov.cn" target="_blank" rel="noopener">beian.miit.gov.cn</a>
         </span>
-
-
+        
+        
         </br>
-        <span style="display: inline-block;" id="logo"> <img src="img/favicon.png"></span>
-
+        <span style="display: inline-block;"> <img src=/null></span>
+        
         <span class="gradient-text">
-            <a href="https://developer.mozilla.org/zh-CN/docs/MDN/Community/Contributing/Getting_started"
-                title="欢迎访问我的小栈" target="_blank" rel="noopener">保护好自己有限的情绪和能量,才有余量做一个无限的人</a>
+            <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010602009049" title="www.beian.gov.cn&#x2F;portal&#x2F;registerSystemInfo?recordcode&#x3D;44010602009049" target="_blank" rel="noopener">www.beian.gov.cn&#x2F;portal&#x2F;registerSystemInfo?recordcode&#x3D;44010602009049</a>
         </span>
-
+        
     </p>
 </footer>
 
 <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 <script>
-    MathJax.Hub.Config({
-        "HTML-CSS": {
-            preferredFont: "TeX",
-            availableFonts: ["STIX", "TeX"],
-            linebreaks: {
-                automatic: true
-            },
-            EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
-        },
-        tex2jax: {
-            inlineMath: [
-                ["$", "$"],
-                ["\\(", "\\)"]
-            ],
-            processEscapes: true,
-            ignoreClass: "tex2jax_ignore|dno",
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        },
-        TeX: {
-            noUndefined: {
-                attributes: {
-                    mathcolor: "red",
-                    mathbackground: "#FFEEEE",
-                    mathsize: "90%"
-                }
-            },
-            Macros: {
-                href: "{}"
-            }
-        },
-        messageStyle: "none"
-    });
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
 </script>
 <script>
-    function initialMathJax() {
-        MathJax.Hub.Queue(function () {
-            var all = MathJax.Hub.getAllJax(),
-                i;
-            // console.log(all);
-            for (i = 0; i < all.length; i += 1) {
-                console.log(all[i].SourceElement().parentNode)
-                all[i].SourceElement().parentNode.className += ' has-jax';
-            }
-        });
-    }
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
 
-    function reprocessMathJax() {
-        if (typeof MathJax !== 'undefined') {
-            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-        }
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
     }
+  }
 </script>
 
 
-
+ 
 <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
-
+ 
 <script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
-
+  
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="/js/plugin.js"></script>
 <script src="/js/obsidian.js"></script>
 <script src="/js/jquery.truncate.js"></script>
 <script src="/js/search.js"></script>
-
+ 
 <script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
-
+ 
 <script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
-
+ 
 <script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
 
 
 <script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
-
+ 
 <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
-
+  
 <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
-
+  
 <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
-
+  
 <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
-
+  
 <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
-
+  
 <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
-
+  
 <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
-
+  
 <script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
-
+   
 <script src="/js/busuanzi.min.js"></script>
 
 <script>
-    $(document).ready(function () {
-        if ($('span[id^="busuanzi_"]').length) {
-            initialBusuanzi();
-        }
-    });
+  $(document).ready(function () {
+    if ($('span[id^="busuanzi_"]').length) {
+      initialBusuanzi();
+    }
+  });
 </script>
-
+ 
 <link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
 <link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
 
@@ -439,14 +463,14 @@
                 <!-- element will get class pswp__preloader--active when preloader is running -->
                 <div class="pswp__preloader">
                     <div class="pswp__preloader__icn">
-                        <div class="pswp__preloader__cut">
-                            <div class="pswp__preloader__donut"></div>
-                        </div>
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
                     </div>
                 </div>
             </div>
             <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div>
+                <div class="pswp__share-tooltip"></div> 
             </div>
             <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
             </button>
@@ -458,27 +482,27 @@
         </div>
     </div>
 </div>
-
+  
 
 <script>
-    function initialTyped() {
-        var typedTextEl = $('.typed-text');
-        if (typedTextEl && typedTextEl.length > 0) {
-            var typed = new Typed('.typed-text', {
-                strings: ['Think like an artist, develop like an artisan', '艺术家思维去思考问题，工匠创造精神去开发'],
-                typeSpeed: 90,
-                loop: true,
-                loopCount: Infinity,
-                backSpeed: 20,
-            });
-        }
+  function initialTyped() {
+    var typedTextEl = $('.typed-text');
+    if (typedTextEl && typedTextEl.length > 0) {
+      var typed = new Typed('.typed-text', {
+        strings: ['Think like an artist, develop like an artisan', '艺术家思维去思考问题，工匠创造精神去开发'],
+        typeSpeed: 90,
+        loop: true,
+        loopCount: Infinity,
+        backSpeed: 20,
+      });
     }
+  }
 
-    if ($('.article-header') && $('.article-header').length) {
-        $(document).ready(function () {
-            initialTyped();
-        });
-    }
+  if ($('.article-header') && $('.article-header').length) {
+    $(document).ready(function () {
+      initialTyped();
+    });
+  }
 </script>
 
 

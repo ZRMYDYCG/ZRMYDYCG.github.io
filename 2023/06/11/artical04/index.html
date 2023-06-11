@@ -5,21 +5,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Promise - WebDesiner-计流年</title>
+    <title>Module 语法 - WebDesiner-计流年</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="TriDiamond Obsidian,"> 
-    <meta name="description" content="笔记Promise 的状态实例对象中的一个属性 【PromiseState】
-
-pending 未决定的
-
-resolved &amp;#x2F; fullfilled 成功
-
-rejected 失败
-
-
-,"> 
+    <meta name="description" content="Module 语法历史上，JavaScript 一直没有模块（module）体系，无法将一个大程序拆分成互相依赖的小文件，再用简单的方法拼装起来。其他语言都有这项功能，比如 Ruby 的requir,"> 
     <meta name="author" content="早起的闽儿"> 
     <link rel="alternative" href="atom.xml" title="WebDesiner-计流年" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -83,7 +74,7 @@ rejected 失败
     <div class="navigation animated fadeIn fast delay-1s">
         <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://example.com">
         <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-        <h3 class="subtitle">Promise</h3>
+        <h3 class="subtitle">Module 语法</h3>
         <div class="social">
             <!--        <div class="like-icon">-->
             <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -115,22 +106,22 @@ rejected 失败
                 
                 <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
                 
-                June 10, 2023
+                June 11, 2023
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2023/06/10/arcical/" title="Promise" class="">Promise</a>
+            <h3 class="post-title animated fadeInDown"><a href="/2023/06/11/artical04/" title="Module 语法" class="">Module 语法</a>
             </h3>
             
             <p class="post-count animated fadeInDown">
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>Words count</i>
-                    10k
+                    6.5k
                 </span>
                 
                 
                 <span>
                     <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                    9 mins.
+                    6 mins.
                 </span>
                 
                 
@@ -162,360 +153,174 @@ rejected 失败
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn">
-            <h1 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h1><h2 id="Promise-的状态"><a href="#Promise-的状态" class="headerlink" title="Promise 的状态"></a>Promise 的状态</h2><p>实例对象中的一个属性 【PromiseState】<br></p>
+            <h1 id="Module-语法"><a href="#Module-语法" class="headerlink" title="Module 语法"></a>Module 语法</h1><p>历史上，JavaScript 一直没有模块（module）体系，无法将一个大程序拆分成互相依赖的小文件，再用简单的方法拼装起来。其他语言都有这项功能，比如 Ruby 的require、Python 的import，甚至就连 CSS 都有@import，但是 JavaScript 任何这方面的支持都没有，这对开发大型的、复杂的项目形成了巨大障碍。<br></p>
+<p>在 ES6 之前，社区制定了一些模块加载方案，最主要的有 CommonJS 和 AMD 两种。前者用于服务器，后者用于浏览器。<b>ES6 在语言标准的层面上，实现了模块功能，而且实现得相当简单，完全可以取代 CommonJS 和 AMD 规范，成为浏览器和服务器通用的模块解决方案。</b><br></p>
+<p>ES6 模块的设计思想是尽量的静态化，使得编译时就能确定模块的依赖关系，以及输入和输出的变量。CommonJS 和 AMD 模块，都只能在运行时确定这些东西。比如，CommonJS 模块就是对象，输入时必须查找对象属性。<br></p>
+<h1 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h1><h2 id="第一种导入导出的写法"><a href="#第一种导入导出的写法" class="headerlink" title="第一种导入导出的写法"></a>第一种导入导出的写法</h2><p>模块化语法是对&lt; script&gt;&lt; &#x2F;script&gt; 标签引入的一种颠覆。可以解决以前的很多痛点问题,此乃神法~</p>
+<h3 id="异步加载"><a href="#异步加载" class="headerlink" title="异步加载"></a>异步加载</h3><pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script&gt;
+        const odiv = document.querySelector(&quot;div&quot;)
+        console.log(odiv); // null
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<p>采用模块化语法（它默认支持异步加载,且与difer实现的异步相似,会等着页面渲染完成:<br></p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script src=&quot;test01.js&quot; type=&quot;module&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<p>上面代码中 :    <script src="test01.js" type="module"></script> 就可以 实现异步加载了</p>
+<h3 id="私密不漏"><a href="#私密不漏" class="headerlink" title="私密不漏"></a>私密不漏</h3><img src = "artical04img\私密化.png">
+
+<p>比如现在我们希望 a1 这个方法是 1.js 中内部的私密方法,外部无法访问到,以前的写法是给其前加 “_”</p>
+<pre><code class="javascript">function _a1()&#123;
+    ....
+&#125;
+</code></pre>
+<p>而模块化就可以解决这个问题 :<br></p>
+<p>1.js文件:</p>
+<pre><code class="javascript">function A1() &#123;
+    _a1();
+    console.log(&quot;A1&quot;);
+&#125;
+
+function _a1() &#123;
+    console.log(&quot;a1&quot;)
+&#125;
+
+function A2() &#123;
+    console.log(&quot;A2&quot;);
+&#125;
+
+function test() &#123;
+    console.log(&quot;A-----a-----A&quot;);
+&#125;
+
+// 导出我们想要暴露出来的方法
+
+export default A1
+</code></pre>
+<p>1.html文件:</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;!-- &lt;script src=&quot;1.js&quot; type=&quot;module&quot;&gt;&lt;/script&gt; --&gt;
+    &lt;!-- * 这样写的话 就把 这个1.js文件私密化了,在该文件中不可以使用里面的任何方法了 --&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;!-- * 这样同样是实现了异步加载 --&gt;
+    &lt;script type=&quot;module&quot;&gt;
+        // 导入 1.js 中我们想要暴露出来的方法
+        import A1 from &#39;./1.js&#39;
+        console.log(A1);
+    &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<p>导入导出多个方法：<br></p>
+<pre><code class="javascript">export default &#123;
+    // A1: A1,
+    // A2: A2
+    // 简写：
+    A1,
+    A2
+&#125;
+</code></pre>
+<pre><code class="javascript">&lt;script type=&quot;module&quot;&gt;
+    // 导入 1.js 中我们想要暴露出来的方法
+    import obj from &#39;./1.js&#39;
+    // console.log(obj);
+    console.log(obj.A1);
+&lt;/script&gt;
+</code></pre>
+<h3 id="重名不怕"><a href="#重名不怕" class="headerlink" title="重名不怕"></a>重名不怕</h3><p>假如两个 js 文件中,有相同的方法名,那么在引用的时候就是会存在覆盖。</p>
+<p>1.js:</p>
+<pre><code class="javascript">function text() &#123;
+    console.log(1);
+&#125;
+// 导出：
+export default &#123;
+    text
+&#125;
+</code></pre>
+<p>2.js:</p>
+<pre><code class="javascript">function text() &#123;
+    console.log(2);
+&#125;
+// 导出：
+export default &#123;
+    text
+&#125;
+</code></pre>
+<p>test.html</p>
+<pre><code class="javascript">import obj1 from &#39;./1.js&#39;
+import obj2 from &#39;./2.js&#39;
+console.log(obj1.text,obj2.text)
+</code></pre>
+<h3 id="依赖不乱"><a href="#依赖不乱" class="headerlink" title="依赖不乱"></a>依赖不乱</h3><p>什么是依赖?也就是指 : 多个 js 文件中,在一个js文件中调用其它 js 文件中的方法,在引入该 js 文件时,这个 js 文件应当放在调用者的前面。<br></p>
+<p>而模块化写法就可以解决这个痛点！！！<br><br>1.js</p>
+<pre><code class="javascript">function A1() &#123;
+
+&#125;
+</code></pre>
+<p>2.js</p>
+<pre><code class="javascript">function B1() &#123;
+
+&#125;
+</code></pre>
+<p>3.js</p>
+<pre><code class="javascript">import obj1 from &#39;./1.js&#39;
+import obj2 from &#39;./2.js&#39;
+obj1.A1()
+obj2.B1()
+</code></pre>
+<p><b>现在希望 3.js 可以使用 1.js 和 2.js 中的方法</b><br><b>要在哪用 就在哪引</b></p>
+<p>test.html</p>
+<pre><code class="javascript">import obj1 from &#39;./1.js&#39;
+import obj2 from &#39;./2.js&#39;
+import obj3 from &#39;./3.js&#39; 
+</code></pre>
+<p>以上这四个特性的展示:<br>其实每一个例子都是符合着</p>
 <ul>
-<li><p>pending 未决定的</p>
-</li>
-<li><p>resolved &#x2F; fullfilled 成功</p>
-</li>
-<li><p>rejected 失败</p>
-</li>
+<li>异步加载</li>
+<li>私密不漏</li>
+<li>重名不怕</li>
+<li>依赖不乱</li>
 </ul>
-<p>这是 Promise 实例对象的一个内置属性<br><br>其变化方式:</p>
-<ul>
-<li><p>pending 变为 resolved</p>
-</li>
-<li><p>pending 变为 rejected</p>
-</li>
-</ul>
-<p>说明:<br><br>只有这 2 种变化,且一个 promise 对象只能改变一次<br><br>无论变成成功还是失败,都会有一个结果数据<br><br>成功的结果数据一般称为 value, 失败的结果数据一般称为 reason</p>
-<h2 id="Promise-对象的值"><a href="#Promise-对象的值" class="headerlink" title="Promise 对象的值"></a>Promise 对象的值</h2><p>实例对象中的另一个属性 【PromiseResult】<br>保存的是异步任务【成功&#x2F;失败】的结果</p>
-<ul>
-<li><p>resolve</p>
-</li>
-<li><p>reject</p>
-</li>
-</ul>
-<h2 id="Promise-工作流程"><a href="#Promise-工作流程" class="headerlink" title="Promise 工作流程"></a>Promise 工作流程</h2><img src = "C:\Users\86151\Desktop\MarkDown‘笔记本\Promise\Promise工作流程.png">
-
-<p>先创建一个 Promise 对象,在 Promise 对象内部封装异步操作,如果异步操作成功,则调用 resolve 函数,resolve 函数一调,则将 Promise 函数状态改为 resolved（成功）,因此在之后调用 then 方法时将调用的是第一个参数（也即是第一个回调函数中的代码）,然后返回一个新的 Promise 对象（then 方法返回的 Promise 对象）。</p>
-<h2 id="Promise-相关的-API"><a href="#Promise-相关的-API" class="headerlink" title="Promise 相关的 API"></a>Promise 相关的 API</h2><ol>
-<li>Promise 的构造函数:Promise（excutor）{ }</li>
-</ol>
-<ul>
-<li><p>executor 函数: 执行器（resolve , reject）&#x3D;&gt; { }</p>
-</li>
-<li><p>resolve 函数: 内部定义成功时我们调用的函数 value &#x3D;&gt;{ }</p>
-</li>
-<li><p>reject 函数: 内部定义失败时我们调用的函数 reson &#x3D;&gt;{ }</p>
-</li>
-</ul>
-<p>说明: executor 会在 Promise 内部立即同步调用,异步操作在执行器中执行。</p>
-<ol start="2">
-<li>Promise.prototype.then 方法:（onRseolved,onRejected）&#x3D;&gt; { }</li>
-</ol>
-<ul>
-<li><p>onResolved 函数: 成功的回调函数 (value) &#x3D;&gt; { }</p>
-</li>
-<li><p>onRejected 函数: 失败的回调函数 (reason) &#x3D;&gt; { }</p>
-</li>
-</ul>
-<p>说明: 指定用于得到成功 value 的成功回调函数和用于得到失败 reason 的失败回调函数返回一个新的 promise 对象。</p>
-<ol start="3">
-<li>Promise.prototype.catch 方法: (onRejected) &#x3D;&gt; { }</li>
-</ol>
-<ul>
-<li><p>onReject 函数: 失败的回调函数 (reason) &#x3D;&gt; { }</p>
-</li>
-<li><p>catch 方法只能指定失败的回调</p>
-</li>
-</ul>
-<pre><code class="js">&lt;script&gt;
-    const p = new Promise((resolve, reject) =&gt; &#123;
-        reject(&#39;catch 方法只在失败时执行回调&#39;)
-    &#125;);
-
-    p.catch(reason =&gt; &#123;
-        console.log(reason);
-    &#125;);
-&lt;/script&gt;
-</code></pre>
-<img src = "C:\Users\86151\Desktop\MarkDown‘笔记本\Promise\catch方法.png">
-
-<ol start="4">
-<li>Promise.resolve 方法 : (value) &#x3D;&gt; { }</li>
-</ol>
-<ul>
-<li><p>这个方法比较特殊,它是属于这个 Promise 方法函数的对象,并不属于 Promise 实例对象</p>
-</li>
-<li><p>value: 成功的数据或 promise 对象<br>（说明: 返回一个成功&#x2F;失败的 promise 对象）</p>
-</li>
-<li><p>如果传入的参数为 非 Peomise 类型的对象,则返回的结果为成功 promise 对象</p>
-</li>
-</ul>
-<pre><code class="js">&lt;script&gt;
-    const p1 = Promise.resolve(521);
-    console.log(p1);
-&lt;/script&gt;
-</code></pre>
-<img src = "C:\Users\86151\Desktop\MarkDown‘笔记本\Promise\resolve方法.png">
-
-<ul>
-<li>如果传入的参数为 Promise 类型的对象,则参数的结果决定了 resolve 的结果</li>
-</ul>
-<pre><code class="js">&lt;script&gt;
-    const p2 = Promise.resolve(new Promise((resolve, reject) =&gt; &#123;
-        resolve(&#39;ok&#39;);
-    &#125;));
-
-    console.log(p2);
-
-    const p3 = Promise.resolve(new Promise((resolve, reject) =&gt; &#123;
-        reject(&#39;Error&#39;)
-    &#125;));
-    
-    console.log(p3);
-
-    p3.catch(reason =&gt; &#123;
-        console.log(reason);
-    &#125;);
-&lt;/script&gt;
-</code></pre>
-<img src = "C:\Users\86151\Desktop\MarkDown‘笔记本\Promise\resolve方法03.png">
-
-<ol start="5">
-<li>Promise.reject 方法: (reason) &#x3D;&gt; { }</li>
-</ol>
-<ul>
-<li><p>它是属于 Promise 函数对象的方法,不是属于 Promise 实例对象的方法</p>
-</li>
-<li><p>reason: 失败的原因<br>（说明: 返回一个失败的 promise 对象）</p>
-</li>
-</ul>
-<pre><code class="js">&lt;script&gt;
-    let p = Promise.reject(521)
-    let p1 = Promise.reject(new Promise((resolve, reject) =&gt; &#123;
-        resolve(&#39;OK&#39;);
-    &#125;));
-    console.log(p);
-    console.log(p1);
-&lt;/script&gt;
-</code></pre>
-<img src = "C:\Users\86151\Desktop\MarkDown‘笔记本\Promise\reject方法01.png">
-
-<ol start="6">
-<li>Promise.all 方法: (promise) &#x3D;&gt; { }</li>
-</ol>
-<ul>
-<li><p>Promise 函数对象的一个方法, 不是 Promise 实例对象的方法 </p>
-</li>
-<li><p>promise: 包含 n 个 promise 数组，也就是每一个都是 promise 对象<br>（说明: 返回一个新的 promise,只有所有的 promise 都成功时才成功,只要有一个失败了就直接失败）</p>
-</li>
-</ul>
-<pre><code class="js">&lt;script&gt;
-    // 设置 3 个成功的 Promise 对象
-    let p1 = new Promise((resolve, reject) =&gt; &#123;
-        resolve(&#39;OK&#39;);
-    &#125;);
-
-    let p2 = Promise.resolve(&#39;success&#39;);
-
-    let p3 = Promise.resolve(&#39;Pass&#39;);
-
-    let result = Promise.all([p1, p2, p3]);
-
-    console.log(result);
-&lt;/script&gt;
-</code></pre>
-<img src = "C:\Users\86151\Desktop\MarkDown‘笔记本\Promise\all方法.png">
-
-<p>从上面代码和控制台的打印结果,我们可以看到 all 方法会返回一个 promise 对象,只有当 p1,p2,p3 都成功的情况下,才会返回一个成功的 promise 对象,其结果值为 p1 p2 p3 这三个 promise 对象成功的结果组成的数组。<br></p>
-<p>现在咱将其中一个设置为失败<br></p>
-<pre><code class="js">&lt;script&gt;
-    let p1 = new Promise((resolve, reject) =&gt; &#123;
-        resolve(&#39;OK&#39;);
-    &#125;);
-
-    let p2 = Promise.reject(&#39;Error&#39;);
-
-    let p3 = Promise.resolve(&#39;Pass&#39;);
-
-    let result = Promise.all([p1, p2, p3]);
-
-    console.log(result);
-&lt;/script&gt;
-</code></pre>
-<img src = "C:\Users\86151\Desktop\MarkDown‘笔记本\Promise\all方法02.png">
-
-<p>从上面代码和控制台的打印结果,我们可以看到 all 方法会返回一个 promise 对象,当 p1 p2 p3 中不全成功的情况下,会返回一个失败的 promise 对象,其结果值为失败的那个promise值的结果值。<br></p>
-<ol start="7">
-<li>Promise.race 方法: (promise) &#x3D;&gt; { }</li>
-</ol>
-<ul>
-<li>promise: 包含 n 个 promise 的数组<br>（说明:返回一个新的 promise 对象, 第一个完成的 promise 的结果状态就是最终的结果状态）</li>
-</ul>
-<pre><code class="js">&lt;script&gt;
-    let p1 = new Promise((resolve, reject) =&gt; &#123;
-        resolve(&#39;OK&#39;);
-    &#125;);
-
-    let p2 = Promise.reject(&#39;Error&#39;);
-
-    let p3 = Promise.resolve(&#39;Pass&#39;);
-
-    let result = Promise.all([p1, p2, p3]);
-
-    console.log(result);
-&lt;/script&gt;
-</code></pre>
-<img src = "C:\Users\86151\Desktop\MarkDown‘笔记本\Promise\race方法.png">
-
-<p>由于是 p1 先改变状态,所以 result 的状态和值就是由 p1 来决定。</p>
-<pre><code class="js">&lt;script&gt;
-    let p1 = new Promise((resolve, reject) =&gt; &#123;
-        setTimeout(() =&gt; &#123;
-            resolve(&#39;OK&#39;);
-        &#125;, 1000)
-    &#125;);
-
-    let p2 = Promise.reject(&#39;Error&#39;);
-
-    let p3 = Promise.resolve(&#39;Pass&#39;);
-
-    let result = Promise.all([p1, p2, p3]);
-
-    console.log(result);
-&lt;/script&gt;
-</code></pre>
-<img src="C:\Users\86151\Desktop\MarkDown‘笔记本\Promise\race方法02.png">
-
-<p>这里 p2 是最先改变状态的</p>
-<h2 id="Promise-的几个关键问题"><a href="#Promise-的几个关键问题" class="headerlink" title="Promise 的几个关键问题"></a>Promise 的几个关键问题</h2><ol>
-<li>如何改变 promise 的状态</li>
-</ol>
-<p>(a) 调用 resolve 函数 pending -&gt; fulfilled</p>
-<pre><code class="js">&lt;script&gt;
-    let p = new Promise((resolve, reject) =&gt; &#123;
-        resolve(&#39;OK&#39;);
-    &#125;);
-    console.log(p);
-&lt;/script&gt;
-</code></pre>
-<p>(b) 调用 reject 函数 pending -&gt; rejected</p>
-<pre><code class="js">&lt;script&gt;
-    let p = new Promise((resolve, reject) =&gt; &#123;
-        reject(&#39;Error&#39;);
-    &#125;);
-    console.log(p);
-&lt;/script&gt;
-</code></pre>
-<p>(c) throw 抛出错误  pending -&gt; rejected</p>
-<pre><code class="js">&lt;script&gt;
-    let p = new Promise((resolve, reject) =&gt; &#123;
-        throw &#39;出问题了&#39;;
-    &#125;);
-    console.log(p);
-&lt;/script&gt;
-</code></pre>
-<ol start="2">
-<li>一个 promise 指定多个成功&#x2F;失败回调函数,都会调用吗?</li>
-</ol>
-<p>当 promise 改变为对应状态时都会调用。</p>
-<pre><code class="js">&lt;script&gt;
-    let p = new Promise((resolve, reject) =&gt; &#123;
-        resolve(&#39;OK&#39;);
-    &#125;);
-
-    // 指定回调 - 1
-
-    p.then(value =&gt; &#123;
-        console.log(value);
-    &#125;);
-
-    // 指定回调 - 2
-
-    p.then(value =&gt; &#123;
-        alert(value);
-    &#125;);
-&lt;/script&gt;
-</code></pre>
-<img src = "C:\Users\86151\Desktop\MarkDown‘笔记本\Promise\执行多个回调.png">
-
-<ol start="3">
-<li>改变promise状态 和 指定回调函数(注意: 指定不是执行) 谁先谁后?</li>
-</ol>
-<p><b>这里的谁先谁后指的是执行的谁先谁后,也就可以简化理解为是promise状态改变先执行还是then方法指定回调先执行</b></p>
-<p>(a) 都有可能,正常情况下是先指定回调再改变状态,但也可以先改变状态再指定回调。</p>
-<pre><code class="js">&lt;script&gt;
-    let p = new Promise((resolve, reject) =&gt; &#123;
-        setInterval(() =&gt; &#123;
-            resolve(&#39;OK&#39;)
-        &#125;, 1000);
-    &#125;);
-    p.then(value =&gt; &#123;
-
-    &#125;, reason =&gt; &#123;
-
-    &#125;);
-&lt;/script&gt;
-</code></pre>
-<p>(b) 如何先改变状态再指定回调?</p>
-<ul>
-<li>在执行器中直接调用 resolve() &#x2F; reject(),也即是同步任务</li>
-</ul>
-<pre><code class="js">&lt;script&gt;
-    let p = new Promise((resolve, reject) =&gt; &#123;
-        resolve(&#39;OK&#39;)
-    &#125;);
-    p.then(value =&gt; &#123;
-
-    &#125;, reason =&gt; &#123;
-
-    &#125;);
-&lt;/script&gt;
-</code></pre>
-<ul>
-<li>延长更长的时间调用 then</li>
-</ul>
-<pre><code class="js">&lt;script&gt;
-    let p = new Promise((resolve, reject) =&gt; &#123;
-        setInterval(() =&gt; &#123;
-            resolve(&#39;OK&#39;);
-        &#125;, 1000);
-    &#125;);
-
-    setInterval(() =&gt; &#123;
-        p.then(value =&gt; &#123;
-
-        &#125;, reason =&gt; &#123;
-
-        &#125;);
-    &#125;, 2000)
-&lt;/script&gt;
-</code></pre>
-<p>(c) 什么时候才能得到数据?<br><br>其实也就是指 这个 then 指定的回调什么时候执行,其实关键的是先指定了回调,后改变状态,必须状态改变后才进入异步队列执行回调函数。<br>例:<br></p>
-<pre><code class="js">&lt;script&gt;
-    let p = new Promise((resolve, reject) =&gt; &#123;
-        setInterval(() =&gt; &#123;
-            resolve(&#39;OK&#39;)
-        &#125;, 1000);
-    &#125;);
-    p.then(value =&gt; &#123;
-
-    &#125;, reason =&gt; &#123;
-
-    &#125;);
-&lt;/script&gt;
-</code></pre>
-<ol start="4">
-<li>promise.then() 返回的新 promise 的结果状态由什么决定?</li>
-</ol>
-<p>(a) 简单表达:由 then() 指定的回调函数执行的结果决定</p>
-<p>(b) 详细表达:</p>
-<ul>
-<li><p>如果抛出异常,新 promise 变为 rejected,reason 为抛出异常</p>
-</li>
-<li><p>如果返回的是非 promise 的任意值,新 promise 变为resloved,value 为返回的值</p>
-</li>
-<li><p>如果返回的是另一个新 promise,此 promise 的结果就会成为新 promise 的结果</p>
-</li>
-</ul>
-<ol start="5">
-<li>promise 如何串连多个操作任务?</li>
-</ol>
-<p>(a) promise 的 then() 返回一个新的promise,可以开成then()的链式调用</p>
-<p>(b) 通过 then() 的链式调用串连多个同步&#x2F;异步任务</p>
-<p>“ 简 单 的 人”</p>
+<p>​                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls"
@@ -565,7 +370,7 @@ rejected 失败
                     </dl>
                 </div>
                 <ul>
-                    <li><a href="/">2 <p>Articles</p></a></li>
+                    <li><a href="/">3 <p>Articles</p></a></li>
                     <li><a href="/categories">0 <p>Categories</p></a></li>
                     <li><a href="/tags">0 <p>Tags</p></a></li>
                 </ul>
@@ -576,7 +381,7 @@ rejected 失败
             <div class="box sticky animated fadeInRight faster">
                 <div id="toc" class="subbox">
                     <h4>Contents</h4>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Promise-%E7%9A%84%E7%8A%B6%E6%80%81"><span class="toc-number">1.1.</span> <span class="toc-text">Promise 的状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Promise-%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%80%BC"><span class="toc-number">1.2.</span> <span class="toc-text">Promise 对象的值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Promise-%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-number">1.3.</span> <span class="toc-text">Promise 工作流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Promise-%E7%9B%B8%E5%85%B3%E7%9A%84-API"><span class="toc-number">1.4.</span> <span class="toc-text">Promise 相关的 API</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Promise-%E7%9A%84%E5%87%A0%E4%B8%AA%E5%85%B3%E9%94%AE%E9%97%AE%E9%A2%98"><span class="toc-number">1.5.</span> <span class="toc-text">Promise 的几个关键问题</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Module-%E8%AF%AD%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">Module 语法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97%E5%8C%96"><span class="toc-number">2.</span> <span class="toc-text">模块化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%A7%8D%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA%E7%9A%84%E5%86%99%E6%B3%95"><span class="toc-number">2.1.</span> <span class="toc-text">第一种导入导出的写法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%82%E6%AD%A5%E5%8A%A0%E8%BD%BD"><span class="toc-number">2.1.1.</span> <span class="toc-text">异步加载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%81%E5%AF%86%E4%B8%8D%E6%BC%8F"><span class="toc-number">2.1.2.</span> <span class="toc-text">私密不漏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E5%90%8D%E4%B8%8D%E6%80%95"><span class="toc-number">2.1.3.</span> <span class="toc-text">重名不怕</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%9D%E8%B5%96%E4%B8%8D%E4%B9%B1"><span class="toc-number">2.1.4.</span> <span class="toc-text">依赖不乱</span></a></li></ol></li></ol></li></ol>
                 </div>
             </div>
             
