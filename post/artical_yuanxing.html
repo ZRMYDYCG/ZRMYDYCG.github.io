@@ -207,7 +207,7 @@
     console.log(p1.sing === p2.sing)
 &lt;/script&gt;
 </code></pre>
-<p><img src="/post/artical_yuanxing/%E5%8E%9F%E5%9E%8B02.png"></p>
+<p><img src="/post/artical_yuanxing/02.png" alt="原型对象"></p>
 <p>通过控制台的打印,我们会发现,返回的是 true, 而最开始的代码里面打印的 sing 方法是 false ,这也进一步说明了,原型对像确实是实现了方法的共享,节约了内存。</p>
 <ul>
 <li>构造函数和原型对象中的 this 都指向 <b>实例化的对象</b></li>
@@ -251,10 +251,10 @@
     console.log(Star.prototype);
 &lt;/script&gt;
 </code></pre>
-<p><img src="/post/artical_yuanxing/%E5%8E%9F%E5%9E%8B03.png"></p>
+<p><img src="/post/artical_yuanxing/03.png"></p>
 <p>通过上面代码及控制台的打印,我们发现:这个constructor属性在原型对像身上,其实每个原型对像身上都有一个constructor属性 (constructor 构造函数) <br></p>
 <p>那么它的作用是什么呢? <br><br>该属性指向该原型对像的构造函数,简单理解,就是指向我的爸爸,我是有爸爸的孩子.</p>
-<p><img src="/post/artical_yuanxing/%E5%8E%9F%E5%9E%8B04.png"></p>
+<p><img src="/post/artical_yuanxing/04.png"></p>
 <pre><code class="javascript">&lt;script&gt;
     function Star() &#123;
 
@@ -295,7 +295,7 @@
     console.log(Star2.prototype)
 &lt;/script&gt;
 </code></pre>
-<p><img src="/post/artical_yuanxing/%E5%8E%9F%E5%9E%8B05.png"></p>
+<p><img src="/post/artical_yuanxing/05.png"></p>
 <p>咱通过控制台的打印可以看到,当原型对像上有多个方法时,其实也就是做了一个赋值操作时(Star2.prototype),它这个原型对像就不知道指向哪个构造函数的了<br></p>
 <p>也就是说:如果有多个对像的方法,我们可以给原型对象采取对象形式赋值,但是这样会覆盖构造函数原型对象原来的内容,这样修改后的原型对象 conctructor 就不再指向当前构造函数了,此时,我们可以在修改后的原型对象中,添加一个 constructor 指向原来的构造函数</p>
 <p>所以有如下解决方法:<br><br>重新指回它的构造函数<br></p>
@@ -313,7 +313,7 @@
 <h1 id="对象原型-prototype"><a href="#对象原型-prototype" class="headerlink" title="对象原型 _ _ prototype _ _"></a>对象原型 _ _ prototype _ _</h1><p>思考:<br></p>
 <p>构造函数可以创建实例对象,构造函数还有一个原型对象,一些公共的属性或者方法放到这个原型对象身上,但是<b>为啥实例对象可以访问原型对象里面的属性和方法呢?</b></p>
 <p>之所以实例对象可以访问到原型对象上的属性和方法,是因为实例对象身上有一个对象原型(_ <em>prototype</em> _)会指向原型对象</p>
-<p><img src="/post/artical_yuanxing/%E5%8E%9F%E5%9E%8B06.jpg"></p>
+<p><img src="/post/artical_yuanxing/06.jpg"></p>
 <pre><code class="javascript">&lt;script&gt;
     let Obj1 = new Object()
     Obj1.name = &quot;2222&quot;
@@ -335,7 +335,7 @@
     console.log(p1)
 &lt;/script&gt;
 </code></pre>
-<p><img src="/post/artical_yuanxing/%E5%8E%9F%E5%9E%8B06.png"></p>
+<p><img src="/post/artical_yuanxing/061.png"></p>
 <p>通过上面的控制台打印,我们可以看到每一个对象都有一个对象原型_ <em>prototype</em> _ ,对象原型里都有一个 constructor 属性</p>
 <pre><code class="javascript">&lt;script&gt;
     function Star() &#123;
@@ -353,7 +353,7 @@
     console.log(p1.__proto__.constructor === Star)
 &lt;/script&gt;
 </code></pre>
-<p><img src="/post/artical_yuanxing/%E5%8E%9F%E5%9E%8B08.png"></p>
+<p><img src="/post/artical_yuanxing/08.png"></p>
 <p>通过控制台的打印,验证成功!!!</p>
 <p>注意:</p>
 <ul>
@@ -369,7 +369,7 @@
 </li>
 </ul>
 <p>原理图:</p>
-<p><img src="/post/artical_yuanxing/%E5%8E%9F%E5%9E%8B08.jpg"><br><img src="/post/artical_yuanxing/%E5%8E%9F%E5%9E%8B09.jpg"></p>
+<p><img src="/post/artical_yuanxing/081.jpg"><br><img src="/post/artical_yuanxing/09.jpg"></p>
 <h1 id="原型继承"><a href="#原型继承" class="headerlink" title="原型继承"></a>原型继承</h1><p>继承是面向对象编程的另一个特征,通过继承进一步提升代码封装的程度,JavaScript 中大多是借助原型对象实现继承的特性</p>
 <p>咱来看个代码:<br></p>
 <pre><code class="javascript">&lt;script&gt;
@@ -404,7 +404,7 @@
     console.log(M1)
 &lt;/script&gt;
 </code></pre>
-<p><img src="/post/artical_yuanxing/%E5%8E%9F%E5%9E%8B11.png"></p>
+<p><img src="/post/artical_yuanxing/11.png"></p>
 <p>通过控制台打印,我们会发现这种原型继承的方式,同样可以使得实例对象通过对象原型(_ _ proto_ _)访问到原型对象上的属性和方法.</p>
 <p>但是我们会发现:我们把 Person 是以赋值的形式交给了构造函数的原型对象,会覆盖掉原型对象的 constructor 属性,所以要再重新指回原来的实例对象</p>
 <pre><code class="javascript">&lt;script&gt;
@@ -427,7 +427,7 @@
     console.log(W1)
 &lt;/script&gt;
 </code></pre>
-<p><img src="/post/artical_yuanxing/%E5%8E%9F%E5%9E%8B14.png"></p>
+<p><img src="/post/artical_yuanxing/14.png"></p>
 <p>注意: 原型继承的一个问题 <br><br>比如我们单独给 Woman 构造函数的原型对象上添加一个方法<br></p>
 <pre><code class="javascript">&lt;script&gt;
     let Person = &#123; eays: 2, head: 1 &#125;
@@ -446,7 +446,7 @@
     console.log(W1)
 &lt;/script&gt;
 </code></pre>
-<p><img src="/post/artical_yuanxing/%E5%8E%9F%E5%9E%8B15.png"></p>
+<p><img src="/post/artical_yuanxing/15.png"></p>
 <p>通过打印台,我们会发现:M1这个在其原型对象身上也有了baby这个方法 <br><br>这是因为Woman 和 Man 的原型对象是一模一样的,都接收了同一个对象Person ,根据引用类型的特点,他们指向同一个对象,修改一个就会都影响<br></p>
 <p>其实可以通过构造函数的方式来解决这个问题<br></p>
 <pre><code class="javascript">&lt;script&gt;
@@ -479,10 +479,10 @@
     console.log(M1)
 &lt;/script&gt;
 </code></pre>
-<p><img src="/post/artical_yuanxing/%E5%8E%9F%E5%9E%8B16.png"></p>
+<p><img src="/post/artical_yuanxing/16.png"></p>
 <p>上面是用原型对象上添加了的是 new 出来的实例对象,我们知道实例对象间是互不影响的</p>
 <h1 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h1><p>基于原型对象的继承使得不同构造函数的原型对象关联在一起,并且这种关联的关系是一种链状的结构,我们将原型对象的链状结构称为原型链 <br></p>
-<p><img src="/post/artical_yuanxing/%E5%8E%9F%E5%9E%8B18.png"></p>
+<p><img src="/post/artical_yuanxing/18.png"></p>
 <p>通过上面的关系,咱不妨总结条规两条律:<br></p>
 <ul>
 <li><p>只要是原型对象,就有 constructor 属性,指回创造这个原型对象的构造函数</p>
@@ -506,7 +506,7 @@
 </li>
 </ol>
 <p>当然本图中是拿了 Object 构造函数来举例,其实 Array 构造函数….也是如此,所以我们在查阅文档的时候 比如这个map方法,文档里是这样写的 Array.prototype.map(),实际上就说明了这个map方法是放在了Array 构造函数的原型对象身上,所有咱直接 数组名.map() 就可以使用这个map方法了,实际上它也是遵循了这个原型链的查找机制,正是因为有这个_ _ proto _ _ 的存在,所以可以新创建出来的 数组和对象就可以使用到原型对象上的这些方法.</p>
-<h1 id="instanceof-运算符"><a href="#instanceof-运算符" class="headerlink" title="instanceof 运算符"></a>instanceof 运算符</h1><p>运算符用于检测构造函数的 prototype 属性是否出现在某个实例对象的原型链上<br><img src="/post/artical_yuanxing/%E5%8E%9F%E5%9E%8B20.png"></p>
+<h1 id="instanceof-运算符"><a href="#instanceof-运算符" class="headerlink" title="instanceof 运算符"></a>instanceof 运算符</h1><p>运算符用于检测构造函数的 prototype 属性是否出现在某个实例对象的原型链上<br><img src="/post/artical_yuanxing/20.png"></p>
 <pre><code class="javascript">&lt;script&gt;
     function Person() &#123;
 
