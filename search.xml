@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>太阳</title>
+      <link href="/post/pass.html"/>
+      <url>/post/pass.html</url>
+      
+        <content type="html"><![CDATA[<p><img src="/post/pass/img/artical/tab5.jpg"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> ES6 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>月亮</title>
       <link href="/post/undefined.html"/>
       <url>/post/undefined.html</url>
