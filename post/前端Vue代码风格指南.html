@@ -5,14 +5,20 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>月亮下山了 - WebDesiner-计流年</title>
+    <title>前端Vue代码风格指南 - WebDesiner-计流年</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="TriDiamond Obsidian,"> 
-    <meta name="description" content="
-“不做永远理性的人，偶尔感性，真的可以带来很多小小的惊喜❤️”
-"> 
+    <meta name="description" content="一、命名规范市面上常用的命名规范：
+
+camelCase（小驼峰式命名法 —— 首字母小写）
+
+PascalCase（大驼峰式命名法 —— 首字母大写）
+
+kebab-case（短横线连接式）
+
+S,"> 
     <meta name="author" content="早起的闽儿"> 
     <link rel="alternative" href="atom.xml" title="WebDesiner-计流年" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -76,7 +82,7 @@
     <div class="navigation animated fadeIn fast delay-1s">
         <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://example.com">
         <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-        <h3 class="subtitle">月亮下山了</h3>
+        <h3 class="subtitle">前端Vue代码风格指南</h3>
         <div class="social">
             <!--        <div class="like-icon">-->
             <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -108,22 +114,22 @@
                 
                 <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
                 
-                June 12, 2023
+                June 26, 2023
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/post/pass.html" title="月亮下山了" class="">月亮下山了</a>
+            <h3 class="post-title animated fadeInDown"><a href="/post/%E5%89%8D%E7%AB%AFVue%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC%E6%8C%87%E5%8D%97.html" title="前端Vue代码风格指南" class="">前端Vue代码风格指南</a>
             </h3>
             
             <p class="post-count animated fadeInDown">
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>Words count</i>
-                    90
+                    3.4k
                 </span>
                 
                 
                 <span>
                     <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                    1 mins.
+                    3 mins.
                 </span>
                 
                 
@@ -136,7 +142,7 @@
             </p>
             
             
-            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/ES6/" rel="tag">ES6</a></li></ul>
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Vue/" rel="tag">Vue</a></li></ul>
             
         </div>
     </div>
@@ -157,9 +163,91 @@
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn">
-            <p><img src="/post/pass/img/artical/tab5.jpg"></p>
-<p>“不做永远理性的人，偶尔感性，真的可以带来很多小小的惊喜❤️”</p>
-
+            <h1 id="一、命名规范"><a href="#一、命名规范" class="headerlink" title="一、命名规范"></a>一、命名规范</h1><p>市面上常用的命名规范：</p>
+<ul>
+<li><p><code>camelCase</code>（小驼峰式命名法 —— 首字母小写）</p>
+</li>
+<li><p><code>PascalCase</code>（大驼峰式命名法 —— 首字母大写）</p>
+</li>
+<li><p><code>kebab-case</code>（短横线连接式）</p>
+</li>
+<li><p><code>Snake_case</code>（下划线连接式）</p>
+</li>
+</ul>
+<h2 id="1-1-项目文件命名"><a href="#1-1-项目文件命名" class="headerlink" title="1.1 项目文件命名"></a>1.1 项目文件命名</h2><h3 id="1-1-1-项目名"><a href="#1-1-1-项目名" class="headerlink" title="1.1.1 项目名"></a>1.1.1 项目名</h3><p>全部采用小写方式， 以<strong>短横线</strong>分隔。例：my-project-name。</p>
+<h3 id="1-1-2-目录名"><a href="#1-1-2-目录名" class="headerlink" title="1.1.2 目录名"></a>1.1.2 目录名</h3><p>参照项目命名规则，有复数结构时，要采用复数命名法。例：docs、assets、components、directives、mixins、utils、views。</p>
+<pre><code>my-project-name
+|- BuildScript    // 流水线部署文件目录
+|- docs           // 项目的细化文档目录（可选）
+|- nginx          // 部署在容器上前端项目 nginx 代理文件目录
+|- node_modules   // 下载的依赖包
+|- public         // 静态页面目录
+    |- index.html // 项目入口
+|- src            // 源码目录
+    |- api        // http 请求目录
+    |- assets     // 静态资源目录，这里的资源会被wabpack构建
+        |- icon   // icon 存放目录
+        |- img    // 图片存放目录
+        |- js     // 公共 js 文件目录
+        |- scss   // 公共样式 scss 存放目录
+            |- frame.scss   // 入口文件
+            |- global.scss  // 公共样式
+            |- reset.scss   // 重置样式
+    |- components     // 组件
+    |- plugins        // 插件
+    |- router         // 路由
+    |- routes         // 详细的路由拆分目录（可选）
+        |- index.js
+    |- store          // 全局状态管理
+    |- utils          // 工具存放目录
+        |- request.js // 公共请求工具
+    |- views          // 页面存放目录
+    |- App.vue        // 根组件
+    |- main.js        // 入口文件
+    |- tests          // 测试用例
+    |- .browserslistrc// 浏览器兼容配置文件
+    |- .editorconfig  // 编辑器配置文件
+    |- .eslintignore  // eslint 忽略规则
+    |- .eslintrc.js   // eslint 规则
+    |- .gitignore     // git 忽略规则
+    |- babel.config.js // babel 规则
+    |- Dockerfile // Docker 部署文件
+    |- jest.config.js
+    |- package-lock.json
+    |- package.json // 依赖
+    |- README.md // 项目 README
+    |- vue.config.js // webpack 配置
+</code></pre>
+<h3 id="1-1-3-图像文件名"><a href="#1-1-3-图像文件名" class="headerlink" title="1.1.3 图像文件名"></a>1.1.3 图像文件名</h3><p>全部采用小写方式， 优先选择单个单词命名，多个单词命名以<strong>下划线</strong>分隔。</p>
+<pre><code>banner_sina.gif
+menu_aboutus.gif
+menutitle_news.gif
+logo_police.gif
+logo_national.gif
+pic_people.jpg
+pic_TV.jpg
+</code></pre>
+<h3 id="1-1-4-HTML-文件名"><a href="#1-1-4-HTML-文件名" class="headerlink" title="1.1.4 HTML 文件名"></a>1.1.4 HTML 文件名</h3><pre><code>|- error_report.html
+|- success_report.html
+</code></pre>
+<h3 id="1-1-5-CSS-文件名"><a href="#1-1-5-CSS-文件名" class="headerlink" title="1.1.5 CSS 文件名"></a>1.1.5 CSS 文件名</h3><p>全部采用小写方式， 优先选择单个单词命名，多个单词命名以短横线分隔。</p>
+<pre><code>|- normalize.less
+|- base.less
+|- date-picker.scss
+|- input-number.scss
+</code></pre>
+<h3 id="1-1-6-JavaScript-文件名"><a href="#1-1-6-JavaScript-文件名" class="headerlink" title="1.1.6 JavaScript 文件名"></a>1.1.6 JavaScript 文件名</h3><p>全部采用小写方式， 优先选择单个单词命名，多个单词命名以短横线分隔。</p>
+<pre><code>|- index.js
+|- plugin.js
+|- util.js
+|- date-util.js
+|- account-model.js
+|- collapse-transition.js
+</code></pre>
+<blockquote>
+<p>上述规则可以快速记忆为“静态文件下划线，编译文件短横线”。</p>
+</blockquote>
+<h2 id="1-2-Vue-组件命名"><a href="#1-2-Vue-组件命名" class="headerlink" title="1.2 Vue 组件命名"></a>1.2 Vue 组件命名</h2><h3 id="1-2-1-单文件组件名"><a href="#1-2-1-单文件组件名" class="headerlink" title="1.2.1 单文件组件名"></a>1.2.1 单文件组件名</h3>
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls"
                 data-autoplay="false">
@@ -208,13 +296,20 @@
                     </dl>
                 </div>
                 <ul>
-                    <li><a href="/">5 <p>Articles</p></a></li>
+                    <li><a href="/">6 <p>Articles</p></a></li>
                     <li><a href="/categories">0 <p>Categories</p></a></li>
-                    <li><a href="/tags">2 <p>Tags</p></a></li>
+                    <li><a href="/tags">3 <p>Tags</p></a></li>
                 </ul>
             </div>
             
             
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>Contents</h4>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83"><span class="toc-number">1.</span> <span class="toc-text">一、命名规范</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E5%91%BD%E5%90%8D"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 项目文件命名</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-1-%E9%A1%B9%E7%9B%AE%E5%90%8D"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1.1 项目名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-2-%E7%9B%AE%E5%BD%95%E5%90%8D"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.1.2 目录名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-3-%E5%9B%BE%E5%83%8F%E6%96%87%E4%BB%B6%E5%90%8D"><span class="toc-number">1.1.3.</span> <span class="toc-text">1.1.3 图像文件名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-4-HTML-%E6%96%87%E4%BB%B6%E5%90%8D"><span class="toc-number">1.1.4.</span> <span class="toc-text">1.1.4 HTML 文件名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-5-CSS-%E6%96%87%E4%BB%B6%E5%90%8D"><span class="toc-number">1.1.5.</span> <span class="toc-text">1.1.5 CSS 文件名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-6-JavaScript-%E6%96%87%E4%BB%B6%E5%90%8D"><span class="toc-number">1.1.6.</span> <span class="toc-text">1.1.6 JavaScript 文件名</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-Vue-%E7%BB%84%E4%BB%B6%E5%91%BD%E5%90%8D"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 Vue 组件命名</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-1-%E5%8D%95%E6%96%87%E4%BB%B6%E7%BB%84%E4%BB%B6%E5%90%8D"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.2.1 单文件组件名</span></a></li></ol></li></ol></li></ol>
+                </div>
+            </div>
             
             
         </div>
