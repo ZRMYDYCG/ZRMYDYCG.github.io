@@ -5,16 +5,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>JavaScript进阶-字符串拓展 - WebDesiner-计流年</title>
+    <title>一文以致我的坤 - WebDesiner-计流年</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="TriDiamond Obsidian,"> 
-    <meta name="description" content="字符串拓展split 方法它与 join 相反，它是将字符串转换成数组 
-代码示例 👉
-&amp;lt;script&amp;gt;
-    const str = &amp;#39;pink,red&amp;#39;
-    ,"> 
+    <meta name="description" content="
+星光不负赶路人，时间不负蔡徐坤“蔡徐坤发烧62度坚持上台，双腿粉碎性骨折仍练习踢踏舞，每日练习40个小时，大小便失禁仍不去医院，累得高位截瘫还练舞，喉咙肿大30多倍坚持练发音，有全国300亿粉丝却,"> 
     <meta name="author" content="早起的闽儿"> 
     <link rel="alternative" href="atom.xml" title="WebDesiner-计流年" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -78,7 +75,7 @@
     <div class="navigation animated fadeIn fast delay-1s">
         <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://example.com">
         <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-        <h3 class="subtitle">JavaScript进阶-字符串拓展</h3>
+        <h3 class="subtitle">一文以致我的坤</h3>
         <div class="social">
             <!--        <div class="like-icon">-->
             <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -108,25 +105,24 @@
         <div class="else">
             <p class="animated fadeInDown">
                 
-                <a href="/categories/ES6"><b>「
-                    </b>ES6<b> 」</b></a>
+                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
                 
                 June 28, 2023
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/post/artical-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%93%E5%B1%95.html" title="JavaScript进阶-字符串拓展" class="">JavaScript进阶-字符串拓展</a>
+            <h3 class="post-title animated fadeInDown"><a href="/post/%E4%B8%80%E6%96%87%E4%BB%A5%E8%87%B4%E6%88%91%E7%9A%84%E5%9D%A4.html" title="一文以致我的坤" class="">一文以致我的坤</a>
             </h3>
             
             <p class="post-count animated fadeInDown">
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>Words count</i>
-                    3.1k
+                    2.3k
                 </span>
                 
                 
                 <span>
                     <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                    3 mins.
+                    2 mins.
                 </span>
                 
                 
@@ -139,7 +135,7 @@
             </p>
             
             
-            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/ES6/" rel="tag">ES6</a></li></ul>
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%8F%8F%E8%BF%B0/" rel="tag">描述</a></li></ul>
             
         </div>
     </div>
@@ -160,81 +156,11 @@
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn">
-            <h1 id="字符串拓展"><a href="#字符串拓展" class="headerlink" title="字符串拓展"></a>字符串拓展</h1><h2 id="split-方法"><a href="#split-方法" class="headerlink" title="split 方法"></a>split 方法</h2><p>它与 join 相反，它是将字符串转换成数组 </p>
-<p>代码示例 👉</p>
-<pre><code class="javascript">&lt;script&gt;
-    const str = &#39;pink,red&#39;
-    const arr = str.split(&#39;&#39;)
-    console.log(arr)
-&lt;/script&gt;
-</code></pre>
-<pre><code>---控制台---
-Array(8) [&#39;p&#39;,&#39;i&#39;,&#39;n&#39;,&#39;k&#39;,&#39;,&#39;,&#39;r&#39;,&#39;e&#39;,&#39;d&#39;]
-</code></pre>
-<p>咱现在传入分隔符试试：</p>
-<pre><code class="javascript">&lt;script&gt;
-    const str = &#39;pink,red&#39;
-    const arr = str.split(&#39;-&#39;)
-    const arr1 = str.split(&#39;,&#39;)
-
-    console.log(&#39;-分隔&#39;, arr);
-
-    console.log(&#39;----------&#39;)
-
-    console.log(&#39;,分隔&#39;, arr1)
-&lt;/script&gt;
-</code></pre>
-<pre><code>---控制台---
-Array(1) [&quot;pink,red&quot;]
-----------
-Array(2) [&quot;pink&quot;,&quot;red&quot;]
-</code></pre>
-<h2 id="substring-方法"><a href="#substring-方法" class="headerlink" title="substring 方法"></a>substring 方法</h2><p>语法 👉</p>
-<pre><code class="js">str.substring(indexStart[,indexEnd]) 
-</code></pre>
-<p>返回值: <code>咱截取的字符串</code></p>
-<p><code>indexStart</code></p>
-<p>需要截取的第一个字符的索引，该索引位置的字符作为字符串的首字母</p>
-<p><code>indexEnd</code></p>
-<p>可选,一个 0 到字符串长度之间的整数,以该数字为索引的字符不包含在截取的字符串内。如果省略不写的话,就是指截取 indexStart 索引到最后一个字符。</p>
-<p>代码示例 👉</p>
-<pre><code class="javascript">&lt;script&gt;
-    const str = &#39;不积跬步,无以至千里&#39;
-
-    let sub = str.substring(5)
-
-    console.log(sub)  // output: 无以至千里
-&lt;/script&gt;
-</code></pre>
-<h2 id="startsWith"><a href="#startsWith" class="headerlink" title="startsWith"></a>startsWith</h2><p>Vue 路由部分要用到噢~ </p>
-<p>stratWith()方法用来判断当前字符串<code>是否以另外一个给定的字符串开头</code>,并根据判断结果返回 true or false。</p>
-<p>语法：str.startsWith(searchString[,position])</p>
-<p>参数</p>
-<p>searchString : 要搜索的字符串</p>
-<p>position（可选）: 在 str 中搜索 searchString 的开始位置,默认值为 0</p>
-<p>代码示例 👉</p>
-<pre><code class="javascript">var str = &quot;To be, or not to be, that is the question.&quot;;
-
-alert(str.startsWith(&quot;To be&quot;));         // true
-alert(str.startsWith(&quot;not to be&quot;));     // false
-alert(str.startsWith(&quot;not to be&quot;, 10)); // true
-</code></pre>
-<h2 id="endsWith"><a href="#endsWith" class="headerlink" title="endsWith"></a>endsWith</h2><p>和上面相反：从字符串的后面开始搜索</p>
-<h2 id="includes"><a href="#includes" class="headerlink" title="includes"></a>includes</h2><p>includes() 方法执行<strong>区分大小写的搜索</strong>，以确定是否可以在另一个字符串中找到一个字符串，并根据情况返回 true 或 false。</p>
-<p>语法：str.includes(searchString[,position]) </p>
-<p>参数</p>
-<p>searchString:要在此字符串中搜索的字符串</p>
-<p>position:规定要从当前字符串哪个索引位置开始搜寻子字符串，默认值为 0</p>
-<p>代码示例 👉</p>
-<pre><code class="javascript">const str = &quot;To be, or not to be, that is the question.&quot;;
-
-console.log(str.includes(&quot;To be&quot;)); // true
-console.log(str.includes(&quot;question&quot;)); // true
-console.log(str.includes(&quot;nonexistent&quot;)); // false
-console.log(str.includes(&quot;To be&quot;, 1)); // false
-console.log(str.includes(&quot;TO BE&quot;)); // false
-console.log(str.includes(&quot;&quot;)); // true
-</code></pre>
+            <p><img src="/post/%E4%B8%80%E6%96%87%E4%BB%A5%E8%87%B4%E6%88%91%E7%9A%84%E5%9D%A4/1.jpg" alt="Alt text"></p>
+<h1 id="星光不负赶路人，时间不负蔡徐坤"><a href="#星光不负赶路人，时间不负蔡徐坤" class="headerlink" title="星光不负赶路人，时间不负蔡徐坤"></a>星光不负赶路人，时间不负蔡徐坤</h1><p>“蔡徐坤发烧62度坚持上台，双腿粉碎性骨折仍练习踢踏舞，每日练习40个小时，大小便失禁仍不去医院，累得高位截瘫还练舞，喉咙肿大30多倍坚持练发音，有全国300亿粉丝却不骄傲，每个2月29、30日慈善义演，将获得的20万亿美元捐给瑞士上不起学的孩子，为了慈善事业每天献出两大桶血，这些你们能做到吗？其实一开始我是拒绝喷蔡徐坤的，后来我试喷了一下，哇，赞率真的很高，还掉助攻，还送VIP，忙的时候可以离线喷，现在每天带着全网友一起喷，开局鸡酱法，鸡图随便爆，哇，好热血，蛮好玩的 真的服了你们这些小黑子，天天黑有意思吗？都四年了，四年了还在玩这个梗，那你们怎么不吃四年前的剩饭呢？你们已经饭发了知道吗？油饼食不食 荔枝 你要我拿什么荔枝 啊?​我爱的那个​她都被你们这么对待了，还要我怎么荔枝?啊?看着她被你们唛的狗血麟投（新菜名）我还坐视不管，这就叫做荔枝了吗？你们食不食仁纳?稻嵌会不会?你们黑她黑的那么爽，骂她骂的这么爽，最后没有仁和一个人跟他稻嵌！你们毁了她的嵌土回了她的一剩！跟你们分享一个超无语的事情，先介绍一下，我叫苏珊，就是在学校的时候，因皮肤黝黑了一点，那些人就给我取了一个很难听的外号，叫什么来着……？哦！想起来了，他们都叫我小黑子苏，这还不算，就连我暗恋的班花姬尼也过来嘲笑我，还与我站在一起做对比，然后在下面的人就纷纷喊到：姬尼实在是太美了，小黑子苏珊真碍眼！在此之后，我就变得沉默寡言，不在与他人交往，在我要想不开的时候，我唯一的朋友”律斯韩”制止了我，他警告那些骂我的人，在骂我小黑子的话，就对他们不客气！在此之后，就没有这样的事情发生了！我当时就很感动，感觉有”律斯韩”这样的朋友真好，此后，我就天天和他在一起玩耍！听说他很爱打篮球，不过技术不好，我就就陪他练习，谁知道一练习就是时长两年半啊！哈哈，还挺有意思的！ 世界上有五种好：<br>早上好、中午好、晚上好、大家好，还有全民制作人们大家好 被识破了，我不装了，我就是IKUN，你们这群小黑让我怎么荔枝?苏珊！食不食香翅捞饭，食不食香精煎，食不食香菜丰仁鸡！ 卤出鸡脚了吧！树枝666，小黑子 苏珊，食不食油饼？耗丸吗？再黑紫砂吧！4年前的梗你们还在玩，4年前的剩饭你们怎么不吃？臻果粉！我看你们都馍蒸了！蒸梅油酥汁！你们犯法了知道吗？你们再这样我就煲胫了！香精煎鱼是吗？香翅捞饭是吗？真没有荚饺​”</p>
+<h1 id="破天下定风云，我们ikun并肩行"><a href="#破天下定风云，我们ikun并肩行" class="headerlink" title="破天下定风云，我们ikun并肩行"></a>破天下定风云，我们ikun并肩行</h1><p>狮子座为王，C徐坤为皇。向阳花木易为春，听说你爱C徐坤。山外青山楼外楼，唱跳rap打篮球。梳中分，背带裤。我是ikun你记住。向阳花木易为春，听说你爱蔡徐坤，千军万马是ikun，ikun永远爱坤坤，待我ikun更强大，定帮坤哥赢天下，两耳不闻窗外事，一心只为蔡徐坤，追梦少年不失眠，未来可期C徐坤，向阳花木每逢春，ikun一直爱坤坤，落红飞雪漫纷纷，心头只有C徐坤，红塔楼是烟，C徐坤是天，立场很简单，就是C徐坤10 狮子座为王，C徐坤为皇，可乐要加冰，爱坤要用心，披荆斩棘，护坤为王，未来可期，余生陪坤，披金成王，伴坤远航，古人有项羽无人敌，今有坤坤万人迷，狮子座为王，蔡徐坤为皇，两耳不闻窗外事，一心只为C徐坤，星光不负赶路人，时间不负C徐坤，狮子作为王，蔡徐坤为皇，农夫山泉有点甜，不爱坤坤有点悬，向阳花木易为春，听说你爱C徐坤，徐徐清风沁心田，不忘初心伴坤随。</p>
+<h1 id="故人西辞黄鹤楼-，唱跳Rap打篮球"><a href="#故人西辞黄鹤楼-，唱跳Rap打篮球" class="headerlink" title="故人西辞黄鹤楼 ，唱跳Rap打篮球"></a>故人西辞黄鹤楼 ，唱跳Rap打篮球</h1><p>春风又绿江南岸 ，练习长达两年半。 清明时节雨坤坤，路上行人梳中分 ，借问背带何处有，牧童遥指我ikun。长江后浪推前浪，爱坤啥样我啥样。鸡冠头背带裤，我是ikun你记住。向阳花木易为春，听说你爱cxk。小黑子树枝666.蒸虾头，好丸吗?树枝赶人，蒸五鱼，食不食油饼，我家鸽鸽在胎上拿姜拿到手软，他那么努力，这样叫我怎么荔枝?已经橘爆你了，再这样我就抱紧了，劝你苏珊，不然我们ikun就紫砂了。</p>
+<h1 id="这个世界太黑暗了，还好有你"><a href="#这个世界太黑暗了，还好有你" class="headerlink" title="这个世界太黑暗了，还好有你"></a>这个世界太黑暗了，还好有你</h1><p>说真的，蔡徐坤原来那么好一孩子，当时都被你们黑疯了，真的不明白，何必对他这么大恶意，他流言最肆虐的时候，还会想着保护ikun们，他打篮球确实不是那么好，但他人品是真的好，人是真的温柔，贴心，蔡徐坤有现在的成绩，都是因为他努力了，他值得这一切。就算全世界冷眼对待坤坤，我也会站在全世界的这边。</p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls"
@@ -295,7 +221,7 @@ console.log(str.includes(&quot;&quot;)); // true
             <div class="box sticky animated fadeInRight faster">
                 <div id="toc" class="subbox">
                     <h4>Contents</h4>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%93%E5%B1%95"><span class="toc-number">1.</span> <span class="toc-text">字符串拓展</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#split-%E6%96%B9%E6%B3%95"><span class="toc-number">1.1.</span> <span class="toc-text">split 方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#substring-%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">substring 方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#startsWith"><span class="toc-number">1.3.</span> <span class="toc-text">startsWith</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#endsWith"><span class="toc-number">1.4.</span> <span class="toc-text">endsWith</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#includes"><span class="toc-number">1.5.</span> <span class="toc-text">includes</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%98%9F%E5%85%89%E4%B8%8D%E8%B4%9F%E8%B5%B6%E8%B7%AF%E4%BA%BA%EF%BC%8C%E6%97%B6%E9%97%B4%E4%B8%8D%E8%B4%9F%E8%94%A1%E5%BE%90%E5%9D%A4"><span class="toc-number">1.</span> <span class="toc-text">星光不负赶路人，时间不负蔡徐坤</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A0%B4%E5%A4%A9%E4%B8%8B%E5%AE%9A%E9%A3%8E%E4%BA%91%EF%BC%8C%E6%88%91%E4%BB%ACikun%E5%B9%B6%E8%82%A9%E8%A1%8C"><span class="toc-number">2.</span> <span class="toc-text">破天下定风云，我们ikun并肩行</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%85%E4%BA%BA%E8%A5%BF%E8%BE%9E%E9%BB%84%E9%B9%A4%E6%A5%BC-%EF%BC%8C%E5%94%B1%E8%B7%B3Rap%E6%89%93%E7%AF%AE%E7%90%83"><span class="toc-number">3.</span> <span class="toc-text">故人西辞黄鹤楼 ，唱跳Rap打篮球</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%99%E4%B8%AA%E4%B8%96%E7%95%8C%E5%A4%AA%E9%BB%91%E6%9A%97%E4%BA%86%EF%BC%8C%E8%BF%98%E5%A5%BD%E6%9C%89%E4%BD%A0"><span class="toc-number">4.</span> <span class="toc-text">这个世界太黑暗了，还好有你</span></a></li></ol>
                 </div>
             </div>
             
