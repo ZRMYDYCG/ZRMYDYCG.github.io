@@ -1,0 +1,746 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>JavaScript 算法数据结构 - 数组结构 - WebDesiner-计流年</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="TriDiamond Obsidian,"> 
+    <meta name="description" content="JavaScript数据结构与算法数组结构数组创建
+通过构造函数进行创建
+
+let arr = new Array(1,2,3)
+
+
+通过字面量方式进行创建
+
+let arr = [1,2,3]
+
+,"> 
+    <meta name="author" content="早起的闽儿"> 
+    <link rel="alternative" href="atom.xml" title="WebDesiner-计流年" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+
+    
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+
+    
+<link rel="stylesheet" href="/css/obsidian.css">
+
+    
+<link rel="stylesheet" href="/css/ball-atom.min.css">
+
+    
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+    
+    <script>var musiclist = ""</script>
+    
+<script src="/js/loadaplayer.js"></script>
+
+    <!-- 引用依赖 -->
+    
+<link rel="stylesheet" href="/aplayer/dist/APlayer.min.css">
+
+    
+<script src="/aplayer/dist/APlayer.min.js"></script>
+<script src="/js/Meting.min.js"></script>
+
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">WebDesiner-计流年</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://example.com">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">JavaScript 算法数据结构 - 数组结构</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url('/img/cover.jpg') ">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+                
+                June 28, 2023
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/post/JavaScript-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%95%B0%E7%BB%84%E7%BB%93%E6%9E%84.html" title="JavaScript 算法数据结构 - 数组结构" class="">JavaScript 算法数据结构 - 数组结构</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>Words count</i>
+                    11k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                    10 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>Read count</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" rel="tag">JavaScript数据结构与算法</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <h1 id="JavaScript数据结构与算法"><a href="#JavaScript数据结构与算法" class="headerlink" title="JavaScript数据结构与算法"></a>JavaScript数据结构与算法</h1><h1 id="数组结构"><a href="#数组结构" class="headerlink" title="数组结构"></a>数组结构</h1><h2 id="数组创建"><a href="#数组创建" class="headerlink" title="数组创建"></a>数组创建</h2><ol>
+<li>通过构造函数进行创建</li>
+</ol>
+<pre><code class="javascript">let arr = new Array(1,2,3)
+</code></pre>
+<ol start="2">
+<li>通过字面量方式进行创建</li>
+</ol>
+<pre><code class="javascript">let arr = [1,2,3]
+</code></pre>
+<h2 id="数组访问"><a href="#数组访问" class="headerlink" title="数组访问"></a>数组访问</h2><p>下标索引</p>
+<h2 id="数组常用方法"><a href="#数组常用方法" class="headerlink" title="数组常用方法"></a>数组常用方法</h2><h3 id="push-pop-shift-unshift-splice"><a href="#push-pop-shift-unshift-splice" class="headerlink" title="push pop shift unshift splice"></a>push pop shift unshift splice</h3><p>push 和 pop：从数组的后面追加和删除一个元素</p>
+<p>unshift 和 shift：从数组的前面追加和删除一个元素</p>
+<p><strong>注意</strong>：pop() 和 shift() 的返回值是删除的数组元素</p>
+<p>那咱要是想是想从任意位置进行元素的插入和删除操作呢？巧了，JavaScript正是提供了这样的一个数组的操作方法：<strong>splice()</strong></p>
+<p>语法</p>
+<p>这个 splice( ) 方法的 ( ) 里接收 3 个参数</p>
+<ol>
+<li><p>从第几个位置开始删除</p>
+</li>
+<li><p>要删除几个元素</p>
+</li>
+<li><p>这个部分的参数就可有意思了，可以进行追加，加入其他的数，加入一个数组形成数组的嵌套，其实追加对象也是可以的，谁叫你删了人家哟</p>
+</li>
+</ol>
+<p>代码示例</p>
+<pre><code class="javascript">&lt;script&gt;
+    let arr = new Array(1, 2, 3)
+    arr.splice(0, 2, [5, 4], &#123; name: &#39;我也进来咯~&#39; &#125;, &#123; age: &#39;18岁了&#39; &#125;)
+    console.log(arr);
+&lt;/script&gt;
+</code></pre>
+<p><img src="/post/JavaScript-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%95%B0%E7%BB%84%E7%BB%93%E6%9E%84/splice.png"><br></p>
+<h3 id="sort-方法"><a href="#sort-方法" class="headerlink" title="sort( ) 方法"></a>sort( ) 方法</h3><p>sort( ) 方法中的 ( ) 接收一个回调函数</p>
+<p>代码示例</p>
+<pre><code class="javascript">&lt;script&gt;
+    let arr = [2, 1, 4, 5, 7, 0]
+    arr.sort((x, y) =&gt; x - y)
+
+    let arr1 = [3, 1, 2, 5, 0, 8]
+    arr1.sort((x, y) =&gt; y - x)
+&lt;/script&gt;
+</code></pre>
+<img src="/post/JavaScript-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%95%B0%E7%BB%84%E7%BB%93%E6%9E%84/sort01.png">
+
+<p>**注意:**里面的 x , y 是数组里面的每一个元素</p>
+<p>那如果数组里面有几个学生信息的对象元素，咱想这些对象按年龄从<strong>小到大排序</strong>呢？</p>
+<p>代码示例</p>
+<pre><code class="javascript">&lt;script&gt;
+    let arr = [&#123;
+        name: &#39;Zeng&#39;,
+        age: 20
+    &#125;, &#123;
+        name: &#39;Ri&#39;,
+        age: 18
+
+    &#125;, &#123;
+        name: &#39; Ming&#39;,
+        age: 19
+    &#125;]
+
+    // 以年龄的顺序进行排序
+
+    arr.sort((x, y) =&gt; (x.age - y.age))
+&lt;/script&gt;
+</code></pre>
+<img src="/post/JavaScript-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%95%B0%E7%BB%84%E7%BB%93%E6%9E%84/sort02.png">
+
+
+<h3 id="concat-方法"><a href="#concat-方法" class="headerlink" title="concat 方法"></a>concat 方法</h3><pre><code class="javascript">&lt;script&gt;
+    let arr1 = [1, 2, 3]
+    let arr2 = [4, 5, 6]
+    let conbain = arr1.concat(arr2)
+
+    console.log(conbain)
+&lt;/script&gt;
+</code></pre>
+<p>那这个方法是不是只可以来连接两个数组呢？你可小瞧它了，咱现在连接一些别的玩意试试…</p>
+<pre><code class="javascript">&lt;script&gt;
+    let arr1 = [1, 2, 3]
+    let arr2 = [4, 5, 6]
+    let conbain = arr1.concat(arr2, 7, 8, 9, &#123; name: &#39;前端小可爱~&#39; &#125;)
+
+    console.log(conbain)
+&lt;/script&gt;
+</code></pre>
+<img src="/post/JavaScript-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%95%B0%E7%BB%84%E7%BB%93%E6%9E%84/concat.png">
+
+<h3 id="迭代方法-every-some-filter-map-forEach-reduce"><a href="#迭代方法-every-some-filter-map-forEach-reduce" class="headerlink" title="迭代方法 every , some , filter , map ,forEach , reduce"></a>迭代方法 every , some , filter , map ,forEach , reduce</h3><ol>
+<li>every</li>
+</ol>
+<p>这个 every 啊，返回的是布尔值，其实讲白辽就是判断数组中<strong>每一个元素</strong>是否都符合条件，如果都合她意了，就返回 true , 否者就是false。</p>
+<p>这个 every 方法接收的是一个回调函数，回调函数中是咱传进去的参数，也就是数组中的每一项。</p>
+<p>代码示例</p>
+<pre><code class="javascript">&lt;script&gt;
+    let arr = [10, 11, 12, 13, 14];
+
+    console.log(arr.every(item =&gt; item &gt; 1));  // true
+
+    console.log(arr.every(item =&gt; item &gt; 10));  // false
+&lt;/script&gt;
+</code></pre>
+<ol start="2">
+<li>some</li>
+</ol>
+<p>这个 some 啊，和 every 就是一对嘛，但他要求就没拉么高了，只要数组中有一个元素符合他的条件，就返回 true , 否则就是 false。</p>
+<p>代码示例</p>
+<pre><code class="javascript">&lt;script&gt;
+    let arr = [10, 11, 12, 13, 14];
+    console.log(arr.some(item =&gt; item &gt; 13));  // true
+&lt;/script&gt;
+</code></pre>
+<ol start="3">
+<li>filter</li>
+</ol>
+<p>咱现在来看看这个 filter ，他呢？就是把符合条件的数组元素给筛选出来，并且返回一个<strong>新的数组</strong>，不光有并且，还有而且，<strong>他还不会改变原数组</strong></p>
+<p>代码示例</p>
+<pre><code class="javascript">&lt;script&gt;
+    let arr = [1, 2, 3, 4, 5, 6]
+
+    let res = arr.filter(item =&gt; item &gt; 5)
+
+    console.log(res)  // 6
+&lt;/script&gt;
+</code></pre>
+<ol start="4">
+<li>map</li>
+</ol>
+<p>map 是一个映射的作用,<strong>原数组真的是一点都改不了</strong>,但其映射出了一个新的数组</p>
+<p>咱就是说既然这个 map 和 forEach 都是起一个遍历作用，连传递的参数都他娘的一样，那是不是map也可以拿来当forEach用，可以是可以哦，但是咱这不违背了设计者的初衷了嘛？哈哈！<strong>map可以理解为功能更完善的forEach</strong></p>
+<p>代码示例</p>
+<pre><code class="js">&lt;script&gt;
+    let arr = [1, 2, 3, 4, 5]
+    let res = arr.map(item =&gt; item + &quot;湖人总冠军！！！&quot;)
+    console.log(res)
+    console.log(arr)
+&lt;/script&gt;
+</code></pre>
+<img src="/post/JavaScript-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%95%B0%E7%BB%84%E7%BB%93%E6%9E%84/map.png">
+
+
+<ol start="5">
+<li>forEach</li>
+</ol>
+<p>forEach 主打的就是一个遍历,也不会把原数组给改变了，他这里可以接收两个参数，第一个是遍历的每一个元素，第二个是元素下标，不过这个forEach和map的重点区别就在于，map有返回值，而forEach没有返回值</p>
+<pre><code class="javascript">&lt;script&gt;
+    let arr = [1, 2, 3, 4, 5]
+
+    let doubleArr = []
+
+    let indexArr = []
+
+    arr.forEach((item, index) =&gt; &#123;
+        doubleArr.push(item * 2)
+        indexArr.unshift(index)
+    &#125;)
+
+    console.log(doubleArr)
+
+    console.log(indexArr)
+&lt;/script&gt;
+</code></pre>
+<img src="/post/JavaScript-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%95%B0%E7%BB%84%E7%BB%93%E6%9E%84/forEach.png">
+
+<ol start="6">
+<li>reduce</li>
+</ol>
+<p>这个 reduce 迭代方法有撒子用哦？咱可以拿它来做一些累加累乘的操作，当然以后在实际开发中，它还会有很多应用</p>
+<p>这 reduce 里面有两个参数 item1 , item2 </p>
+<p>代码示例</p>
+<pre><code class="javascript">&lt;script&gt;
+    let arr = [1, 2, 3, 4]
+
+    let res = arr.reduce((item1, item2) =&gt; item1 + item2)
+
+    console.log(res)
+&lt;/script&gt;
+</code></pre>
+<blockquote>
+<p>这个 item 1，item 2 一开始是接收了 arr 中的第一和第二个参数 item1 &#x3D; 1, item2 &#x3D; 2,将其执行函数体内 item1 + item2 操作, 其和作为 下一次操作的 item1 的值 , 再与 item2(item2 &#x3D;&#x3D; 3 啦) 相加。诶哟~真想用我滴口才来表达这段文字,这文字太难表达辽！！！</p>
+</blockquote>
+<h3 id="搜索-indexOf-lastIndexOf-find-findIndex-findLast-findLastIndex-includes"><a href="#搜索-indexOf-lastIndexOf-find-findIndex-findLast-findLastIndex-includes" class="headerlink" title="搜索 indexOf , lastIndexOf , find , findIndex ,  findLast ,findLastIndex , includes"></a>搜索 indexOf , lastIndexOf , find , findIndex ,  findLast ,findLastIndex , includes</h3><ol>
+<li><b>indexOf</b> 与 <b>includes</b></li>
+</ol>
+<p>这两个方法都是搜索数组中是否有这个值 <br><br>indexOf 有：返回 0  没有：返回 -1</p>
+<p>所以以后只要判断 返回值是否大于 -1 , 就可以知道该元素是否在数组里面了。</p>
+<p>includes 有：返回 true 没有：返回 false</p>
+<p>代码示例</p>
+<pre><code class="javascript">&lt;script&gt;
+    let arr = [1, 2, 3, 4]
+
+    console.log(arr.indexOf(1))
+    console.log(arr.indexOf(5))
+
+    console.log(arr.includes(1))
+    console.log(arr.includes(5))
+&lt;/script&gt;
+</code></pre>
+<img src="/post/JavaScript-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%95%B0%E7%BB%84%E7%BB%93%E6%9E%84/indexOf与includes.png">
+
+
+<ol start="2">
+<li>find findIndex findLast findLastIndex</li>
+</ol>
+<ul>
+<li><p>find 查找并返回满足条件的第一个元素</p>
+</li>
+<li><p>findLast 倒序查找并返回满足条件的第一个元素，也即是最后一个满足条件的元素</p>
+</li>
+<li><p>findIndex 查找并返回满足条件的第一个元素的下标</p>
+</li>
+<li><p>findLastIndex 倒序查找并返回满足条件的第一个元素下标，也即是最后一个满足条件的元素下标</p>
+</li>
+</ul>
+<p>代码示例</p>
+<pre><code class="javascript">&lt;script&gt;
+    let arr = [1, 2, 3, 4, 5]
+    let res1 = arr.find(item =&gt; item &gt; 2)
+    let res2 = arr.findIndex(item =&gt; item &gt; 2)
+    console.log(res1, res2)
+    let res3 = arr.findLast(item =&gt; item &gt; 2)
+    let res4 = arr.findLastIndex(item =&gt; item &gt; 2)
+    console.log(res3, res4)
+&lt;/script&gt;
+</code></pre>
+<img src="/post/JavaScript-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%95%B0%E7%BB%84%E7%BB%93%E6%9E%84/搜索.png">
+
+
+<h3 id="数组中的-join-方法"><a href="#数组中的-join-方法" class="headerlink" title="数组中的 join 方法"></a>数组中的 join 方法</h3><ul>
+<li>作用：<br>join() 方法用于把数组中的所有元素转换成一个字符串</li>
+<li>语法：<br>比如这里有一个数组<br></li>
+</ul>
+<pre><code class="javascript">&lt;script&gt;
+    const arr = [&#39;日闽&#39;, &#39;好&#39;, &#39;帅&#39;, &#39;啊&#39;]
+    console.log(arr.join())
+    console.log(arr.join(&quot;&quot;))
+    console.log(arr.join(&quot;-&quot;))
+&lt;/script&gt;
+</code></pre>
+<ul>
+<li>map 和 join 的搭配使用</li>
+</ul>
+<p>map <strong>映射出新数组</strong> join 去掉数组中的 “,” 进行渲染</p>
+<h3 id="数组中的-slice-方法"><a href="#数组中的-slice-方法" class="headerlink" title="数组中的 slice 方法"></a>数组中的 slice 方法</h3><p>slice() 方法返回一个新的数组对象，这一对象是一个由 start 和 end 决定的原数组的<b>浅拷贝（包括 start，不包括 end）</b>，<br>其中 start 和 end 代表了数组元素的索引。原始数组不会被改变。</p>
+<p>咱先来尝试一下下：</p>
+<pre><code class="javascript">const animals = [&#39;ant&#39;, &#39;bison&#39;, &#39;camel&#39;, &#39;duck&#39;, &#39;elephant&#39;];
+
+console.log(animals.slice(2));
+// Expected output: Array [&quot;camel&quot;, &quot;duck&quot;, &quot;elephant&quot;]
+
+console.log(animals.slice(2, 4));
+// Expected output: Array [&quot;camel&quot;, &quot;duck&quot;]
+
+console.log(animals.slice(1, 5));
+// Expected output: Array [&quot;bison&quot;, &quot;camel&quot;, &quot;duck&quot;, &quot;elephant&quot;]
+
+console.log(animals.slice(-2));
+// Expected output: Array [&quot;duck&quot;, &quot;elephant&quot;]
+
+console.log(animals.slice(2, -1));
+// Expected output: Array [&quot;camel&quot;, &quot;duck&quot;]
+
+console.log(animals.slice());
+// Expected output: Array [&quot;ant&quot;, &quot;bison&quot;, &quot;camel&quot;, &quot;duck&quot;, &quot;elephant&quot;]
+</code></pre>
+<h3 id="多维数组"><a href="#多维数组" class="headerlink" title="多维数组"></a>多维数组</h3><p>代码示例</p>
+<pre><code class="javascript">&lt;script&gt;
+    let arr = [
+        [1, 2, 3, 4],
+        [5, 6, 7, 8],
+        [9, 10, 11, 12]
+    ]
+
+    arr.forEach((item, index) =&gt; &#123;
+        console.log(`第$&#123;index&#125;个数组的元素是:`)
+        arr[index].forEach(item =&gt; &#123;
+            console.log(item)
+        &#125;)
+    &#125;)
+&lt;/script&gt;
+</code></pre>
+<img src="/post/JavaScript-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%95%B0%E7%BB%84%E7%BB%93%E6%9E%84/多维数组.png">
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/statics/chengdu.mp3'></li>
+                
+                    
+            </ul>
+            
+                        
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d=''
+        data-p='https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    >Comments</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="/img/favicon.png" height=300 width=300></img>
+                    <p>早起的闽儿</p>
+                    <span>Let life be beautiful like summer flowers and death like autumn leaves.</span>
+                    <dl>
+                        
+                            
+                            
+                            
+                        
+                        
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">24 <p>Articles</p></a></li>
+                    <li><a href="/categories">2 <p>Categories</p></a></li>
+                    <li><a href="/tags">12 <p>Tags</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>Contents</h4>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaScript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">JavaScript数据结构与算法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%BB%93%E6%9E%84"><span class="toc-number">2.</span> <span class="toc-text">数组结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E5%88%9B%E5%BB%BA"><span class="toc-number">2.1.</span> <span class="toc-text">数组创建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E8%AE%BF%E9%97%AE"><span class="toc-number">2.2.</span> <span class="toc-text">数组访问</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">2.3.</span> <span class="toc-text">数组常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#push-pop-shift-unshift-splice"><span class="toc-number">2.3.1.</span> <span class="toc-text">push pop shift unshift splice</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sort-%E6%96%B9%E6%B3%95"><span class="toc-number">2.3.2.</span> <span class="toc-text">sort( ) 方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#concat-%E6%96%B9%E6%B3%95"><span class="toc-number">2.3.3.</span> <span class="toc-text">concat 方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E6%96%B9%E6%B3%95-every-some-filter-map-forEach-reduce"><span class="toc-number">2.3.4.</span> <span class="toc-text">迭代方法 every , some , filter , map ,forEach , reduce</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%90%9C%E7%B4%A2-indexOf-lastIndexOf-find-findIndex-findLast-findLastIndex-includes"><span class="toc-number">2.3.5.</span> <span class="toc-text">搜索 indexOf , lastIndexOf , find , findIndex ,  findLast ,findLastIndex , includes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84-join-%E6%96%B9%E6%B3%95"><span class="toc-number">2.3.6.</span> <span class="toc-text">数组中的 join 方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84-slice-%E6%96%B9%E6%B3%95"><span class="toc-number">2.3.7.</span> <span class="toc-text">数组中的 slice 方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="toc-number">2.3.8.</span> <span class="toc-text">多维数组</span></a></li></ol></li></ol></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2023
+        <span class="gradient-text">
+            早起的闽儿
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.9.3" target="_blank" rel="noopener">v1.4.9.3</a></small>
+        
+        </br>
+        
+        <span class="gradient-text">
+            <a href="https://beian.miit.gov.cn/" title="beian.miit.gov.cn" target="_blank" rel="noopener">beian.miit.gov.cn</a>
+        </span>
+        
+        
+        </br>
+        <span style="display: inline-block;"> <img src=/null></span>
+        
+        <span class="gradient-text">
+            <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010602009049" title="www.beian.gov.cn&#x2F;portal&#x2F;registerSystemInfo?recordcode&#x3D;44010602009049" target="_blank" rel="noopener">www.beian.gov.cn&#x2F;portal&#x2F;registerSystemInfo?recordcode&#x3D;44010602009049</a>
+        </span>
+        
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+ 
+<link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+ 
+<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+  
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+ 
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+ 
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+ 
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+ 
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+  
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+   
+<script src="/js/busuanzi.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    if ($('span[id^="busuanzi_"]').length) {
+      initialBusuanzi();
+    }
+  });
+</script>
+ 
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+
+
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+
+<script>
+  function initialTyped() {
+    var typedTextEl = $('.typed-text');
+    if (typedTextEl && typedTextEl.length > 0) {
+      var typed = new Typed('.typed-text', {
+        strings: ['Let life be beautiful like summer flowers and death like autumn leaves.', '生如夏花之绚烂，死如秋叶之静美'],
+        typeSpeed: 90,
+        loop: true,
+        loopCount: Infinity,
+        backSpeed: 20,
+      });
+    }
+  }
+
+  if ($('.article-header') && $('.article-header').length) {
+    $(document).ready(function () {
+      initialTyped();
+    });
+  }
+</script>
+
+
+
+
+<!-- 引用依赖 -->
+<script>document.write(aplayerconf)</script>
+
+
+
+
+</html>

@@ -5,15 +5,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>JavaScript进阶-函数拓展 - WebDesiner-计流年</title>
+    <title>JavaScript-数据结构与算法-栈结构 - WebDesiner-计流年</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="TriDiamond Obsidian,"> 
-    <meta name="description" content="函数拓展参数默认值这个参数默认值是适用于任何的函数场景的，是很不错的一种实际开发项目的方法和技巧。
-比如现在封装了一个ajax的方法
-&amp;lt;script&amp;gt;
-    function ajax,"> 
+    <meta name="description" content="栈结构初识栈结构栈(stack) 又名堆栈，它是一种运算受限的线性表。限定仅在表尾进行插入和删除操作的线性表。这一端被称为栈顶，相对地，把另一端称为栈底。向一个栈插入新元素又称作进栈、入栈或压栈，它,"> 
     <meta name="author" content="早起的闽儿"> 
     <link rel="alternative" href="atom.xml" title="WebDesiner-计流年" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -77,7 +74,7 @@
     <div class="navigation animated fadeIn fast delay-1s">
         <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://example.com">
         <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-        <h3 class="subtitle">JavaScript进阶-函数拓展</h3>
+        <h3 class="subtitle">JavaScript-数据结构与算法-栈结构</h3>
         <div class="social">
             <!--        <div class="like-icon">-->
             <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -107,25 +104,24 @@
         <div class="else">
             <p class="animated fadeInDown">
                 
-                <a href="/categories/ES6"><b>「
-                    </b>ES6<b> 」</b></a>
+                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
                 
-                June 27, 2023
+                June 28, 2023
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/post/artical-%E5%87%BD%E6%95%B0%E6%8B%93%E5%B1%95.html" title="JavaScript进阶-函数拓展" class="">JavaScript进阶-函数拓展</a>
+            <h3 class="post-title animated fadeInDown"><a href="/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%A0%88%E7%BB%93%E6%9E%84.html" title="JavaScript-数据结构与算法-栈结构" class="">JavaScript-数据结构与算法-栈结构</a>
             </h3>
             
             <p class="post-count animated fadeInDown">
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>Words count</i>
-                    7.7k
+                    5.7k
                 </span>
                 
                 
                 <span>
                     <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                    7 mins.
+                    5 mins.
                 </span>
                 
                 
@@ -138,7 +134,7 @@
             </p>
             
             
-            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/ES6/" rel="tag">ES6</a></li></ul>
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" rel="tag">JavaScript数据结构与算法</a></li></ul>
             
         </div>
     </div>
@@ -159,261 +155,203 @@
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn">
-            <h1 id="函数拓展"><a href="#函数拓展" class="headerlink" title="函数拓展"></a>函数拓展</h1><h2 id="参数默认值"><a href="#参数默认值" class="headerlink" title="参数默认值"></a>参数默认值</h2><p>这个参数默认值是适用于任何的函数场景的，是很不错的一种实际开发项目的方法和技巧。</p>
-<p>比如现在封装了一个ajax的方法</p>
+            <h1 id="栈结构"><a href="#栈结构" class="headerlink" title="栈结构"></a>栈结构</h1><h2 id="初识栈结构"><a href="#初识栈结构" class="headerlink" title="初识栈结构"></a>初识栈结构</h2><p>栈(stack) 又名堆栈，<strong>它是一种运算受限的线性表</strong>。限定仅在表尾进行插入和删除操作的线性表。这一端被称为栈顶，相对地，把另一端称为栈底。向一个栈插入新元素又称作进栈、入栈或压栈，它是把新元素放到栈顶元素的上面，使之成为新的栈顶元素，从一个栈删除元素称作出栈或退栈，它是把栈顶元素删除掉使其相邻的元素成为新的栈顶元素。</p>
+<p>简而言之，栈是一种遵从后进先出（LIFO）原则的有序集合。新添加的或待删除的元素都保存在栈的 同一端，称作栈顶，另一端就叫栈底。在栈里，新元素都靠近栈顶，旧元素都接近栈底。 注：LIFO：last in first out 图例：</p>
+<p><img src="/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%A0%88%E7%BB%93%E6%9E%84/image-1.png" alt="进出栈"></p>
+<p>JavaScript 中可以通过数组实现栈数据结构。栈是一种遵循后进先出（LIFO）原则的数据结构，它只允许在栈顶进行插入和删除操作。</p>
+<h2 id="栈结构的封装"><a href="#栈结构的封装" class="headerlink" title="栈结构的封装"></a>栈结构的封装</h2><h3 id="栈声明方法举例"><a href="#栈声明方法举例" class="headerlink" title="栈声明方法举例"></a>栈声明方法举例</h3><p><code>push(element(s))：</code>添加一个（或几个）新元素到栈顶。</p>
+<p><code>pop()：</code>移除栈顶的元素，同时返回被移除的元素。</p>
+<p><code>peek()：</code>返回栈顶的元素，不对栈做任何修改（这个方法不会移除栈顶的元素，仅仅返 回它）。</p>
+<p><code>isEmpty()：</code>如果栈里没有任何元素就返回true，否则返回false。</p>
+<p><code>clear()：</code>移除栈里的所有元素。</p>
+<p><code>size()：</code>返回栈里的元素个数。这个方法和数组的length属性很类似。</p>
+<h3 id="封装-function"><a href="#封装-function" class="headerlink" title="封装-function"></a>封装-function</h3><p><strong>添加</strong></p>
+<p>实现添加的可以使用push。这个方法负责往栈里添加新元素，有一点很重要：该方法只添加元素到栈顶，也就是栈的末尾。 push 方法可以这样写：</p>
+<pre><code class="js">this.push = function(element)&#123; 
+ items.push(element); 
+&#125;; 
+</code></pre>
+<p><strong>移除</strong></p>
+<p>接着来实现移除，主要用来移除栈里的元素，使用的是pop方法。 栈遵从LIFO原则，因此移出的是最后添加进去的元素。 栈的pop方法可以这样写：</p>
+<pre><code class="js">this.pop = function()&#123; 
+ return items.pop(); 
+&#125;; 
+</code></pre>
+<p><strong>查看</strong></p>
+<p>查看栈顶元素<br>因为栈顶就是最后进入的元素，类内部是用数组保存元素的，所以访问数组的最后一个元素可以用 length - 1,或者使用 at(-1)</p>
+<pre><code class="js">this.peek = function()&#123; 
+//  return items[items.length-1]; 
+    return items.at(-1)
+&#125;; 
+</code></pre>
+<p><strong>检查栈是否为空</strong></p>
+<p>可以直接使用length &#x3D;&#x3D; 0判断，如果栈为空的话将返回true，否则就返回false</p>
+<pre><code class="js">this.isEmpty = function()&#123; 
+ return items.length == 0; 
+&#125;; 
+</code></pre>
+<p><strong>检查栈的长度</strong></p>
+<p>类似于数组的length属性，我们也能实现栈的length。对于集合，最好用size代替length。 因为栈的内部使用数组保存元素，所以能简单地返回栈的长度</p>
+<pre><code class="js">this.size = function()&#123; 
+ return items.length; 
+&#125;;
+</code></pre>
+<p>示例代码</p>
+<pre><code class="js">function Stack() &#123; 
+  //保存栈里的元素
+  let items = []; 
+   //添加新元素
+  this.push = function(element)&#123; 
+   items.push(element); 
+  &#125;; 
+  //移除元素
+ this.pop = function()&#123; 
+  return items.pop(); 
+ &#125;; 
+ //查看栈顶元素
+ this.peek = function()&#123; 
+   return items[items.length-1]; 
+ &#125;; 
+ //检查栈是否为空
+ this.isEmpty = function()&#123; 
+   return items.length == 0; 
+ &#125;; 
+ //检查栈的长度
+ this.size = function()&#123; 
+   return items.length; 
+ &#125;;
+ //各种属性和方法的声明
+&#125; 
+</code></pre>
+<h3 id="封装-Class"><a href="#封装-Class" class="headerlink" title="封装-Class"></a>封装-Class</h3><p>代码示例</p>
 <pre><code class="js">&lt;script&gt;
-    function ajax(url, methods, async) &#123;
-        console.log(url, methods, async);
+    class Stack &#123;
+        constructor() &#123;
+            this.items = []
+        &#125;
+
+        pop() &#123;
+            return this.items.pop()
+        &#125;
+
+        push(data) &#123;
+            this.tiems.push(data)
+        &#125;
+
+        peek() &#123;
+            // return this.items[items.length - 1]
+            return this.item.at(-1)
+        &#125;
+
+        isEmpty() &#123;
+                return this.items.length === 0
+        &#125;
+
+        size() &#123;
+                return this.items.length
+        &#125;
+
+        clear() &#123;
+                this.items = []
+        &#125;
+
+        toString() &#123;
+                console.log(items.toString())
+        &#125;
     &#125;
 
-    ajax(&quot;//http:baidu.com&quot;, &quot;get&quot;, true)
+    let stack = new Stack()
 &lt;/script&gt;
 </code></pre>
-<p>那么这个参数默认值该怎么用呢？其实很简单，就是给函数参数赋上初值，若调用函数时没有传这个参数，那就会使用默认值，如果函数调用传入参数，就会更新初值。</p>
+<h2 id="栈结构的应用"><a href="#栈结构的应用" class="headerlink" title="栈结构的应用"></a>栈结构的应用</h2><p>封装栈结构来实现十进制到二进制的转换</p>
+<p>代码示例</p>
 <pre><code class="js">&lt;script&gt;
-    function ajax(url, methods = &quot;get&quot;, async = true) &#123;
-        console.log(url, methods, async);
+    class Stack &#123;
+        constructor() &#123;
+            this.items = []
+        &#125;
+
+        pop() &#123;
+            return this.items.pop()
+        &#125;
+
+        push(data) &#123;
+            this.items.push(data)
+        &#125;
+
+        peek() &#123;
+            // return this.items[items.length - 1]
+            return this.item.at(-1)
+        &#125;
+
+        isEmpty() &#123;
+            return this.items.length === 0
+        &#125;
+
+        size() &#123;
+            return this.items.length
+        &#125;
+
+        clear() &#123;
+            this.items = []
+        &#125;
+
+        toString() &#123;
+            console.log(items.toString())
+        &#125;
     &#125;
 
-    ajax(&quot;//http:baidu.com&quot;, true)
-    ajax(&quot;//http:baidu.com&quot;, &quot;get&quot;, false)
+    function convert(decNumber, base) &#123;
+        let remStack = new Stack()
+        let number = decNumber
+        let string = &quot;&quot;
+        let baseString = &quot;0123456789ABCDEF&quot;
+        while (number &gt; 0) &#123;
+            remStack.push(number % base)
+            number = Math.floor(number / base)
+        &#125;
+
+        while (!(remStack.isEmpty())) &#123;
+            string += remStack.pop()
+        &#125;
+
+        return string
+    &#125;
+
+    convert(50, 2) // 二进制转换
+    convert(50, 8) // 八进制转换
+    convert(500, 16) // 十六进制转换
 &lt;/script&gt;
 </code></pre>
 <pre><code>---控制台---
-//http:baidu.com true true
-//http:baidu.com get false
+convert(50, 2)
+110010
+convert(50, 8)
+62
+convert(500, 16)
+1F4       
 </code></pre>
-<h2 id="…-展开运算符的运用"><a href="#…-展开运算符的运用" class="headerlink" title="… 展开运算符的运用"></a>… 展开运算符的运用</h2><p>比如现在咱想要得到函数调用传入的值形成数组，可以使用 arguments 和 Array.from 方法</p>
-<p>代码示例 👉</p>
-<pre><code class="js">&lt;script&gt;
-    function f1() &#123;
-        let arr = Array.from(arguments)
-        console.log(arr);
-    &#125;
-
-    f1(1, 2, 3, 4, 5, 6)
-&lt;/script&gt;
+<p><strong>实现进制转换关键点</strong></p>
+<p>辗转相除法</p>
+<pre><code>50 % 2   0
+25 % 2   1
+12 % 2   0
+6  % 2   0
+3  % 2   1
+1  % 2   1
 </code></pre>
-<pre><code>---控制台---
-Array(6) [1,2,3,4,5,6]
+<p>110010</p>
+<pre><code>50 % 8  2
+6  % 8  6
 </code></pre>
-<p>使用 <code>...</code></p>
-<p>这拿到的是第一个值 1</p>
-<pre><code class="js">    function f1(data) &#123;
-        console.log(data);
-    &#125;
-
-    f1(1, 2, 3, 4, 5, 6)
-&lt;/script&gt;
+<p>62</p>
+<pre><code>500 % 16  4
+31  % 16  (15) =&gt; 对应 F
+1   % 16  1
 </code></pre>
-<p>这便拿到了它全家了 并形成数组 [1,2,3,4,5,6]</p>
-<pre><code class="js">&lt;script&gt;
-    function f1(...data) &#123;
-        console.log(data);
-    &#125;
-
-    f1(1, 2, 3, 4, 5, 6)
-&lt;/script&gt;
-</code></pre>
-<p>再看：那咱现在不要1，2，3 就要4，5，6 那咋整？</p>
-<pre><code class="js">&lt;script&gt;
-    function f1(x, y, z, ...data) &#123;
-        console.log(data);
-    &#125;
-
-    f1(1, 2, 3, 4, 5, 6)
-&lt;/script&gt;
-</code></pre>
-<h2 id="name属性"><a href="#name属性" class="headerlink" title="name属性"></a>name属性</h2><p>就是能够拿到函数的名字</p>
-<pre><code class="js">&lt;script&gt;
-    function f1(x, y, z, ...data) &#123;
-        console.log(data);
-    &#125;
-    console.log(f1.name) // output: f1
-    f1(1, 2, 3, 4, 5, 6) // output: [4,5,6]
-&lt;/script&gt;
-</code></pre>
-<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><blockquote>
-<p>最好的称赞往往只需要最简单的文字：牛逼</p>
-</blockquote>
-<p>咱以前的函数写法有:</p>
-<ul>
-<li><p>声明式</p>
-</li>
-<li><p>赋值式</p>
-</li>
-</ul>
-<pre><code class="js">&lt;script&gt;
-    // 声明式
-    function f1() &#123;
-
-    &#125;
-
-    // 赋值式
-    let f2 = function () &#123;
-
-    &#125;
-&lt;/script&gt;
-</code></pre>
-<p>那这个箭头函数咋写呢？</p>
-<p>把function删掉，小括弧后边加箭头</p>
-<p>咱先看看这个箭头函数最初始的写法 👉</p>
-<pre><code class="js">&lt;script&gt;
-    let f2 = () =&gt; &#123;
-
-    &#125;
-&lt;/script&gt;
-</code></pre>
-<p>那看这最初始的写法，好像是还看不出它的简洁性，咱继续看看</p>
-<p>如果箭头函数体内只有一个返回值，而没有其他逻辑，就可以把花括弧 <code>&#123; &#125;</code> 和 <code>return</code> 都省略掉</p>
-<pre><code class="js">&lt;script&gt;
-    let f2 = () =&gt; &quot;箭头函数！！！！&quot;
-    console.log(f2())
-&lt;/script&gt;
-</code></pre>
-<pre><code>---控制台---
-箭头函数！！！！
-</code></pre>
-<p>咱再写一个渲染列表的案例来好好体会箭头函数的简洁性</p>
-<p>代码示例 👉</p>
-<p>这是普通写法</p>
-<pre><code class="js">&lt;ul&gt;&lt;/ul&gt;
-&lt;script&gt;
-    let arr = [&quot;箭头&quot;, &quot;函数&quot;, &quot;真&quot;, &quot;简洁&quot;]
-    let newArr = arr.map(function (item, index) &#123;
-        return `&lt;li data-id=&quot;$&#123;index&#125;&quot;&gt;$&#123;item&#125;&lt;/li&gt;`
-    &#125;)
-    console.log(newArr);
-    document.querySelector(&#39;ul&#39;).innerHTML = newArr.join(&quot;&quot;)
-&lt;/script&gt;
-</code></pre>
-<p>箭头简写</p>
-<blockquote>
-<p>function是不是可以删掉，函数体内是不是只有一个return而无其他逻辑，是不是可以把{ }去掉</p>
-</blockquote>
-<pre><code class="js">&lt;ul&gt;&lt;/ul&gt;
-&lt;script&gt;
-    let arr = [&quot;箭头&quot;, &quot;函数&quot;, &quot;真&quot;, &quot;简洁&quot;]
-    let newArr = arr.map((item, index) =&gt; `&lt;li data-id=&quot;$&#123;index&#125;&quot;&gt;$&#123;item&#125;&lt;/li&gt;`)
-    console.log(newArr)
-    document.querySelector(&#39;ul&#39;).innerHTML = newArr.join(&quot;&quot;)
-&lt;/script&gt;
-</code></pre>
-<p><img src="/post/artical-%E5%87%BD%E6%95%B0%E6%8B%93%E5%B1%95/image-8.png"></p>
-<p><strong>注意</strong>：如果 return 返回的是一个<code>对象</code>，也不是不可以省略这个return,<code>就是这个对象要加上一个括弧</code></p>
-<p>代码示例 👉</p>
-<pre><code class="js">&lt;script&gt;
-    let f3 = () =&gt; (&#123;
-        name: &#39;箭头函数真好用！！！&#39;
-    &#125;)
-&lt;/script&gt;
-</code></pre>
-<p>那能不能再简单一点，当然可以呀，当咱只传入一个参数的时候，可以把小括弧也打烂来。</p>
-<p>代码示例 👉</p>
-<pre><code class="js">&lt;script&gt;
-    let arr = [1, 2, 3]
-    let newArr = arr.map(item =&gt; `&lt;li&gt;$&#123;item&#125;&lt;/li&gt;`)
-    console.log(newArr)
-&lt;/script&gt;
-</code></pre>
-<h2 id="箭头函数所带来的问题"><a href="#箭头函数所带来的问题" class="headerlink" title="箭头函数所带来的问题"></a>箭头函数所带来的问题</h2><ol>
-<li>无法访问数组内建方法 arguments</li>
-</ol>
-<pre><code class="js">&lt;script&gt;
-    let judge = () =&gt; &#123;
-        console.log(arguments)
-    &#125;
-
-    judge(1, 2, 3, 4, 5, 6)
-&lt;/script&gt;
-</code></pre>
-<pre><code>---控制台---
-Uncaught ReferenceError : arguments is not definet at judge
-</code></pre>
-<ol start="2">
-<li>无法 new（）一个实例对象</li>
-</ol>
-<pre><code class="js">&lt;script&gt;
-    let judge = () =&gt; &#123;
-
-    &#125;
-    new judge()
-&lt;/script&gt;
-</code></pre>
-<pre><code>---控制台---
-Uncaught TypeError: judge is not a constructor
-</code></pre>
-<ol start="3">
-<li>箭头函数没有 this，或者还有一种说法是箭头函数的 this 是指向父作用域</li>
-</ol>
-<p>但是就是这样的一个问题，可以带来很大的价值。</p>
-<p>咱先看看普通函数的一个痛点 👉</p>
-<pre><code class="js">你倒是敲代码啊: &lt;input type=&quot;text&quot;&gt;
-&lt;script&gt;
-    let input = document.querySelector(&#39;input&#39;)
-    input.oninput = function () &#123;
-        console.log(this);  // 指向 input
-        setTimeout(function () &#123;
-            console.log(this)  // 指向 windows
-            console.log(`我收到了用户的数据,是$&#123;this.value&#125;`)
-        &#125;, 1000)
-    &#125;
-&lt;/script&gt;
-</code></pre>
-<pre><code>---控制台---
-&lt;input type=&quot;text&quot;&gt;
-
-Window &#123;window: Window, self: Window, document: document,name:&#39;&#39;Location:Location, ....&#125;
-
-我收到了用户的数据,是undefined
-</code></pre>
-<p>解决方法 👉</p>
-<p>声明了一个临时 this（_this）变量存放 input</p>
-<pre><code class="js">你倒是敲代码啊: &lt;input type=&quot;text&quot;&gt;
-&lt;script&gt;
-    let input = document.querySelector(&#39;input&#39;)
-    input.oninput = function () &#123;
-        let _this = this
-        setTimeout(function () &#123;
-            console.log(`我收到了用户的数据,是$&#123;_this.value&#125;`)
-        &#125;, 1000)
-    &#125;
-&lt;/script&gt;
-</code></pre>
-<p>好了，箭头函数是不是就可以轻松解决掉这个问题？</p>
-<pre><code class="js">你倒是敲代码啊: &lt;input type=&quot;text&quot;&gt;
-&lt;script&gt;
-    let input = document.querySelector(&#39;input&#39;)
-    input.oninput = () =&gt; &#123;
-        setTimeout(() =&gt; &#123;
-            console.log(`我收到了用户的数据,是$&#123;this.value&#125;`)
-        &#125;, 1000)
-    &#125;
-&lt;/script&gt;
-</code></pre>
-<pre><code>---控制台---
-window:&#123; window, self: window, document: document, name: &#39;&#39;,location: Location,...&#125;
-
-我收到了用户的数据,是 undefined
-</code></pre>
-<p>哈哈，咱这一下改爽了，给外边注册事件的函数也用了箭头函数，本来是指向 input 的，结果指到外层的 windows 了，<code>那么定时器函数里的 this 就指向了外层函数的指向了，也即是windiows</code></p>
-<p>像这种注册事件函数最好是写成普通函数形式</p>
-<p>其内部的异步操作可以写箭头函数 👉</p>
-<pre><code class="js">你倒是敲代码啊: &lt;input type=&quot;text&quot;&gt;
-&lt;script&gt;
-    let input = document.querySelector(&#39;input&#39;)
-    input.oninput = function () &#123;
-        console.log(this)
-        setTimeout(() =&gt; &#123;
-            console.log(`我收到了用户的数据,是$&#123;this.value&#125;`)
-        &#125;, 1000)
-    &#125;
-&lt;/script&gt;
-</code></pre>
-<pre><code>---控制台---
-&lt;input type=&quot;text&#39;&gt;
-我收到了用户的数据，是1
-</code></pre>
+<p>1F4</p>
+<p><strong>实现16进制转换关键点</strong></p>
+<p>baseString &#x3D; “0123456789ABCDEF” 的设置</p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls"
@@ -474,7 +412,7 @@ window:&#123; window, self: window, document: document, name: &#39;&#39;,locatio
             <div class="box sticky animated fadeInRight faster">
                 <div id="toc" class="subbox">
                     <h4>Contents</h4>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E6%8B%93%E5%B1%95"><span class="toc-number">1.</span> <span class="toc-text">函数拓展</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="toc-number">1.1.</span> <span class="toc-text">参数默认值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%80%A6-%E5%B1%95%E5%BC%80%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E8%BF%90%E7%94%A8"><span class="toc-number">1.2.</span> <span class="toc-text">… 展开运算符的运用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#name%E5%B1%9E%E6%80%A7"><span class="toc-number">1.3.</span> <span class="toc-text">name属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0"><span class="toc-number">1.4.</span> <span class="toc-text">箭头函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%E6%89%80%E5%B8%A6%E6%9D%A5%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">1.5.</span> <span class="toc-text">箭头函数所带来的问题</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%88%E7%BB%93%E6%9E%84"><span class="toc-number">1.</span> <span class="toc-text">栈结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E8%AF%86%E6%A0%88%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.</span> <span class="toc-text">初识栈结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%88%E7%BB%93%E6%9E%84%E7%9A%84%E5%B0%81%E8%A3%85"><span class="toc-number">1.2.</span> <span class="toc-text">栈结构的封装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%88%E5%A3%B0%E6%98%8E%E6%96%B9%E6%B3%95%E4%B8%BE%E4%BE%8B"><span class="toc-number">1.2.1.</span> <span class="toc-text">栈声明方法举例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%81%E8%A3%85-function"><span class="toc-number">1.2.2.</span> <span class="toc-text">封装-function</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%81%E8%A3%85-Class"><span class="toc-number">1.2.3.</span> <span class="toc-text">封装-Class</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%88%E7%BB%93%E6%9E%84%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-number">1.3.</span> <span class="toc-text">栈结构的应用</span></a></li></ol></li></ol>
                 </div>
             </div>
             
