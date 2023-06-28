@@ -4,6 +4,89 @@
   
     
     <entry>
+      <title>JavsScript设计模式</title>
+      <link href="/post/undefined.html"/>
+      <url>/post/undefined.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JavaScript 算法数据结构 - 数组结构</title>
+      <link href="/post/undefined.html"/>
+      <url>/post/undefined.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="JavaScript数据结构与算法"><a href="#JavaScript数据结构与算法" class="headerlink" title="JavaScript数据结构与算法"></a>JavaScript数据结构与算法</h1><h1 id="数组结构"><a href="#数组结构" class="headerlink" title="数组结构"></a>数组结构</h1><h2 id="数组创建"><a href="#数组创建" class="headerlink" title="数组创建"></a>数组创建</h2><ol><li>通过构造函数进行创建</li></ol><pre><code class="javascript">let arr = new Array(1,2,3)</code></pre><ol start="2"><li>通过字面量方式进行创建</li></ol><pre><code class="javascript">let arr = [1,2,3]</code></pre><h2 id="数组访问"><a href="#数组访问" class="headerlink" title="数组访问"></a>数组访问</h2><p>下标索引</p><h2 id="数组常用方法"><a href="#数组常用方法" class="headerlink" title="数组常用方法"></a>数组常用方法</h2><h3 id="push-pop-shift-unshift-splice"><a href="#push-pop-shift-unshift-splice" class="headerlink" title="push pop shift unshift splice"></a>push pop shift unshift splice</h3><p>push 和 pop：从数组的后面追加和删除一个元素</p><p>unshift 和 shift：从数组的前面追加和删除一个元素</p><p><strong>注意</strong>：pop() 和 shift() 的返回值是删除的数组元素</p><p>那咱要是想是想从任意位置进行元素的插入和删除操作呢？巧了，JavaScript正是提供了这样的一个数组的操作方法：<strong>splice()</strong></p><p>语法</p><p>这个 splice( ) 方法的 ( ) 里接收 3 个参数</p><ol><li><p>从第几个位置开始删除</p></li><li><p>要删除几个元素</p></li><li><p>这个部分的参数就可有意思了，可以进行追加，加入其他的数，加入一个数组形成数组的嵌套，其实追加对象也是可以的，谁叫你删了人家哟</p></li></ol><p>代码示例</p><pre><code class="javascript">&lt;script&gt;    let arr = new Array(1, 2, 3)    arr.splice(0, 2, [5, 4], &#123; name: &#39;我也进来咯~&#39; &#125;, &#123; age: &#39;18岁了&#39; &#125;)    console.log(arr);&lt;/script&gt;</code></pre><p><img src="/post/undefined/splice.png"><br></p><h3 id="sort-方法"><a href="#sort-方法" class="headerlink" title="sort( ) 方法"></a>sort( ) 方法</h3><p>sort( ) 方法中的 ( ) 接收一个回调函数</p><p>代码示例</p><pre><code class="javascript">&lt;script&gt;    let arr = [2, 1, 4, 5, 7, 0]    arr.sort((x, y) =&gt; x - y)    let arr1 = [3, 1, 2, 5, 0, 8]    arr1.sort((x, y) =&gt; y - x)&lt;/script&gt;</code></pre><img src="/post/undefined/sort01.png"><p>**注意:**里面的 x , y 是数组里面的每一个元素</p><p>那如果数组里面有几个学生信息的对象元素，咱想这些对象按年龄从<strong>小到大排序</strong>呢？</p><p>代码示例</p><pre><code class="javascript">&lt;script&gt;    let arr = [&#123;        name: &#39;Zeng&#39;,        age: 20    &#125;, &#123;        name: &#39;Ri&#39;,        age: 18    &#125;, &#123;        name: &#39; Ming&#39;,        age: 19    &#125;]    // 以年龄的顺序进行排序    arr.sort((x, y) =&gt; (x.age - y.age))&lt;/script&gt;</code></pre><img src="/post/undefined/sort02.png"><h3 id="concat-方法"><a href="#concat-方法" class="headerlink" title="concat 方法"></a>concat 方法</h3><pre><code class="javascript">&lt;script&gt;    let arr1 = [1, 2, 3]    let arr2 = [4, 5, 6]    let conbain = arr1.concat(arr2)    console.log(conbain)&lt;/script&gt;</code></pre><p>那这个方法是不是只可以来连接两个数组呢？你可小瞧它了，咱现在连接一些别的玩意试试…</p><pre><code class="javascript">&lt;script&gt;    let arr1 = [1, 2, 3]    let arr2 = [4, 5, 6]    let conbain = arr1.concat(arr2, 7, 8, 9, &#123; name: &#39;前端小可爱~&#39; &#125;)    console.log(conbain)&lt;/script&gt;</code></pre><img src="/post/undefined/concat.png"><h3 id="迭代方法-every-some-filter-map-forEach-reduce"><a href="#迭代方法-every-some-filter-map-forEach-reduce" class="headerlink" title="迭代方法 every , some , filter , map ,forEach , reduce"></a>迭代方法 every , some , filter , map ,forEach , reduce</h3><ol><li>every</li></ol><p>这个 every 啊，返回的是布尔值，其实讲白辽就是判断数组中<strong>每一个元素</strong>是否都符合条件，如果都合她意了，就返回 true , 否者就是false。</p><p>这个 every 方法接收的是一个回调函数，回调函数中是咱传进去的参数，也就是数组中的每一项。</p><p>代码示例</p><pre><code class="javascript">&lt;script&gt;    let arr = [10, 11, 12, 13, 14];    console.log(arr.every(item =&gt; item &gt; 1));  // true    console.log(arr.every(item =&gt; item &gt; 10));  // false&lt;/script&gt;</code></pre><ol start="2"><li>some</li></ol><p>这个 some 啊，和 every 就是一对嘛，但他要求就没拉么高了，只要数组中有一个元素符合他的条件，就返回 true , 否则就是 false。</p><p>代码示例</p><pre><code class="javascript">&lt;script&gt;    let arr = [10, 11, 12, 13, 14];    console.log(arr.some(item =&gt; item &gt; 13));  // true&lt;/script&gt;</code></pre><ol start="3"><li>filter</li></ol><p>咱现在来看看这个 filter ，他呢？就是把符合条件的数组元素给筛选出来，并且返回一个<strong>新的数组</strong>，不光有并且，还有而且，<strong>他还不会改变原数组</strong></p><p>代码示例</p><pre><code class="javascript">&lt;script&gt;    let arr = [1, 2, 3, 4, 5, 6]    let res = arr.filter(item =&gt; item &gt; 5)    console.log(res)  // 6&lt;/script&gt;</code></pre><ol start="4"><li>map</li></ol><p>map 是一个映射的作用,<strong>原数组真的是一点都改不了</strong>,但其映射出了一个新的数组</p><p>咱就是说既然这个 map 和 forEach 都是起一个遍历作用，连传递的参数都他娘的一样，那是不是map也可以拿来当forEach用，可以是可以哦，但是咱这不违背了设计者的初衷了嘛？哈哈！<strong>map可以理解为功能更完善的forEach</strong></p><p>代码示例</p><pre><code class="js">&lt;script&gt;    let arr = [1, 2, 3, 4, 5]    let res = arr.map(item =&gt; item + &quot;湖人总冠军！！！&quot;)    console.log(res)    console.log(arr)&lt;/script&gt;</code></pre><img src="/post/undefined/map.png"><ol start="5"><li>forEach</li></ol><p>forEach 主打的就是一个遍历,也不会把原数组给改变了，他这里可以接收两个参数，第一个是遍历的每一个元素，第二个是元素下标，不过这个forEach和map的重点区别就在于，map有返回值，而forEach没有返回值</p><pre><code class="javascript">&lt;script&gt;    let arr = [1, 2, 3, 4, 5]    let doubleArr = []    let indexArr = []    arr.forEach((item, index) =&gt; &#123;        doubleArr.push(item * 2)        indexArr.unshift(index)    &#125;)    console.log(doubleArr)    console.log(indexArr)&lt;/script&gt;</code></pre><img src="/post/undefined/forEach.png"><ol start="6"><li>reduce</li></ol><p>这个 reduce 迭代方法有撒子用哦？咱可以拿它来做一些累加累乘的操作，当然以后在实际开发中，它还会有很多应用</p><p>这 reduce 里面有两个参数 item1 , item2 </p><p>代码示例</p><pre><code class="javascript">&lt;script&gt;    let arr = [1, 2, 3, 4]    let res = arr.reduce((item1, item2) =&gt; item1 + item2)    console.log(res)&lt;/script&gt;</code></pre><blockquote><p>这个 item 1，item 2 一开始是接收了 arr 中的第一和第二个参数 item1 &#x3D; 1, item2 &#x3D; 2,将其执行函数体内 item1 + item2 操作, 其和作为 下一次操作的 item1 的值 , 再与 item2(item2 &#x3D;&#x3D; 3 啦) 相加。诶哟~真想用我滴口才来表达这段文字,这文字太难表达辽！！！</p></blockquote><h3 id="搜索-indexOf-lastIndexOf-find-findIndex-findLast-findLastIndex-includes"><a href="#搜索-indexOf-lastIndexOf-find-findIndex-findLast-findLastIndex-includes" class="headerlink" title="搜索 indexOf , lastIndexOf , find , findIndex ,  findLast ,findLastIndex , includes"></a>搜索 indexOf , lastIndexOf , find , findIndex ,  findLast ,findLastIndex , includes</h3><ol><li><b>indexOf</b> 与 <b>includes</b></li></ol><p>这两个方法都是搜索数组中是否有这个值 <br><br>indexOf 有：返回 0  没有：返回 -1</p><p>所以以后只要判断 返回值是否大于 -1 , 就可以知道该元素是否在数组里面了。</p><p>includes 有：返回 true 没有：返回 false</p><p>代码示例</p><pre><code class="javascript">&lt;script&gt;    let arr = [1, 2, 3, 4]    console.log(arr.indexOf(1))    console.log(arr.indexOf(5))    console.log(arr.includes(1))    console.log(arr.includes(5))&lt;/script&gt;</code></pre><img src="/post/undefined/indexOf与includes.png"><ol start="2"><li>find findIndex findLast findLastIndex</li></ol><ul><li><p>find 查找并返回满足条件的第一个元素</p></li><li><p>findLast 倒序查找并返回满足条件的第一个元素，也即是最后一个满足条件的元素</p></li><li><p>findIndex 查找并返回满足条件的第一个元素的下标</p></li><li><p>findLastIndex 倒序查找并返回满足条件的第一个元素下标，也即是最后一个满足条件的元素下标</p></li></ul><p>代码示例</p><pre><code class="javascript">&lt;script&gt;    let arr = [1, 2, 3, 4, 5]    let res1 = arr.find(item =&gt; item &gt; 2)    let res2 = arr.findIndex(item =&gt; item &gt; 2)    console.log(res1, res2)    let res3 = arr.findLast(item =&gt; item &gt; 2)    let res4 = arr.findLastIndex(item =&gt; item &gt; 2)    console.log(res3, res4)&lt;/script&gt;</code></pre><img src="/post/undefined/搜索.png"><h3 id="数组中的-join-方法"><a href="#数组中的-join-方法" class="headerlink" title="数组中的 join 方法"></a>数组中的 join 方法</h3><ul><li>作用：<br>join() 方法用于把数组中的所有元素转换成一个字符串</li><li>语法：<br>比如这里有一个数组<br></li></ul><pre><code class="javascript">&lt;script&gt;    const arr = [&#39;日闽&#39;, &#39;好&#39;, &#39;帅&#39;, &#39;啊&#39;]    console.log(arr.join())    console.log(arr.join(&quot;&quot;))    console.log(arr.join(&quot;-&quot;))&lt;/script&gt;</code></pre><ul><li>map 和 join 的搭配使用</li></ul><p>map <strong>映射出新数组</strong> join 去掉数组中的 “,” 进行渲染</p><h3 id="数组中的-slice-方法"><a href="#数组中的-slice-方法" class="headerlink" title="数组中的 slice 方法"></a>数组中的 slice 方法</h3><p>slice() 方法返回一个新的数组对象，这一对象是一个由 start 和 end 决定的原数组的<b>浅拷贝（包括 start，不包括 end）</b>，<br>其中 start 和 end 代表了数组元素的索引。原始数组不会被改变。</p><p>咱先来尝试一下下：</p><pre><code class="javascript">const animals = [&#39;ant&#39;, &#39;bison&#39;, &#39;camel&#39;, &#39;duck&#39;, &#39;elephant&#39;];console.log(animals.slice(2));// Expected output: Array [&quot;camel&quot;, &quot;duck&quot;, &quot;elephant&quot;]console.log(animals.slice(2, 4));// Expected output: Array [&quot;camel&quot;, &quot;duck&quot;]console.log(animals.slice(1, 5));// Expected output: Array [&quot;bison&quot;, &quot;camel&quot;, &quot;duck&quot;, &quot;elephant&quot;]console.log(animals.slice(-2));// Expected output: Array [&quot;duck&quot;, &quot;elephant&quot;]console.log(animals.slice(2, -1));// Expected output: Array [&quot;camel&quot;, &quot;duck&quot;]console.log(animals.slice());// Expected output: Array [&quot;ant&quot;, &quot;bison&quot;, &quot;camel&quot;, &quot;duck&quot;, &quot;elephant&quot;]</code></pre><h3 id="多维数组"><a href="#多维数组" class="headerlink" title="多维数组"></a>多维数组</h3><p>代码示例</p><pre><code class="javascript">&lt;script&gt;    let arr = [        [1, 2, 3, 4],        [5, 6, 7, 8],        [9, 10, 11, 12]    ]    arr.forEach((item, index) =&gt; &#123;        console.log(`第$&#123;index&#125;个数组的元素是:`)        arr[index].forEach(item =&gt; &#123;            console.log(item)        &#125;)    &#125;)&lt;/script&gt;</code></pre><img src="/post/undefined/多维数组.png"><h1 id="栈结构"><a href="#栈结构" class="headerlink" title="栈结构"></a>栈结构</h1><h2 id="初识栈结构"><a href="#初识栈结构" class="headerlink" title="初识栈结构"></a>初识栈结构</h2><p>栈(stack) 又名堆栈，<strong>它是一种运算受限的线性表</strong>。限定仅在表尾进行插入和删除操作的线性表。这一端被称为栈顶，相对地，把另一端称为栈底。向一个栈插入新元素又称作进栈、入栈或压栈，它是把新元素放到栈顶元素的上面，使之成为新的栈顶元素，从一个栈删除元素称作出栈或退栈，它是把栈顶元素删除掉使其相邻的元素成为新的栈顶元素。</p><p>简而言之，栈是一种遵从后进先出（LIFO）原则的有序集合。新添加的或待删除的元素都保存在栈的 同一端，称作栈顶，另一端就叫栈底。在栈里，新元素都靠近栈顶，旧元素都接近栈底。 注：LIFO：last in first out 图例：</p><p><img src="/post/undefined/image-1.png" alt="进出栈"></p><p>JavaScript 中可以通过数组实现栈数据结构。栈是一种遵循后进先出（LIFO）原则的数据结构，它只允许在栈顶进行插入和删除操作。</p><h2 id="栈结构的封装"><a href="#栈结构的封装" class="headerlink" title="栈结构的封装"></a>栈结构的封装</h2><p>栈声明方法举例</p><p><strong>push(element(s))：</strong>添加一个（或几个）新元素到栈顶。</p><p><strong>pop()：</strong>移除栈顶的元素，同时返回被移除的元素。</p><p><strong>peek()：</strong>返回栈顶的元素，不对栈做任何修改（这个方法不会移除栈顶的元素，仅仅返 回它）。</p><p><strong>isEmpty()：</strong>如果栈里没有任何元素就返回true，否则返回false。</p><p><strong>clear()：</strong>移除栈里的所有元素。</p><p><strong>size()：</strong>返回栈里的元素个数。这个方法和数组的length属性很类似。</p><h2 id="栈结构的应用"><a href="#栈结构的应用" class="headerlink" title="栈结构的应用"></a>栈结构的应用</h2><p>以辗转相除法为例</p><h1 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h1>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> JavaScript数据结构与算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>C语言算法数据结构</title>
+      <link href="/post/undefined.html"/>
+      <url>/post/undefined.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Python基础学习</title>
+      <link href="/post/undefined.html"/>
+      <url>/post/undefined.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="Python-基础"><a href="#Python-基础" class="headerlink" title="Python 基础"></a>Python 基础</h1><h2 id="Python-初体验"><a href="#Python-初体验" class="headerlink" title="Python 初体验"></a>Python 初体验</h2><p>代码示例</p><pre><code class="python">temp = input(&quot;请输入：&quot;)guess = int(temp)if guess == 8:   print(&quot;你输入了 8&quot;)   print(&quot;哈哈哈哈，被我猜到了&quot;)else:   print(&quot;你输入的不是 8&quot;)   print(&quot;哈哈哈哈，我猜对了吧&quot;)print(&quot;游戏结束&quot;)</code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JavaScript进阶-Symbol</title>
+      <link href="/post/artical-Symbol.html"/>
+      <url>/post/artical-Symbol.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="Symbol"><a href="#Symbol" class="headerlink" title="Symbol"></a>Symbol</h1><p>ES6 引入了一种新的<strong>原始数据类型 Symbol</strong>，表示独一无二的值。它是JavaScript的第七种数据类型，是一种<strong>类似于字符串的数据类型</strong>。其他数据类型是: undefined、null、布尔值(Boolean) 、字符串 (String)、数值 (Number)、对象(Object)。</p><h2 id="Symbol-的特点"><a href="#Symbol-的特点" class="headerlink" title="Symbol 的特点"></a>Symbol 的特点</h2><ol><li>Symbol 的值是唯一的，用来解决命名冲突的问题</li><li>Symbol 值不能与其他数据进行运算</li><li>Symbol 定义的对象属性不能使用 for…in 循环遍历，但是可以使用 Reflect.ownKeys 来获取对象的所有键名</li></ol><p>通过函数调用，创建 Symbol</p><h2 id="Symbol-的创建与介绍"><a href="#Symbol-的创建与介绍" class="headerlink" title="Symbol 的创建与介绍"></a>Symbol 的创建与介绍</h2><p>第一种创建方式 👉</p><pre><code class="js">let s1 = Symbol();console.log(s1,typeof s1);</code></pre><pre><code>---控制台---Symbol() &quot;symbol&quot;</code></pre><p>既然是函数式创建,那么可不可以传入值呢？当然是可以的</p><pre><code class="js">let s2 = Symbol(&#39;创建Symbol&#39;);</code></pre><p>这里面传入的值，实际上是一个起描述性的作用的字符串，相当于是做了一个注释。</p><p>比如 👉</p><pre><code class="js">let s2 = Symbol(&#39;创建Symbol&#39;);let s3 = Symbol(&#39;创建Symbol&#39;);console.log(s2 === s3);</code></pre><pre><code>---控制台---false</code></pre><p>第二种创建方式 👉</p><pre><code class="js">let s4 = Symbol.for(&#39;创建Symbol&#39;);console.log(s4,typeof s4);</code></pre><pre><code>---控制台---Symbol(&#39;创建Symbol&#39;) &quot;symbol&quot;</code></pre><p>用该方式方式创建（可以把<code>Symbol.for()看作是函数对象</code>），可以通过这个描述值，得到两个相同的 symbol 值。</p><pre><code class="js">let s4 = Symbol.for(&#39;创建Symbol&#39;);let s5 = Symbol.for(&#39;创建Symbol&#39;);console.log(s4 === s5);</code></pre><pre><code>---控制台---true</code></pre><h2 id="Symbol-的使用"><a href="#Symbol-的使用" class="headerlink" title="Symbol 的使用"></a>Symbol 的使用</h2><p>Symbol 的一个使用场景就是来给对象添加属性和方法，表示该属性或方法是独一无二的。</p><p>代码示例 👉</p><p>向对象中添加方法</p><pre><code class="js">let game = &#123;&#125;</code></pre><h2 id="Symbol-的内置属性"><a href="#Symbol-的内置属性" class="headerlink" title="Symbol 的内置属性"></a>Symbol 的内置属性</h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> ES6 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>一文以致我的坤</title>
       <link href="/post/%E4%B8%80%E6%96%87%E4%BB%A5%E8%87%B4%E6%88%91%E7%9A%84%E5%9D%A4.html"/>
       <url>/post/%E4%B8%80%E6%96%87%E4%BB%A5%E8%87%B4%E6%88%91%E7%9A%84%E5%9D%A4.html</url>
