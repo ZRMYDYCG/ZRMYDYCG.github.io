@@ -5,20 +5,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>前端Vue代码风格指南 - WebDesiner-计流年</title>
+    <title>JavaScript进阶-字符串拓展 - WebDesiner-计流年</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="TriDiamond Obsidian,"> 
-    <meta name="description" content="一、命名规范市面上常用的命名规范：
-
-camelCase（小驼峰式命名法 —— 首字母小写）
-
-PascalCase（大驼峰式命名法 —— 首字母大写）
-
-kebab-case（短横线连接式）
-
-S,"> 
+    <meta name="description" content="字符串拓展split 方法它与 join 相反，它是将字符串转换成数组 
+代码示例 👉
+&amp;lt;script&amp;gt;
+    const str = &amp;#39;pink,red&amp;#39;
+    ,"> 
     <meta name="author" content="早起的闽儿"> 
     <link rel="alternative" href="atom.xml" title="WebDesiner-计流年" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -82,7 +78,7 @@ S,">
     <div class="navigation animated fadeIn fast delay-1s">
         <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://example.com">
         <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-        <h3 class="subtitle">前端Vue代码风格指南</h3>
+        <h3 class="subtitle">JavaScript进阶-字符串拓展</h3>
         <div class="social">
             <!--        <div class="like-icon">-->
             <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -112,18 +108,19 @@ S,">
         <div class="else">
             <p class="animated fadeInDown">
                 
-                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+                <a href="/categories/ES6"><b>「
+                    </b>ES6<b> 」</b></a>
                 
-                June 26, 2023
+                June 28, 2023
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/post/%E5%89%8D%E7%AB%AFVue%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC%E6%8C%87%E5%8D%97.html" title="前端Vue代码风格指南" class="">前端Vue代码风格指南</a>
+            <h3 class="post-title animated fadeInDown"><a href="/post/artical-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%93%E5%B1%95.html" title="JavaScript进阶-字符串拓展" class="">JavaScript进阶-字符串拓展</a>
             </h3>
             
             <p class="post-count animated fadeInDown">
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>Words count</i>
-                    3.4k
+                    3.1k
                 </span>
                 
                 
@@ -142,7 +139,7 @@ S,">
             </p>
             
             
-            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Vue/" rel="tag">Vue</a></li></ul>
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/ES6/" rel="tag">ES6</a></li></ul>
             
         </div>
     </div>
@@ -163,91 +160,82 @@ S,">
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn">
-            <h1 id="一、命名规范"><a href="#一、命名规范" class="headerlink" title="一、命名规范"></a>一、命名规范</h1><p>市面上常用的命名规范：</p>
-<ul>
-<li><p><code>camelCase</code>（小驼峰式命名法 —— 首字母小写）</p>
-</li>
-<li><p><code>PascalCase</code>（大驼峰式命名法 —— 首字母大写）</p>
-</li>
-<li><p><code>kebab-case</code>（短横线连接式）</p>
-</li>
-<li><p><code>Snake_case</code>（下划线连接式）</p>
-</li>
-</ul>
-<h2 id="1-1-项目文件命名"><a href="#1-1-项目文件命名" class="headerlink" title="1.1 项目文件命名"></a>1.1 项目文件命名</h2><h3 id="1-1-1-项目名"><a href="#1-1-1-项目名" class="headerlink" title="1.1.1 项目名"></a>1.1.1 项目名</h3><p>全部采用小写方式， 以<strong>短横线</strong>分隔。例：my-project-name。</p>
-<h3 id="1-1-2-目录名"><a href="#1-1-2-目录名" class="headerlink" title="1.1.2 目录名"></a>1.1.2 目录名</h3><p>参照项目命名规则，有复数结构时，要采用复数命名法。例：docs、assets、components、directives、mixins、utils、views。</p>
-<pre><code>my-project-name
-|- BuildScript    // 流水线部署文件目录
-|- docs           // 项目的细化文档目录（可选）
-|- nginx          // 部署在容器上前端项目 nginx 代理文件目录
-|- node_modules   // 下载的依赖包
-|- public         // 静态页面目录
-    |- index.html // 项目入口
-|- src            // 源码目录
-    |- api        // http 请求目录
-    |- assets     // 静态资源目录，这里的资源会被wabpack构建
-        |- icon   // icon 存放目录
-        |- img    // 图片存放目录
-        |- js     // 公共 js 文件目录
-        |- scss   // 公共样式 scss 存放目录
-            |- frame.scss   // 入口文件
-            |- global.scss  // 公共样式
-            |- reset.scss   // 重置样式
-    |- components     // 组件
-    |- plugins        // 插件
-    |- router         // 路由
-    |- routes         // 详细的路由拆分目录（可选）
-        |- index.js
-    |- store          // 全局状态管理
-    |- utils          // 工具存放目录
-        |- request.js // 公共请求工具
-    |- views          // 页面存放目录
-    |- App.vue        // 根组件
-    |- main.js        // 入口文件
-    |- tests          // 测试用例
-    |- .browserslistrc// 浏览器兼容配置文件
-    |- .editorconfig  // 编辑器配置文件
-    |- .eslintignore  // eslint 忽略规则
-    |- .eslintrc.js   // eslint 规则
-    |- .gitignore     // git 忽略规则
-    |- babel.config.js // babel 规则
-    |- Dockerfile // Docker 部署文件
-    |- jest.config.js
-    |- package-lock.json
-    |- package.json // 依赖
-    |- README.md // 项目 README
-    |- vue.config.js // webpack 配置
+            <h1 id="字符串拓展"><a href="#字符串拓展" class="headerlink" title="字符串拓展"></a>字符串拓展</h1><h2 id="split-方法"><a href="#split-方法" class="headerlink" title="split 方法"></a>split 方法</h2><p>它与 join 相反，它是将字符串转换成数组 </p>
+<p>代码示例 👉</p>
+<pre><code class="javascript">&lt;script&gt;
+    const str = &#39;pink,red&#39;
+    const arr = str.split(&#39;&#39;)
+    console.log(arr)
+&lt;/script&gt;
 </code></pre>
-<h3 id="1-1-3-图像文件名"><a href="#1-1-3-图像文件名" class="headerlink" title="1.1.3 图像文件名"></a>1.1.3 图像文件名</h3><p>全部采用小写方式， 优先选择单个单词命名，多个单词命名以<strong>下划线</strong>分隔。</p>
-<pre><code>banner_sina.gif
-menu_aboutus.gif
-menutitle_news.gif
-logo_police.gif
-logo_national.gif
-pic_people.jpg
-pic_TV.jpg
+<pre><code>---控制台---
+Array(8) [&#39;p&#39;,&#39;i&#39;,&#39;n&#39;,&#39;k&#39;,&#39;,&#39;,&#39;r&#39;,&#39;e&#39;,&#39;d&#39;]
 </code></pre>
-<h3 id="1-1-4-HTML-文件名"><a href="#1-1-4-HTML-文件名" class="headerlink" title="1.1.4 HTML 文件名"></a>1.1.4 HTML 文件名</h3><pre><code>|- error_report.html
-|- success_report.html
+<p>咱现在传入分隔符试试：</p>
+<pre><code class="javascript">&lt;script&gt;
+    const str = &#39;pink,red&#39;
+    const arr = str.split(&#39;-&#39;)
+    const arr1 = str.split(&#39;,&#39;)
+
+    console.log(&#39;-分隔&#39;, arr);
+
+    console.log(&#39;----------&#39;)
+
+    console.log(&#39;,分隔&#39;, arr1)
+&lt;/script&gt;
 </code></pre>
-<h3 id="1-1-5-CSS-文件名"><a href="#1-1-5-CSS-文件名" class="headerlink" title="1.1.5 CSS 文件名"></a>1.1.5 CSS 文件名</h3><p>全部采用小写方式， 优先选择单个单词命名，多个单词命名以短横线分隔。</p>
-<pre><code>|- normalize.less
-|- base.less
-|- date-picker.scss
-|- input-number.scss
+<pre><code>---控制台---
+Array(1) [&quot;pink,red&quot;]
+----------
+Array(2) [&quot;pink&quot;,&quot;red&quot;]
 </code></pre>
-<h3 id="1-1-6-JavaScript-文件名"><a href="#1-1-6-JavaScript-文件名" class="headerlink" title="1.1.6 JavaScript 文件名"></a>1.1.6 JavaScript 文件名</h3><p>全部采用小写方式， 优先选择单个单词命名，多个单词命名以短横线分隔。</p>
-<pre><code>|- index.js
-|- plugin.js
-|- util.js
-|- date-util.js
-|- account-model.js
-|- collapse-transition.js
+<h2 id="substring-方法"><a href="#substring-方法" class="headerlink" title="substring 方法"></a>substring 方法</h2><p>语法 👉</p>
+<pre><code class="js">str.substring(indexStart[,indexEnd]) 
 </code></pre>
-<blockquote>
-<p>上述规则可以快速记忆为“静态文件下划线，编译文件短横线”。</p>
-</blockquote>
-<h2 id="1-2-Vue-组件命名"><a href="#1-2-Vue-组件命名" class="headerlink" title="1.2 Vue 组件命名"></a>1.2 Vue 组件命名</h2><h3 id="1-2-1-单文件组件名"><a href="#1-2-1-单文件组件名" class="headerlink" title="1.2.1 单文件组件名"></a>1.2.1 单文件组件名</h3>
+<p>返回值: <code>咱截取的字符串</code></p>
+<p><code>indexStart</code></p>
+<p>需要截取的第一个字符的索引，该索引位置的字符作为字符串的首字母</p>
+<p><code>indexEnd</code></p>
+<p>可选,一个 0 到字符串长度之间的整数,以该数字为索引的字符不包含在截取的字符串内。如果省略不写的话,就是指截取 indexStart 索引到最后一个字符。</p>
+<p>代码示例 👉</p>
+<pre><code class="javascript">&lt;script&gt;
+    const str = &#39;不积跬步,无以至千里&#39;
+
+    let sub = str.substring(5)
+
+    console.log(sub)  // output: 无以至千里
+&lt;/script&gt;
+</code></pre>
+<h2 id="startsWith"><a href="#startsWith" class="headerlink" title="startsWith"></a>startsWith</h2><p>Vue 路由部分要用到噢~ </p>
+<p>stratWith()方法用来判断当前字符串<code>是否以另外一个给定的字符串开头</code>,并根据判断结果返回 true or false。</p>
+<p>语法：str.startsWith(searchString[,position])</p>
+<p>参数</p>
+<p>searchString : 要搜索的字符串</p>
+<p>position（可选）: 在 str 中搜索 searchString 的开始位置,默认值为 0</p>
+<p>代码示例 👉</p>
+<pre><code class="javascript">var str = &quot;To be, or not to be, that is the question.&quot;;
+
+alert(str.startsWith(&quot;To be&quot;));         // true
+alert(str.startsWith(&quot;not to be&quot;));     // false
+alert(str.startsWith(&quot;not to be&quot;, 10)); // true
+</code></pre>
+<h2 id="endsWith"><a href="#endsWith" class="headerlink" title="endsWith"></a>endsWith</h2><p>和上面相反：从字符串的后面开始搜索</p>
+<h2 id="includes"><a href="#includes" class="headerlink" title="includes"></a>includes</h2><p>includes() 方法执行<strong>区分大小写的搜索</strong>，以确定是否可以在另一个字符串中找到一个字符串，并根据情况返回 true 或 false。</p>
+<p>语法：str.includes(searchString[,position]) </p>
+<p>参数</p>
+<p>searchString:要在此字符串中搜索的字符串</p>
+<p>position:规定要从当前字符串哪个索引位置开始搜寻子字符串，默认值为 0</p>
+<p>代码示例 👉</p>
+<pre><code class="javascript">const str = &quot;To be, or not to be, that is the question.&quot;;
+
+console.log(str.includes(&quot;To be&quot;)); // true
+console.log(str.includes(&quot;question&quot;)); // true
+console.log(str.includes(&quot;nonexistent&quot;)); // false
+console.log(str.includes(&quot;To be&quot;, 1)); // false
+console.log(str.includes(&quot;TO BE&quot;)); // false
+console.log(str.includes(&quot;&quot;)); // true
+</code></pre>
+
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls"
                 data-autoplay="false">
@@ -307,7 +295,7 @@ pic_TV.jpg
             <div class="box sticky animated fadeInRight faster">
                 <div id="toc" class="subbox">
                     <h4>Contents</h4>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83"><span class="toc-number">1.</span> <span class="toc-text">一、命名规范</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E5%91%BD%E5%90%8D"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 项目文件命名</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-1-%E9%A1%B9%E7%9B%AE%E5%90%8D"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1.1 项目名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-2-%E7%9B%AE%E5%BD%95%E5%90%8D"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.1.2 目录名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-3-%E5%9B%BE%E5%83%8F%E6%96%87%E4%BB%B6%E5%90%8D"><span class="toc-number">1.1.3.</span> <span class="toc-text">1.1.3 图像文件名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-4-HTML-%E6%96%87%E4%BB%B6%E5%90%8D"><span class="toc-number">1.1.4.</span> <span class="toc-text">1.1.4 HTML 文件名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-5-CSS-%E6%96%87%E4%BB%B6%E5%90%8D"><span class="toc-number">1.1.5.</span> <span class="toc-text">1.1.5 CSS 文件名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-6-JavaScript-%E6%96%87%E4%BB%B6%E5%90%8D"><span class="toc-number">1.1.6.</span> <span class="toc-text">1.1.6 JavaScript 文件名</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-Vue-%E7%BB%84%E4%BB%B6%E5%91%BD%E5%90%8D"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 Vue 组件命名</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-1-%E5%8D%95%E6%96%87%E4%BB%B6%E7%BB%84%E4%BB%B6%E5%90%8D"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.2.1 单文件组件名</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%93%E5%B1%95"><span class="toc-number">1.</span> <span class="toc-text">字符串拓展</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#split-%E6%96%B9%E6%B3%95"><span class="toc-number">1.1.</span> <span class="toc-text">split 方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#substring-%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">substring 方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#startsWith"><span class="toc-number">1.3.</span> <span class="toc-text">startsWith</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#endsWith"><span class="toc-number">1.4.</span> <span class="toc-text">endsWith</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#includes"><span class="toc-number">1.5.</span> <span class="toc-text">includes</span></a></li></ol></li></ol>
                 </div>
             </div>
             

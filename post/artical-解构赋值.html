@@ -5,14 +5,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>声明变量 - WebDesiner-计流年</title>
+    <title>JavaScript进阶-解构赋值 - WebDesiner-计流年</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="TriDiamond Obsidian,"> 
-    <meta name="description" content="let 声明变量要看看它的好处，这就必须和 var 声明来比一比了
-块级作用域（函数的那个是叫局部作用域）
-以前呀,用这个 var 声明的的时候，很容易将if，for….里面的声明的变量暴露出来，成,"> 
+    <meta name="description" content="解构赋值解构赋值的意思就是快速地从对象或者数组中取出成员的一种语法方式
+数组原来我们来拿数组里每一项成员的值，可以通过下标来获取
+新方法：解构代码示例 👉
+    let arr = [1, 2,,"> 
     <meta name="author" content="早起的闽儿"> 
     <link rel="alternative" href="atom.xml" title="WebDesiner-计流年" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -76,7 +77,7 @@
     <div class="navigation animated fadeIn fast delay-1s">
         <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://example.com">
         <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-        <h3 class="subtitle">声明变量</h3>
+        <h3 class="subtitle">JavaScript进阶-解构赋值</h3>
         <div class="social">
             <!--        <div class="like-icon">-->
             <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -106,18 +107,19 @@
         <div class="else">
             <p class="animated fadeInDown">
                 
-                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+                <a href="/categories/ES6"><b>「
+                    </b>ES6<b> 」</b></a>
                 
                 June 27, 2023
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/post/undefined.html" title="声明变量" class="">声明变量</a>
+            <h3 class="post-title animated fadeInDown"><a href="/post/artical-%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC.html" title="JavaScript进阶-解构赋值" class="">JavaScript进阶-解构赋值</a>
             </h3>
             
             <p class="post-count animated fadeInDown">
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>Words count</i>
-                    5.5k
+                    5.6k
                 </span>
                 
                 
@@ -157,204 +159,187 @@
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn">
-            <h1 id="let-声明变量"><a href="#let-声明变量" class="headerlink" title="let 声明变量"></a>let 声明变量</h1><p>要看看它的好处，这就必须和 <code>var</code> 声明来比一比了</p>
-<h2 id="块级作用域（函数的那个是叫局部作用域）"><a href="#块级作用域（函数的那个是叫局部作用域）" class="headerlink" title="块级作用域（函数的那个是叫局部作用域）"></a>块级作用域（函数的那个是叫局部作用域）</h2><blockquote>
-<p>以前呀,用这个 var 声明的的时候，很容易将if，for….里面的声明的变量暴露出来，成为了全局变量，从而污染了我们定义的全局变量。</p>
-</blockquote>
-<p>var 声明</p>
-<pre><code class="js"> &#123;
-    var a = 1;
- &#125;
- console.log(a)
+            <h1 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h1><p>解构赋值的意思就是<code>快速地从对象或者数组中取出成员</code>的一种语法方式</p>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>原来我们来拿数组里每一项成员的值，可以通过下标来获取</p>
+<h3 id="新方法：解构"><a href="#新方法：解构" class="headerlink" title="新方法：解构"></a>新方法：解构</h3><p>代码示例 👉</p>
+<pre><code class="js">    let arr = [1, 2, 3]
+    let [x, y, z] = arr
+    console.log(x, y, z)  
 </code></pre>
 <pre><code>---控制台---
-1
+1 2 3
 </code></pre>
-<p>在控制台顺利地把这个块中的a给打印出来了</p>
-<p>let 声明</p>
-<pre><code class="js"> &#123;
-    let a = 1;
- &#125;
-  console.log(a);
+<p>数组解构赋值挺方便的，比如交换 x，y 的值</p>
+<p>代码示例 👉</p>
+<pre><code class="js">    let x = 1;
+    let y = 2;
+    [y, x] = [x, y]
+</code></pre>
+<h3 id="回到最开始的例子里，如果咱只想拿到数组里边的3，该怎么写呢？"><a href="#回到最开始的例子里，如果咱只想拿到数组里边的3，该怎么写呢？" class="headerlink" title="回到最开始的例子里，如果咱只想拿到数组里边的3，该怎么写呢？"></a>回到最开始的例子里，如果咱只想拿到数组里边的3，该怎么写呢？</h3><p>代码示例 👉</p>
+<pre><code class="js">    let arr = [1, 2, 3]
+    let [, , a] = arr
+    console.log(a); 
 </code></pre>
 <pre><code>---控制台---
-Uncaught ReferenceError: a is not defined
+3
 </code></pre>
-<p>萤火虫的比喻</p>
-<p>需求</p>
-<p>遍历<code>ul</code>里的<code>li</code>，点击其中的<code>li</code>，就在控制台打印该<code>li</code>的索引号。</p>
-<p>代码示例 - var 👉</p>
-<pre><code class="js">&lt;body&gt;
-    &lt;ul&gt;
-        &lt;li&gt;I&lt;/li&gt;
-        &lt;li&gt;Love&lt;/li&gt;
-        &lt;li&gt;Me&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;script&gt;
-        var list = document.querySelectorAll(&#39;ul li&#39;)
-        for (var i = 0; i &lt; list.length; i++) &#123;
-            list[i].onclick = function () &#123;
-                console.log(i);
+<h3 id="那要是数组里面又嵌套了数组，该怎么处理呢？"><a href="#那要是数组里面又嵌套了数组，该怎么处理呢？" class="headerlink" title="那要是数组里面又嵌套了数组，该怎么处理呢？"></a>那要是数组里面又嵌套了数组，该怎么处理呢？</h3><p>代码示例 👉</p>
+<pre><code class="js">    let arr = [1, [2, 3, 4], 5, 6]
+    let [a, [b], c] = arr
+    console.log(b) 
+</code></pre>
+<pre><code>---控制台---
+2
+</code></pre>
+<p>比如这个例子，咱就拿到了嵌套数组里的第一个元素</p>
+<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><p>对象解构与数组不同，它是<strong>无序</strong>的，是通过对应的 <code>key</code> 来寻找并 <code>抽取</code> 出来</p>
+<p>代码示例 👉</p>
+<pre><code class="js">    let obj = &#123;
+        name: &#39;刘德华&#39;,
+        age: &#39;18&#39;
+    &#125;
+    // let &#123; name, age &#125; = obj
+    let &#123; age, name &#125; = obj // 交换一下也是可以滴
+    console.log(name, age);
+</code></pre>
+<pre><code>---控制台---
+刘德华 18
+</code></pre>
+<p>这样一来就在面对了一个对象中的大量数据，咱就可以通过解构的方式，通过 key <code>抓</code> 到我们所需要的数据，是不是及其方便!</p>
+<p>代码示例 👉</p>
+<pre><code class="js">    let obj = &#123;
+        name: &#39;日闽&#39;,
+        tall: &#39;180&#39;,
+        weight: &#39;75KG&#39;,
+        face: &#39;帅&#39;,
+        money: &#39;1000000000000万&#39;,
+        address: &#123;
+            china: &#39;北京10套 苏州园林28套&#39;,
+            US: &#39;欧洲农场20万亩&#39;,
+        &#125;
+    &#125;
+    /* 将其解构取值 */
+    let &#123; face &#125; = obj
+    console.log(face);
+
+    let &#123; address &#125; = obj
+    console.log(address);
+
+    let &#123; china &#125; = address
+    console.log(china)
+</code></pre>
+<p><img src="/post/artical-%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/image-8.png"></p>
+<p>咱就说假如在外面早就定义了一个name，且是全局的，那这咋办？</p>
+<p><img src="/post/artical-%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC/image-9.png"></p>
+<p>解决方法</p>
+<p>代码示例 👉</p>
+<pre><code class="js">    let name = &#39;刘泽泉&#39;
+    let obj = &#123;
+        name: &#39;日闽&#39;,
+        tall: &#39;180&#39;,
+        weight: &#39;70KG&#39;,
+        face: &#39;帅&#39;,
+        money: &#39;1000000000000万&#39;,
+        address: &#123;
+            china: &#39;北京10套 苏州园林2套&#39;,
+            US: &#39;园林1万亩&#39;,
+        &#125;
+    &#125;
+    let &#123; name: newname &#125; = obj ⭐⭐⭐
+    console.log(newname);
+</code></pre>
+<pre><code>---控制台---
+日闽
+</code></pre>
+<h2 id="嵌套"><a href="#嵌套" class="headerlink" title="嵌套"></a>嵌套</h2><p>要是想获得list这个数组，咱先不用嵌套写法来获得</p>
+<p>代码示例 👉</p>
+<pre><code class="js">    let obj = &#123;
+        rel: &#39;2&#39;,
+        name: &#39;xiao&#39;,
+        data: &#123;
+            list: [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
+        &#125;
+    &#125;
+    let &#123; data &#125; = obj
+    let &#123; list &#125; = data
+    console.log(list)
+</code></pre>
+<p>用嵌套写法来获得</p>
+<p>代码示例 👉</p>
+<pre><code class="js">    let obj = &#123;
+        rel: &#39;2&#39;,
+        name: &#39;xiao&#39;,
+        data: &#123;
+            list: [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
+        &#125;
+    &#125;
+    let &#123; data: &#123; list &#125; &#125; = obj ⭐⭐⭐
+    console.log(list)
+</code></pre>
+<p>咱要是想得到数组里面的 c 呢？那就继续嵌套呀！！！</p>
+<p>代码示例 👉</p>
+<pre><code class="js">    let obj = &#123;
+        rel: &#39;2&#39;,
+        name: &#39;xiao&#39;,
+        data: &#123;
+            list: [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
+        &#125;
+    &#125;
+    // 数组解构是下标一一对应，key 值不用相同
+    let &#123; data: &#123; list: [, , z] &#125; &#125; = obj
+    console.log(z)
+</code></pre>
+<pre><code>---控制台---
+c
+</code></pre>
+<h2 id="函数参数解构赋值"><a href="#函数参数解构赋值" class="headerlink" title="函数参数解构赋值"></a>函数参数解构赋值</h2><p>当我们接到后端传来的数据后，我们希望通过函数的方式来处理数据，得到我们想要的部分。</p>
+<pre><code class="js">    function getData() &#123;
+        let res = &#123;
+            code: 200,
+            data: &#123;
+                list: [&#39;aaa&#39;, &#39;bbb&#39;, &#39;ccc&#39;]
             &#125;
         &#125;
-    &lt;/script&gt;
-&lt;/body&gt;
+        test(res)
+    &#125;
+    function test(res) &#123;
+        let &#123; code &#125; = res
+        console.log(code);
+    &#125;
+    getData()
 </code></pre>
 <pre><code>---控制台---
-我们可以发现：无论我们点击哪一个 li ，返回的都是 3
+200
 </code></pre>
-<p>为什么每点击其中的 <code>li</code>，控制台都是打印 <code>3</code> 呢？</p>
-<blockquote>
-<p>是因为这个 <code>for循环</code> 是一瞬间就完成了，<code>而注册的这个点击事件是属于是一个异步的操作</code>，此时的 i &#x3D; 3 了，且这个 i 已经暴露成了一个全局变量了，所以每次点击返回的都是 3。</p>
-</blockquote>
-<p>解决方案</p>
-<blockquote>
-<p>那就是给每一个 li 自定义一个 index 属性，在循环的时候就把下标交给这个自定义属性</p>
-</blockquote>
-<p>代码示例 - let 👉</p>
-<pre><code class="js">&lt;body&gt;
-    &lt;ul&gt;
-        &lt;li&gt;I&lt;/li&gt;
-        &lt;li&gt;Love&lt;/li&gt;
-        &lt;li&gt;Me&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;script&gt;
-        let list = document.querySelectorAll(&#39;ul li&#39;)
-        for (let i = 0; i &lt; list.length; i++) &#123;
-            list[i].onclick = function () &#123;
-                console.log(i);
+<p>在上部分函数中通过test传过来的对象可不可以在直接在接收函数的参数部分就进行处理呢？</p>
+<p>当然是可以的！！！</p>
+<p>代码示例 👉</p>
+<pre><code class="js">    function getData() &#123;
+        let res = &#123;
+            code: 200,
+            data: &#123;
+                list: [&#39;aaa&#39;, &#39;bbb&#39;, &#39;ccc&#39;]
             &#125;
         &#125;
-    &lt;/script&gt;
-&lt;/body&gt;
-</code></pre>
-<pre><code>---控制台---
-我们可以发现：
-点击其中的 li ，就在控制台打印该 li 的索引号。
-</code></pre>
-<blockquote>
-<p>这就是 let 的能耐，在每一次循环后，这个 i 并没有被释放掉，每一次的点击事件依赖于这个 i，所以所点之处皆下标</p>
-</blockquote>
-<h2 id="不允许重复声明"><a href="#不允许重复声明" class="headerlink" title="不允许重复声明"></a>不允许重复声明</h2><p>用let重复声明之后，嘎嘎报错，而用var是可以这样滴，但是后面的值会覆盖掉前面的。</p>
-<p>代码示例 👉</p>
-<pre><code class="js">var i = 1;
-var i = 2;
-console.log(i);  ---控制台 2---
-let you = 1; 报错: Cannot redeclare block-scoped variable &#39;you&#39;
-let you = 2; 报错: Cannot redeclare block-scoped variable &#39;you&#39;
-</code></pre>
-<h2 id="没有变量提升"><a href="#没有变量提升" class="headerlink" title="没有变量提升"></a>没有变量提升</h2><p>代码示例 👉</p>
-<pre><code class="js">// var 变量提升
-
-    var a = &#39;太酷辣！！！&#39;
-    console.log(a)
-    console.log(&#39;................&#39;)
-
-// let 变量没提升
-
-    let a = &#39;太酷辣！！！&#39;
-    console.log(a)
-</code></pre>
-<pre><code>---控制台---
-太酷辣！！！
-................
-Uncaught SyntaxError:Identifier &#39;a&#39; has already been declared
-</code></pre>
-<h2 id="暂存性死区"><a href="#暂存性死区" class="headerlink" title="暂存性死区"></a>暂存性死区</h2><p>代码示例 👉</p>
-<pre><code class="js">    let a = &#39;太酷辣&#39;
-    function trys() &#123;
-        console.log(a);
+        test(res)
     &#125;
-    trys()
-</code></pre>
-<pre><code>---控制台---
-太酷辣
-</code></pre>
-<pre><code class="js">    let a = &#39;太酷辣&#39;
-    function trys() &#123;
-        console.log(a);
-        let a = &#39;煞笔煞笔&#39;;
+    function test(&#123; code, data &#125;) &#123;
+        console.log(code, data);
     &#125;
-    trys()
+    getData()
 </code></pre>
 <pre><code>---控制台---
-Uncaught ReferenceError:Cannot access before initialization at trys 
+200 object 
 </code></pre>
-<blockquote>
-<p>由于这个暂时性死区的存在，也就是指函数内部，声明的这个变量a是已经存在的了，但是在这声明以上的区域没法使用，要是把打印函数写到函数内部的变量声明之后就可以了。</p>
-</blockquote>
-<h2 id="不与顶层对象挂钩"><a href="#不与顶层对象挂钩" class="headerlink" title="不与顶层对象挂钩"></a>不与顶层对象挂钩</h2><p>代码示例 👉</p>
-<pre><code class="js">    var a = 100;
-    console.log(window.a); ---控制台 100---
-</code></pre>
-<pre><code class="js">    let a = 11;
-    console.log(window.a) ---控制台 undefined---
-</code></pre>
-<h1 id="const声明常量"><a href="#const声明常量" class="headerlink" title="const声明常量"></a>const声明常量</h1><p>比如一些文件路径，网页地址啥的死信息就可以使用const来定义</p>
-<ol>
-<li><p>定义的是一个常量，不可以修改</p>
-</li>
-<li><p>不能重复定义</p>
-</li>
-<li><p>也存在块级</p>
-</li>
-<li><p>变量不提升</p>
-</li>
-<li><p>也存在暂时性死区</p>
-</li>
-<li><p>不与顶层对象挂钩</p>
-</li>
-</ol>
-<blockquote>
-<p>其实和 let 声明的特性差不多吧</p>
-</blockquote>
-<p>但是用const声明的变量就一定不可以被修改了了吗？</p>
+<h2 id="字符串解构"><a href="#字符串解构" class="headerlink" title="字符串解构"></a>字符串解构</h2><p>把字符串当个数组就可以了</p>
 <p>代码示例 👉</p>
-<pre><code class="js">    const obj = &#123;
-        name: &#39;小黑&#39;,
-        age: 18
-    &#125;
-    obj.name = &#39;999&#39;
-
-    const arr = [&#123;
-        age: 18
-    &#125;,
-    &#123;
-        age: 19
-    &#125;,
-    &#123;
-        age: 20
-    &#125;]
-
-    arr[2].age = 30
+<pre><code class="js">let name = &#39;xiaoriming&#39;
+let [x, y, z] = name
+console.log(x, y, z);
 </code></pre>
 <pre><code>---控制台---
-&gt;obj
-&#123; name : &#39;999&#39;, age: 18&#125;
-[[Prototype]]: Object
-&gt; arr
-0: &#123;age: 18&#125;
-1: &#123;age: 19&#125;
-2: &#123;age: 30&#125;
-length: 3
-[[Prototype]]: Array(0)
+x i a
 </code></pre>
-<blockquote>
-<p>当const声明的是复杂数据类型的时候，如上例，其声明的obj和arr，实际上是指向对象和数组的一个指针(地址)，通过该指针找到该对象中某一属性将其修改。</p>
-</blockquote>
-<p>但是这里有一种 <code>freeze</code> 方法可以冻结对象中的属性,使其不能被修改</p>
-<p>代码示例 👉</p>
-<pre><code class="js">    const obj = Object.freeze(&#123;
-        name: &#39;小黑&#39;,
-        age: 18
-    &#125;)
-    obj.age = &#39;19&#39;
-    console.log(obj.name)
-</code></pre>
-<pre><code>---控制台---
-18
-</code></pre>
-<p><img src="/post/undefined/tab3.jpg" alt="带着所爱的一切都住进这里吧！"></p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls"
@@ -405,7 +390,7 @@ length: 3
                 </div>
                 <ul>
                     <li><a href="/">13 <p>Articles</p></a></li>
-                    <li><a href="/categories">0 <p>Categories</p></a></li>
+                    <li><a href="/categories">1 <p>Categories</p></a></li>
                     <li><a href="/tags">3 <p>Tags</p></a></li>
                 </ul>
             </div>
@@ -415,7 +400,7 @@ length: 3
             <div class="box sticky animated fadeInRight faster">
                 <div id="toc" class="subbox">
                     <h4>Contents</h4>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#let-%E5%A3%B0%E6%98%8E%E5%8F%98%E9%87%8F"><span class="toc-number">1.</span> <span class="toc-text">let 声明变量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F%EF%BC%88%E5%87%BD%E6%95%B0%E7%9A%84%E9%82%A3%E4%B8%AA%E6%98%AF%E5%8F%AB%E5%B1%80%E9%83%A8%E4%BD%9C%E7%94%A8%E5%9F%9F%EF%BC%89"><span class="toc-number">1.1.</span> <span class="toc-text">块级作用域（函数的那个是叫局部作用域）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8D%E5%85%81%E8%AE%B8%E9%87%8D%E5%A4%8D%E5%A3%B0%E6%98%8E"><span class="toc-number">1.2.</span> <span class="toc-text">不允许重复声明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B2%A1%E6%9C%89%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87"><span class="toc-number">1.3.</span> <span class="toc-text">没有变量提升</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9A%82%E5%AD%98%E6%80%A7%E6%AD%BB%E5%8C%BA"><span class="toc-number">1.4.</span> <span class="toc-text">暂存性死区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8D%E4%B8%8E%E9%A1%B6%E5%B1%82%E5%AF%B9%E8%B1%A1%E6%8C%82%E9%92%A9"><span class="toc-number">1.5.</span> <span class="toc-text">不与顶层对象挂钩</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#const%E5%A3%B0%E6%98%8E%E5%B8%B8%E9%87%8F"><span class="toc-number">2.</span> <span class="toc-text">const声明常量</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC"><span class="toc-number">1.</span> <span class="toc-text">解构赋值</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-number">1.1.</span> <span class="toc-text">数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E6%96%B9%E6%B3%95%EF%BC%9A%E8%A7%A3%E6%9E%84"><span class="toc-number">1.1.1.</span> <span class="toc-text">新方法：解构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9E%E5%88%B0%E6%9C%80%E5%BC%80%E5%A7%8B%E7%9A%84%E4%BE%8B%E5%AD%90%E9%87%8C%EF%BC%8C%E5%A6%82%E6%9E%9C%E5%92%B1%E5%8F%AA%E6%83%B3%E6%8B%BF%E5%88%B0%E6%95%B0%E7%BB%84%E9%87%8C%E8%BE%B9%E7%9A%843%EF%BC%8C%E8%AF%A5%E6%80%8E%E4%B9%88%E5%86%99%E5%91%A2%EF%BC%9F"><span class="toc-number">1.1.2.</span> <span class="toc-text">回到最开始的例子里，如果咱只想拿到数组里边的3，该怎么写呢？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%A3%E8%A6%81%E6%98%AF%E6%95%B0%E7%BB%84%E9%87%8C%E9%9D%A2%E5%8F%88%E5%B5%8C%E5%A5%97%E4%BA%86%E6%95%B0%E7%BB%84%EF%BC%8C%E8%AF%A5%E6%80%8E%E4%B9%88%E5%A4%84%E7%90%86%E5%91%A2%EF%BC%9F"><span class="toc-number">1.1.3.</span> <span class="toc-text">那要是数组里面又嵌套了数组，该怎么处理呢？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.2.</span> <span class="toc-text">对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B5%8C%E5%A5%97"><span class="toc-number">1.3.</span> <span class="toc-text">嵌套</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC"><span class="toc-number">1.4.</span> <span class="toc-text">函数参数解构赋值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%A7%A3%E6%9E%84"><span class="toc-number">1.5.</span> <span class="toc-text">字符串解构</span></a></li></ol></li></ol>
                 </div>
             </div>
             

@@ -5,20 +5,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>前端Vue代码风格指南 - WebDesiner-计流年</title>
+    <title>JavaScript进阶-对象拓展 - WebDesiner-计流年</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="TriDiamond Obsidian,"> 
-    <meta name="description" content="一、命名规范市面上常用的命名规范：
-
-camelCase（小驼峰式命名法 —— 首字母小写）
-
-PascalCase（大驼峰式命名法 —— 首字母大写）
-
-kebab-case（短横线连接式）
-
-S,"> 
+    <meta name="description" content="对象拓展对象拓展咱先来看看最初是怎么写的 👉
+&amp;lt;script&amp;gt;
+    let obj = &amp;#123;
+        name: &amp;quot;Alian&amp;quot;,
+      ,"> 
     <meta name="author" content="早起的闽儿"> 
     <link rel="alternative" href="atom.xml" title="WebDesiner-计流年" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -82,7 +78,7 @@ S,">
     <div class="navigation animated fadeIn fast delay-1s">
         <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://example.com">
         <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-        <h3 class="subtitle">前端Vue代码风格指南</h3>
+        <h3 class="subtitle">JavaScript进阶-对象拓展</h3>
         <div class="social">
             <!--        <div class="like-icon">-->
             <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -112,24 +108,25 @@ S,">
         <div class="else">
             <p class="animated fadeInDown">
                 
-                <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
+                <a href="/categories/ES6"><b>「
+                    </b>ES6<b> 」</b></a>
                 
-                June 26, 2023
+                June 27, 2023
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/post/%E5%89%8D%E7%AB%AFVue%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC%E6%8C%87%E5%8D%97.html" title="前端Vue代码风格指南" class="">前端Vue代码风格指南</a>
+            <h3 class="post-title animated fadeInDown"><a href="/post/artical-%E5%AF%B9%E8%B1%A1%E6%8B%93%E5%B1%95.html" title="JavaScript进阶-对象拓展" class="">JavaScript进阶-对象拓展</a>
             </h3>
             
             <p class="post-count animated fadeInDown">
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>Words count</i>
-                    3.4k
+                    5.7k
                 </span>
                 
                 
                 <span>
                     <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                    3 mins.
+                    5 mins.
                 </span>
                 
                 
@@ -142,7 +139,7 @@ S,">
             </p>
             
             
-            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Vue/" rel="tag">Vue</a></li></ul>
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/ES6/" rel="tag">ES6</a></li></ul>
             
         </div>
     </div>
@@ -163,91 +160,215 @@ S,">
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn">
-            <h1 id="一、命名规范"><a href="#一、命名规范" class="headerlink" title="一、命名规范"></a>一、命名规范</h1><p>市面上常用的命名规范：</p>
-<ul>
-<li><p><code>camelCase</code>（小驼峰式命名法 —— 首字母小写）</p>
-</li>
-<li><p><code>PascalCase</code>（大驼峰式命名法 —— 首字母大写）</p>
-</li>
-<li><p><code>kebab-case</code>（短横线连接式）</p>
-</li>
-<li><p><code>Snake_case</code>（下划线连接式）</p>
-</li>
-</ul>
-<h2 id="1-1-项目文件命名"><a href="#1-1-项目文件命名" class="headerlink" title="1.1 项目文件命名"></a>1.1 项目文件命名</h2><h3 id="1-1-1-项目名"><a href="#1-1-1-项目名" class="headerlink" title="1.1.1 项目名"></a>1.1.1 项目名</h3><p>全部采用小写方式， 以<strong>短横线</strong>分隔。例：my-project-name。</p>
-<h3 id="1-1-2-目录名"><a href="#1-1-2-目录名" class="headerlink" title="1.1.2 目录名"></a>1.1.2 目录名</h3><p>参照项目命名规则，有复数结构时，要采用复数命名法。例：docs、assets、components、directives、mixins、utils、views。</p>
-<pre><code>my-project-name
-|- BuildScript    // 流水线部署文件目录
-|- docs           // 项目的细化文档目录（可选）
-|- nginx          // 部署在容器上前端项目 nginx 代理文件目录
-|- node_modules   // 下载的依赖包
-|- public         // 静态页面目录
-    |- index.html // 项目入口
-|- src            // 源码目录
-    |- api        // http 请求目录
-    |- assets     // 静态资源目录，这里的资源会被wabpack构建
-        |- icon   // icon 存放目录
-        |- img    // 图片存放目录
-        |- js     // 公共 js 文件目录
-        |- scss   // 公共样式 scss 存放目录
-            |- frame.scss   // 入口文件
-            |- global.scss  // 公共样式
-            |- reset.scss   // 重置样式
-    |- components     // 组件
-    |- plugins        // 插件
-    |- router         // 路由
-    |- routes         // 详细的路由拆分目录（可选）
-        |- index.js
-    |- store          // 全局状态管理
-    |- utils          // 工具存放目录
-        |- request.js // 公共请求工具
-    |- views          // 页面存放目录
-    |- App.vue        // 根组件
-    |- main.js        // 入口文件
-    |- tests          // 测试用例
-    |- .browserslistrc// 浏览器兼容配置文件
-    |- .editorconfig  // 编辑器配置文件
-    |- .eslintignore  // eslint 忽略规则
-    |- .eslintrc.js   // eslint 规则
-    |- .gitignore     // git 忽略规则
-    |- babel.config.js // babel 规则
-    |- Dockerfile // Docker 部署文件
-    |- jest.config.js
-    |- package-lock.json
-    |- package.json // 依赖
-    |- README.md // 项目 README
-    |- vue.config.js // webpack 配置
+            <h1 id="对象拓展"><a href="#对象拓展" class="headerlink" title="对象拓展"></a>对象拓展</h1><h2 id="对象拓展-1"><a href="#对象拓展-1" class="headerlink" title="对象拓展"></a>对象拓展</h2><p>咱先来看看最初是怎么写的 👉</p>
+<pre><code class="js">&lt;script&gt;
+    let obj = &#123;
+        name: &quot;Alian&quot;,
+        a: function () &#123;
+
+        &#125;,
+        b: function () &#123;
+
+        &#125;
+    &#125;
+&lt;/script&gt;
 </code></pre>
-<h3 id="1-1-3-图像文件名"><a href="#1-1-3-图像文件名" class="headerlink" title="1.1.3 图像文件名"></a>1.1.3 图像文件名</h3><p>全部采用小写方式， 优先选择单个单词命名，多个单词命名以<strong>下划线</strong>分隔。</p>
-<pre><code>banner_sina.gif
-menu_aboutus.gif
-menutitle_news.gif
-logo_police.gif
-logo_national.gif
-pic_people.jpg
-pic_TV.jpg
-</code></pre>
-<h3 id="1-1-4-HTML-文件名"><a href="#1-1-4-HTML-文件名" class="headerlink" title="1.1.4 HTML 文件名"></a>1.1.4 HTML 文件名</h3><pre><code>|- error_report.html
-|- success_report.html
-</code></pre>
-<h3 id="1-1-5-CSS-文件名"><a href="#1-1-5-CSS-文件名" class="headerlink" title="1.1.5 CSS 文件名"></a>1.1.5 CSS 文件名</h3><p>全部采用小写方式， 优先选择单个单词命名，多个单词命名以短横线分隔。</p>
-<pre><code>|- normalize.less
-|- base.less
-|- date-picker.scss
-|- input-number.scss
-</code></pre>
-<h3 id="1-1-6-JavaScript-文件名"><a href="#1-1-6-JavaScript-文件名" class="headerlink" title="1.1.6 JavaScript 文件名"></a>1.1.6 JavaScript 文件名</h3><p>全部采用小写方式， 优先选择单个单词命名，多个单词命名以短横线分隔。</p>
-<pre><code>|- index.js
-|- plugin.js
-|- util.js
-|- date-util.js
-|- account-model.js
-|- collapse-transition.js
-</code></pre>
+<p>那咋样进行简写呢？</p>
 <blockquote>
-<p>上述规则可以快速记忆为“静态文件下划线，编译文件短横线”。</p>
+<p>属性可以简写，方法也是可以简写的，在 Vue 中就是这么干滴!!! 在使用 Vue 的时候，进行模块化组件化开发的时候，是经常会给这个对象取取一个名字的，将来导出的时候非常方便，这样的简写方式是很有必要的。</p>
 </blockquote>
-<h2 id="1-2-Vue-组件命名"><a href="#1-2-Vue-组件命名" class="headerlink" title="1.2 Vue 组件命名"></a>1.2 Vue 组件命名</h2><h3 id="1-2-1-单文件组件名"><a href="#1-2-1-单文件组件名" class="headerlink" title="1.2.1 单文件组件名"></a>1.2.1 单文件组件名</h3>
+<p>代码示例 👉</p>
+<pre><code class="js">&lt;script&gt;
+    let name = &quot;模块A&quot;
+    let obj = &#123;
+        name,  // name:name
+        a() &#123;
+
+        &#125;,
+        b() &#123;
+
+        &#125;
+    &#125;
+&lt;/script&gt;
+</code></pre>
+<h2 id="对象属性-–-表达式写法"><a href="#对象属性-–-表达式写法" class="headerlink" title="对象属性 – 表达式写法"></a>对象属性 – 表达式写法</h2><p>咱先来看这个问题，这个obj里面的name属性是name还是变成 ‘a’了呢？</p>
+<pre><code class="js">&lt;script&gt;
+    let name = &#39;a&#39;
+    let obj = &#123;
+        name: &#39;值&#39;
+    &#125;
+&lt;/script&gt;
+</code></pre>
+<p>经过控制台打印发现还是 name，也就是说 obj 里面的 name 并没有被当作是变量来处理，那咱就是想要这个name变成a，咋办呢？巧了，ES6又给咱提供了方法[…..]，可以将里面的属性名(key)变成变量。而且[…..]里面是可以写表达式滴！</p>
+<p>代码示例 👉</p>
+<pre><code class="js">&lt;script&gt;
+    let name = &#39;a&#39;
+    let name1 = &#39;b&#39;
+    let obj = &#123;
+        [name]: &#39;值&#39;,
+        [name1 + &quot;cd&quot;]: &#39;值&#39;
+    &#125;
+
+    console.log(obj);
+&lt;/script&gt;
+</code></pre>
+<pre><code>---控制台---
+object
+a:&quot;值&quot;
+bcd:&quot;值&quot;
+[[Prototype]]: object
+</code></pre>
+<p>提需求：咱现在希望这个模块A里面的每一个方法名字都得带上<code>模块A</code></p>
+<p>代码示例 👉</p>
+<pre><code class="js">&lt;script&gt;
+    let name = &#39;模块A&#39;
+    let obj = &#123;
+        name,
+        f1() &#123;
+
+        &#125;,
+        f2() &#123;
+
+        &#125;
+    &#125;
+    console.log(obj)
+&lt;/script&gt;
+</code></pre>
+<p>咱现在就用这个 […] 的方法，这便是模块化思想</p>
+<pre><code class="js">    name,
+    [name + &quot;f1&quot;]() &#123;
+
+    &#125;,
+    [name + &quot;f2&quot;]() &#123;
+
+    &#125;
+</code></pre>
+<pre><code>---控制台---
+object
+name:&quot;模块A&quot;
+模块Af1: f [name +“f1&quot;]()
+棋块Af2: f [name +“f2&quot;]()
+[[Prototype]]: object
+</code></pre>
+<h2 id="…-展开运算符"><a href="#…-展开运算符" class="headerlink" title="… 展开运算符"></a>… 展开运算符</h2><p>其用法和数组里的使用是一样的</p>
+<p>复制</p>
+<p>代码示例 👉</p>
+<pre><code class="js">&lt;script&gt;
+    let obj1 = &#123;
+        name: &quot;hello&quot;
+    &#125;
+
+    let obj2 = &#123;
+        ...obj1
+    &#125;
+
+    console.log(obj2);
+&lt;/script&gt;
+</code></pre>
+<pre><code>---控制台---
+Object
+name: &quot;hello&quot;
+[[Prototype]]: object
+</code></pre>
+<p>合并：</p>
+<p>代码示例 👉</p>
+<pre><code class="js">&lt;script&gt;
+    let obj1 = &#123;
+        way: &#39;hello,&#39;
+    &#125;
+
+    let obj2 = &#123;
+        name: &#39;小闽&#39;
+    &#125;
+
+    let obj3 = &#123; ...obj1, obj2 &#125;
+
+    console.log(obj3);
+&lt;/script&gt;
+</code></pre>
+<p><img src="/post/artical-%E5%AF%B9%E8%B1%A1%E6%8B%93%E5%B1%95/image-8.png" alt="Alt text"></p>
+<blockquote>
+<p>注意：如果在合并的过程中，一旦遇到了同名属性时，后边的会把前面的属性值给覆盖掉。</p>
+</blockquote>
+<h2 id="Object-assign方法"><a href="#Object-assign方法" class="headerlink" title="Object.assign方法"></a>Object.assign方法</h2><pre><code class="js">&lt;script&gt;
+    let obj1 = &#123;
+        name: &#39;Alian&#39;
+    &#125;
+
+    let obj2 = &#123;
+        age: 18
+    &#125;
+
+    let conbainObj = Object.assign(obj1, obj2);
+
+    console.log(conbainObj);
+&lt;/script&gt;
+</code></pre>
+<pre><code>---控制台---
+object
+age: 18
+name: &quot;Alian&quot;
+[[Prototype]]: object
+</code></pre>
+<p>这和上面的扩展运算符是可以实现一样的功能的，但是其影响了Object.assign(obj1, obj2) 中第一个参数 obj1</p>
+<pre><code class="js">console.log(obj1);
+</code></pre>
+<pre><code>---控制台---
+object
+age: 18
+name: &quot;Alian&quot;
+[[Prototype]]: object
+</code></pre>
+<p>所以咱可以在外面声明一个空数组来借助这个合并的对象 👉</p>
+<pre><code class="js">&lt;script&gt;
+    let obj = &#123;&#125;
+
+    let obj1 = &#123;
+        name: &#39;Alian&#39;
+    &#125;
+
+    let obj2 = &#123;
+        age: 18
+    &#125;
+
+    let conbainObj = Object.assign(obj, obj1, obj2);
+
+    console.log(conbainObj);
+
+    console.log(obj1);
+&lt;/script&gt;
+</code></pre>
+<h2 id="Object-is-方法"><a href="#Object-is-方法" class="headerlink" title="Object.is 方法"></a>Object.is 方法</h2><blockquote>
+<p>这个方法解决了JS以前的一个痛点，判断两个值是否相等，以前的 “&#x3D;&#x3D;” 和“&#x3D;&#x3D;&#x3D;” 无法判断 NaN 是否相等。这个Object.is属于是和这个“&#x3D;&#x3D;&#x3D;”几乎一致</p>
+</blockquote>
+<pre><code class="js">&lt;script&gt;
+    console.log(Object.is(5, 5)); // true
+
+    console.log(Object.is(5, &quot;5&quot;));  // false
+
+    // === 和 Object.is 同样都是判断不了两个对象是否相等
+
+    console.log(Object.is(&#123;&#125;, &#123;&#125;)) // false
+
+    console.log(&#123;&#125; === &#123;&#125;)  // false
+&lt;/script&gt;
+</code></pre>
+<h2 id="唯一的两点不同就是NaN的判断和-0与-0的判断"><a href="#唯一的两点不同就是NaN的判断和-0与-0的判断" class="headerlink" title="唯一的两点不同就是NaN的判断和+0与-0的判断"></a>唯一的两点不同就是<code>NaN的判断</code>和<code>+0与-0的判断</code></h2><p>代码示例 👉</p>
+<h3 id="NaN"><a href="#NaN" class="headerlink" title="NaN"></a>NaN</h3><p>使用场景：当咱接受到两个处理过的变量，就可以使用Object.is来进行判断，进行判断传过来的是不是一个合法的数据</p>
+<p>代码示例 👉</p>
+<pre><code class="js">&lt;script&gt;
+    console.log(NaN === NaN); // false
+
+    console.log(Object.is(NaN, NaN));  // true
+&lt;/script&gt;
+</code></pre>
+<h3 id="Object-is-判断-0-和-0-是相等的，而-x3D-x3D-x3D-判断-0-和-0是不相等的"><a href="#Object-is-判断-0-和-0-是相等的，而-x3D-x3D-x3D-判断-0-和-0是不相等的" class="headerlink" title="Object.is 判断 +0 和 -0 是相等的，而 &#x3D;&#x3D;&#x3D; 判断 +0 和 -0是不相等的"></a>Object.is 判断 +0 和 -0 是相等的，而 &#x3D;&#x3D;&#x3D; 判断 +0 和 -0是不相等的</h3><p>代码示例 👉</p>
+<pre><code class="js">&lt;script&gt;
+    console.log(+0 === -0);  // false
+    console.log(Object.is(+0, -0));  // true
+&lt;/script&gt;
+</code></pre>
+
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls"
                 data-autoplay="false">
@@ -307,7 +428,7 @@ pic_TV.jpg
             <div class="box sticky animated fadeInRight faster">
                 <div id="toc" class="subbox">
                     <h4>Contents</h4>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83"><span class="toc-number">1.</span> <span class="toc-text">一、命名规范</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E5%91%BD%E5%90%8D"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 项目文件命名</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-1-%E9%A1%B9%E7%9B%AE%E5%90%8D"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1.1 项目名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-2-%E7%9B%AE%E5%BD%95%E5%90%8D"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.1.2 目录名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-3-%E5%9B%BE%E5%83%8F%E6%96%87%E4%BB%B6%E5%90%8D"><span class="toc-number">1.1.3.</span> <span class="toc-text">1.1.3 图像文件名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-4-HTML-%E6%96%87%E4%BB%B6%E5%90%8D"><span class="toc-number">1.1.4.</span> <span class="toc-text">1.1.4 HTML 文件名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-5-CSS-%E6%96%87%E4%BB%B6%E5%90%8D"><span class="toc-number">1.1.5.</span> <span class="toc-text">1.1.5 CSS 文件名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-6-JavaScript-%E6%96%87%E4%BB%B6%E5%90%8D"><span class="toc-number">1.1.6.</span> <span class="toc-text">1.1.6 JavaScript 文件名</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-Vue-%E7%BB%84%E4%BB%B6%E5%91%BD%E5%90%8D"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 Vue 组件命名</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-1-%E5%8D%95%E6%96%87%E4%BB%B6%E7%BB%84%E4%BB%B6%E5%90%8D"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.2.1 单文件组件名</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E6%8B%93%E5%B1%95"><span class="toc-number">1.</span> <span class="toc-text">对象拓展</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E6%8B%93%E5%B1%95-1"><span class="toc-number">1.1.</span> <span class="toc-text">对象拓展</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7-%E2%80%93-%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%86%99%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">对象属性 – 表达式写法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%80%A6-%E5%B1%95%E5%BC%80%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.3.</span> <span class="toc-text">… 展开运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-assign%E6%96%B9%E6%B3%95"><span class="toc-number">1.4.</span> <span class="toc-text">Object.assign方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-is-%E6%96%B9%E6%B3%95"><span class="toc-number">1.5.</span> <span class="toc-text">Object.is 方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%94%AF%E4%B8%80%E7%9A%84%E4%B8%A4%E7%82%B9%E4%B8%8D%E5%90%8C%E5%B0%B1%E6%98%AFNaN%E7%9A%84%E5%88%A4%E6%96%AD%E5%92%8C-0%E4%B8%8E-0%E7%9A%84%E5%88%A4%E6%96%AD"><span class="toc-number">1.6.</span> <span class="toc-text">唯一的两点不同就是NaN的判断和+0与-0的判断</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#NaN"><span class="toc-number">1.6.1.</span> <span class="toc-text">NaN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Object-is-%E5%88%A4%E6%96%AD-0-%E5%92%8C-0-%E6%98%AF%E7%9B%B8%E7%AD%89%E7%9A%84%EF%BC%8C%E8%80%8C-x3D-x3D-x3D-%E5%88%A4%E6%96%AD-0-%E5%92%8C-0%E6%98%AF%E4%B8%8D%E7%9B%B8%E7%AD%89%E7%9A%84"><span class="toc-number">1.6.2.</span> <span class="toc-text">Object.is 判断 +0 和 -0 是相等的，而 &#x3D;&#x3D;&#x3D; 判断 +0 和 -0是不相等的</span></a></li></ol></li></ol></li></ol>
                 </div>
             </div>
             
