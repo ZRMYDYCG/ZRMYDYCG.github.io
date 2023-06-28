@@ -179,7 +179,7 @@
    |——服务端部署 : 可以让每一个人可以访问应用
 |——服务端部署
 </code></pre>
-<h2 id="为什么学习-Node-js"><a href="#为什么学习-Node-js" class="headerlink" title="为什么学习 Node.js ?"></a>为什么学习 Node.js ?</h2><p><img src="/post/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E2%80%94%E2%80%94Node.js/image.png" alt="Alt text"></p>
+<h2 id="为什么学习-Node-js"><a href="#为什么学习-Node-js" class="headerlink" title="为什么学习 Node.js ?"></a>为什么学习 Node.js ?</h2><p><img src="/post/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E2%80%94%E2%80%94Node.js/image-9.png" alt="Alt text"></p>
 <h2 id="Node-js-是什么"><a href="#Node-js-是什么" class="headerlink" title="Node.js 是什么 ?"></a>Node.js 是什么 ?</h2><p><img src="/post/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E2%80%94%E2%80%94Node.js/image-1.png" alt="Alt text"></p>
 <h2 id="Node-js-的作用"><a href="#Node-js-的作用" class="headerlink" title="Node.js 的作用"></a>Node.js 的作用</h2><ol>
 <li>开发服务端应用</li>
@@ -228,7 +228,7 @@ PS D:\blog\Myblog&gt;
 <h2 id="Node-js-初体验"><a href="#Node-js-初体验" class="headerlink" title="Node.js 初体验"></a>Node.js 初体验</h2><p><img src="/post/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E2%80%94%E2%80%94Node.js/image-7.png" alt="Alt text"></p>
 <h2 id="Node-js-注意点"><a href="#Node-js-注意点" class="headerlink" title="Node.js 注意点"></a>Node.js 注意点</h2><p><img src="/post/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E2%80%94%E2%80%94Node.js/image-8.png" alt="Alt text"></p>
 <h2 id="Buffer"><a href="#Buffer" class="headerlink" title="Buffer"></a>Buffer</h2><p>Buffer 中文译为 <code>缓冲区</code>，是类似于 Array 的 <code>对象</code>，用于表示固定长度的字节序列，换而言之，Buffer 就是<code>一段固定长度的内存空间</code>，用于处理<code>二进制数据</code>。</p>
-<p><img src="/post/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E2%80%94%E2%80%94Node.js/image_buffer01.png" alt="Alt text"></p>
+<p><img src="/post/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E2%80%94%E2%80%94Node.js/image_buffer01.png"></p>
 <h3 id="Buffer-特点"><a href="#Buffer-特点" class="headerlink" title="Buffer 特点"></a>Buffer 特点</h3><ol>
 <li><p>与数组不同，Buffer 大小固定且无法调整</p>
 </li>
@@ -237,7 +237,7 @@ PS D:\blog\Myblog&gt;
 <li><p>每个元素的大小为 1 字节 （8 byte &#x3D; 1 字节）</p>
 </li>
 </ol>
-<p><img src="/post/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E2%80%94%E2%80%94Node.js/image.png" alt="Alt text"></p>
+<p><img src="/post/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E2%80%94%E2%80%94Node.js/image10.png"></p>
 <h3 id="Buffer-创建"><a href="#Buffer-创建" class="headerlink" title="Buffer 创建"></a>Buffer 创建</h3><ol>
 <li>alloc 方法</li>
 </ol>
@@ -248,20 +248,20 @@ PS D:\blog\Myblog&gt;
 <p>控制台打印 buf 变量</p>
 <pre><code class="js">console.log(buf)
 </code></pre>
-<p><img src="/post/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E2%80%94%E2%80%94Node.js/image-1.png" alt="Alt text"></p>
+<p><img src="/post/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E2%80%94%E2%80%94Node.js/image-11.png"></p>
 <ol start="2">
 <li>allocUnsafe</li>
 </ol>
 <pre><code class="js">let buf = Buffer.allocUnsafe(10)
 </code></pre>
-<p><img src="/post/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E2%80%94%E2%80%94Node.js/image-2.png" alt="Alt text"></p>
+<p><img src="/post/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E2%80%94%E2%80%94Node.js/image-12.png" alt="Alt text"></p>
 <p>它所创建的 Buffer 可能会包含旧的内存数据。</p>
 <pre><code class="js">// let buf = Buffer.allocUnsafe(10)
 let buf_2 = Buffer.allocUnsafe(10000)
 </code></pre>
 <pre><code class="js">console.log(buf_2)
 </code></pre>
-<p><img src="/post/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E2%80%94%E2%80%94Node.js/image-3.png" alt="Alt text"></p>
+<p><img src="/post/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E2%80%94%E2%80%94Node.js/image-13.png" alt="Alt text"></p>
 <p>对于这样的 Buffer 在使用的时候需要格外小心。但是使用这种方式去创建 Buffer，它的速度比 alloc 方式创建要快，因为它不需要做旧数据归零这一操作。</p>
 <ol start="3">
 <li>from 方法</li>
@@ -273,8 +273,8 @@ let buf_4 = Buffer.from([105,108,111,118,101,121,111,117])
 <pre><code class="js">console.log(buf_3)
 console.log(buf_4.toString())
 </code></pre>
-<p><img src="/post/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E2%80%94%E2%80%94Node.js/image-4.png" alt="Alt text"></p>
-<p><img src="/post/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E2%80%94%E2%80%94Node.js/image-5.png" alt="Alt text"></p>
+<p><img src="/post/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E2%80%94%E2%80%94Node.js/image-14.png" alt="Alt text"></p>
+<p><img src="/post/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E2%80%94%E2%80%94Node.js/image-15.png" alt="Alt text"></p>
 <h2 id="fs-模块"><a href="#fs-模块" class="headerlink" title="fs 模块"></a>fs 模块</h2><p><code>fs</code> &#x3D;&gt; <code>file system</code> ‘文件操作系统’</p>
 <h3 id="fs-模块作用"><a href="#fs-模块作用" class="headerlink" title="fs 模块作用"></a>fs 模块作用</h3><p>fs 模块可以实现与硬盘的交互，例如文件的<code>创建、删除、重命名、移动</code>，还有<code>文件内容的写入、读取以及文件夹的相关操作</code></p>
 <h3 id="fs模块-写入文件"><a href="#fs模块-写入文件" class="headerlink" title="fs模块-写入文件"></a>fs模块-写入文件</h3><pre><code>/**
@@ -442,7 +442,7 @@ ws.close()
                     </dl>
                 </div>
                 <ul>
-                    <li><a href="/">6 <p>Articles</p></a></li>
+                    <li><a href="/">13 <p>Articles</p></a></li>
                     <li><a href="/categories">0 <p>Categories</p></a></li>
                     <li><a href="/tags">3 <p>Tags</p></a></li>
                 </ul>
