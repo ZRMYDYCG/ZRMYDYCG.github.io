@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*发请求 可以类似于打电话: */
+
+        //1. 装电话 安装电话的过程其实就是创建这个对象
+        // javascript 中有一个内置对象专门用来处理ajax数据交互，该对象是: XMLHttpRequest
+
+        let ajax = new XMLHttpRequest();
+
+        //2. 连电话线 连电话线的过程其实就是建立前端和后台之间的连接
+        // 建立连接的方法是 XMLHttpRequest对象 的一个方法 send
+
+        ajax.open('get', './data.txt', true);
+
+        //3. 打电话 打电话的过程其实就是向后台数据库发送请求
+        // 发送请求的方法是 XMLHttpRequest对象 的一个方法 send
+
+        ajax.send();
+
+        /*
+        * 当电话打通后，服务器会自动地解析请求中需要的数据，并发送数据
+        * 前端接下来需要监听数据是否接受到，如果到了，就可以开始使用数据进行渲染
+        */
+
+        //4. 监测数据 在 XMLHttpRequest对象 有一个 onreadystatechange事件
+        // onreadystatechange事件可以监测数据响应到什么程度
+        // on readystate（通信状态码） change（改变）
+        // 在数据交互的过程中 每当通信状态码改变的时候 就会触发这个事件
+
+        ajax.onreadystatechange = function () {
+            //如果通信状态码为 4 就获取数据
+            //XMLHttpRequest对象的readyState属性就是通信状态码
+            if (ajax.readyState == 4) {
+                //响应数据就是XMLHttpRequest对象的responseRequest属性
+                //还需监测请求响应过程中是否出问题
+                // 通过响应状态码 state 来监测
+                if (ajax.state == 200 || ajax.state == 304) {
+                    console.log(ajax.responseRequest)
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

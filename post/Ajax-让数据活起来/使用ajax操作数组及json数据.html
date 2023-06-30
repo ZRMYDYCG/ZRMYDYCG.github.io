@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 引入封装的 ajax -->
+    <script src="./ajax.js"></script>
+    <script>
+        ajax('./data1.txt', 'post', true, function (res) {
+            console.log(res, typeof res);
+            cosole.log(eval(res))
+        })
+
+        ajax('./data.json', 'post', function (res1) {
+            console.log(res1, typeof res1);
+            cosole.log(eval(res1))
+        })
+    </script>
+</body>
+
+</html>

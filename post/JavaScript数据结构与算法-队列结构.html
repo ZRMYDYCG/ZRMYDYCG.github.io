@@ -5,15 +5,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>数组拓展 - WebDesiner-计流年</title>
+    <title>JavaScript数据结构与算法-队列结构 - WebDesiner-计流年</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="TriDiamond Obsidian,"> 
-    <meta name="description" content="数组扩展数组扩展
-|—— `...` 展开运算符十分重要，有着复制，合并数组的作用，也可以和数组解构赋值进行结合
-|—— `Array.from` 也是十分重要的，它可以将类数组转化为数组
-|—— ,"> 
+    <meta name="description" content="初识队列结构队列结构的封装相似于栈结构的封装
+简单封装代码如下
+class Quequ &amp;#123;
+    constructor() &amp;#123;
+        this.items = [],"> 
     <meta name="author" content="早起的闽儿"> 
     <link rel="alternative" href="atom.xml" title="WebDesiner-计流年" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -77,7 +78,7 @@
     <div class="navigation animated fadeIn fast delay-1s">
         <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://example.com">
         <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-        <h3 class="subtitle">数组拓展</h3>
+        <h3 class="subtitle">JavaScript数据结构与算法-队列结构</h3>
         <div class="social">
             <!--        <div class="like-icon">-->
             <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -109,22 +110,22 @@
                 
                 <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
                 
-                June 27, 2023
+                June 29, 2023
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/post/arcical-%E6%95%B0%E7%BB%84%E6%8B%93%E5%B1%95.html" title="数组拓展" class="">数组拓展</a>
+            <h3 class="post-title animated fadeInDown"><a href="/post/JavaScript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E9%98%9F%E5%88%97%E7%BB%93%E6%9E%84.html" title="JavaScript数据结构与算法-队列结构" class="">JavaScript数据结构与算法-队列结构</a>
             </h3>
             
             <p class="post-count animated fadeInDown">
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>Words count</i>
-                    7.6k
+                    1.2k
                 </span>
                 
                 
                 <span>
                     <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                    7 mins.
+                    1 mins.
                 </span>
                 
                 
@@ -137,7 +138,7 @@
             </p>
             
             
-            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/ES6/" rel="tag">ES6</a></li></ul>
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" rel="tag">JavaScript数据结构与算法</a></li></ul>
             
         </div>
     </div>
@@ -158,244 +159,46 @@
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn">
-            <h1 id="数组扩展"><a href="#数组扩展" class="headerlink" title="数组扩展"></a>数组扩展</h1><pre><code>数组扩展
-|—— `...` 展开运算符十分重要，有着复制，合并数组的作用，也可以和数组解构赋值进行结合
-|—— `Array.from` 也是十分重要的，它可以将类数组转化为数组
-|—— `Array.of` 这个方法了解一下，其实就是一种创建数组的方式，也是Array创建数组的一个改进
-|—— `find` 和 `findIndex` 方法就是查找数组中第一个符合条件的的元素，属于是数组实例身上的方法
-|—— `fill` 方法是很重要的，它可以对数组进行填充和替换
-|—— `flat() flatMap` 方法是数组的扁平化处理，其中flatMap可以实现多维嵌套数组的处理，将对象中的数组抽取出来实现扁平化。
-</code></pre>
-<h2 id="展开运算符"><a href="#展开运算符" class="headerlink" title="... 展开运算符"></a><code>...</code> 展开运算符</h2><p>作用： </p>
-<blockquote>
-<p>快速地进行数组的复制，数组的合并，能够与解构进行结合。</p>
-</blockquote>
-<h3 id="数组的复制（注意是-浅复制-）"><a href="#数组的复制（注意是-浅复制-）" class="headerlink" title="数组的复制（注意是 浅复制 ）"></a>数组的复制（注意是 <code>浅复制</code> ）</h3><p>咱以前的复制方案 👉</p>
-<pre><code class="js">&lt;script&gt;
-    // 1-(...)展开运算符
-    let arr = [1, 2, 3]
-    let arr2 = arr
-    let arr3 = []
-    for (let i = 0; i &lt; arr.length; i++) &#123;
-        arr3[i] = arr[i];
+            <h1 id="初识队列结构"><a href="#初识队列结构" class="headerlink" title="初识队列结构"></a>初识队列结构</h1><h1 id="队列结构的封装"><a href="#队列结构的封装" class="headerlink" title="队列结构的封装"></a>队列结构的封装</h1><p>相似于栈结构的封装</p>
+<p>简单封装代码如下</p>
+<pre><code class="js">class Quequ &#123;
+    constructor() &#123;
+        this.items = []
     &#125;
-    // concat:连接字符串  concat() 参数为空不连
-    let arr4 = arr.concat()
-    console.log(&#39;1.&#39;, arr2, &#39;2.&#39;, arr3, &#39;3.&#39;, arr4);
-&lt;/script&gt;
-</code></pre>
-<pre><code>---控制台---
-打印出 3 个一样的数组
-</code></pre>
-<p>使用 … 👉</p>
-<pre><code class="js">&lt;script&gt;
-    let arr = [1, 2, 3]
-    let arr2 = [...arr]
-    arr2.pop()
-    console.log(arr, arr2);
-&lt;/script&gt;
-</code></pre>
-<p>使用…(展开运算符)复制，<code>且不会改变原来的数组 arr</code>，这样来看这个（[…arr]），有没有一种就是把 arr 这个数组中括号打烂来，放到新家的感觉</p>
-<h3 id="数组的合并"><a href="#数组的合并" class="headerlink" title="数组的合并"></a>数组的合并</h3><p>concat方案 👉</p>
-<pre><code class="js">&lt;script&gt;
-    let arr1 = [1, 2, 3]
-    let arr2 = [4, 5, 6]
-    let arr3 = arr1.concat(arr2)
-    console.log(arr3)
-&lt;/script&gt;
-</code></pre>
-<p>那试试咱学地这个展开运算符 👉</p>
-<pre><code class="js">&lt;script&gt;
-  let arr1 = [1, 2, 3]
-  let arr2 = [4, 5, 6]
-  let arr3 = [...arr1, ...arr2]
-  console.log(arr3) // [1,2,3,4,5,6]
-&lt;/script&gt;
-</code></pre>
-<h3 id="与解构进行结合"><a href="#与解构进行结合" class="headerlink" title="与解构进行结合"></a>与解构进行结合</h3><pre><code class="js">&lt;script&gt;
-    let arr1 = [1, 2, 3, 4, 5, 6, 7, 8]
-    let [a, b, c] = arr1
-    console.log(a, b, c) // 1 2 3
-&lt;/script&gt;
-</code></pre>
-<blockquote>
-<p>那 … 的用武之处在哪里呢？咱这样写试试 ：<code>[a,b,...c] = arr1</code> , 咱在控制台就发现这个 c 接受了剩余元素形成了一个数组</p>
-</blockquote>
-<p><strong>注意</strong></p>
-<p><code>...</code> 在解构中的使用,只能放在最后一个元素身上,也就是把前边的元素被特定的元素取走,剩余的交个最后一个元素。</p>
-<h2 id="Array-from"><a href="#Array-from" class="headerlink" title="Array.from"></a>Array.from</h2><p>首先讲讲这个 <code>arguments</code> 方法，<code>arguments</code> 方法能够在没有形参的情况下拿到所有实参的内容，但是 <code>arguments</code> 不能使用数组的方法，它是类数组。</p>
-<p>代码示例 👉</p>
-<pre><code class="js">&lt;script&gt;
-  function test() &#123;
-      console.log(arguments);
-      console.log(arguments.pop());
-  &#125;
-  test(1, 2, 3, 4)
-&lt;/script&gt;
-</code></pre>
-<pre><code>---控制台---
-Arguments(4)
-Uncaught TypeError: arguments.pop() is not a function
-</code></pre>
-<p>于是乎，这个 <code>Array.from()</code> 就可以将这些类似数组的东西转化成数组</p>
-<p>代码示例 👉</p>
-<pre><code class="js">&lt;script&gt;
-  function test() &#123;
-      console.log(Array.from(arguments));
-  &#125;
-  test(1, 2, 3, 4)
-&lt;/script&gt;
-</code></pre>
-<pre><code>---控制台---
-Array(4)
-</code></pre>
-<p>再比如这个节点数组 </p>
-<p>代码示例 👉</p>
-<pre><code class="js">&lt;ul&gt;
-  &lt;li&gt;1&lt;/li&gt;
-  &lt;li&gt;2&lt;/li&gt;
-  &lt;li&gt;3&lt;/li&gt;
-  &lt;li&gt;4&lt;/li&gt;
-&lt;/ul&gt;
 
-&lt;script&gt;
-  let list = document.querySelectorAll(&#39;ul li&#39;)
-  console.log(list);
-  list.pop()
-&lt;/script&gt;
+    outquequ() &#123;
+        return this.items.shift()
+    &#125;
+
+    enterqueqe(data) &#123;
+        this.tiems.push(data)
+    &#125;
+
+    front() &#123;
+        // return this.items[0]
+        return this.item.at(0)
+    &#125;
+
+    isEmpty() &#123;
+        return this.items.length === 0
+    &#125;
+
+    size() &#123;
+        return this.items.length
+    &#125;
+
+    clear() &#123;
+        this.items = []
+    &#125;
+
+    toString() &#123;
+        console.log(items.toString())
+    &#125;
+&#125;
 </code></pre>
-<pre><code>---控制台---
-NodeList(4)
-Uncaught TypeError: list.pop() is not a function
-</code></pre>
-<p>那咱用Array.from()将其转换一下，再用fliter方法将下标大于 2 的 li 节点打印出来</p>
-<pre><code class="js">&lt;ul&gt;
-  &lt;li&gt;1&lt;/li&gt;
-  &lt;li&gt;2&lt;/li&gt;
-  &lt;li&gt;3&lt;/li&gt;
-  &lt;li&gt;4&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;script&gt;
-  let list = document.querySelectorAll(&#39;ul li&#39;)
-  let arr = Array.from(list).filter(function (item, index) &#123;
-      return index &gt; 2
-  &#125;)
-  console.log(arr);
-&lt;/script&gt;
-</code></pre>
-<h2 id="Array-of"><a href="#Array-of" class="headerlink" title="Array.of"></a>Array.of</h2><p><code>Array.of</code> 方法可以弥补 <code>Array</code> 方法创建数组的短板，也就是当 <code>Array()</code> 里边只传一个参数的话，就是生成该参数个数的空数组。</p>
-<p>代码示例 👉</p>
-<pre><code class="js">&lt;script&gt;
-  let arr = [1, 2, 3]
-  let arr1 = Array(3)
-  let arr2 = Array.of(1, 2, 3)
-  console.log(&#39;1&#39;,arr,&#39;2&#39;, arr1,&#39;3&#39;, arr2);
-&lt;/script&gt;
-</code></pre>
-<pre><code>---控制台---
-1. Array(3) [1,2,3] 
-2. Array(3) [] length 为 3 的空数组
-3. Array(3) [1,2,3]
-</code></pre>
-<h2 id="flat-flatMap"><a href="#flat-flatMap" class="headerlink" title="flat() flatMap()"></a>flat() flatMap()</h2><blockquote>
-<p>可以将嵌套的数组拉平，变成一维的数组</p>
-</blockquote>
-<p>代码示例 👉</p>
-<pre><code class="js">&lt;script&gt;
-    let arr = [1, 2, 3, [4, 5, 6]]
-
-    // 进行数组的扁平化处理 将原来的二维的嵌套数组转化为一维数组
-    let arr1 = arr.flat()
-
-    console.log(&#39;1&#39;,arr,&#39;2&#39;,arr1);
-&lt;/script&gt;
-</code></pre>
-<pre><code>---控制台---
-1. Array(4) [1, 2, 3, [4, 5, 6]]
-2. Array(6) [1,2,3,4,5,6]
-</code></pre>
-<p>那当场景逐渐变得复杂了呢？比如 👉</p>
-<pre><code class="js">&lt;script&gt;
-    let arr = [
-        &#123;
-            name: &quot;夜晚&quot;,
-            list: [&quot;🎑&quot;, &quot;🌠&quot;, &quot;🌚&quot;]
-        &#125;,
-        &#123;
-            name: &quot;白天&quot;,
-            list: [&quot;⛈️&quot;, &quot;🌤️&quot;, &quot;🌝&quot;]
-        &#125;
-    ]
-
-    let arr1 = arr.flat()
-
-    console.log(arr1);
-&lt;/script&gt;
-</code></pre>
-<p><img src="/post/arcical-%E6%95%B0%E7%BB%84%E6%8B%93%E5%B1%95/image-8.png" alt="Alt text"></p>
-<p>其实ES6考虑地很周到，可以用 <code>flatMap()</code> 方法来实现这种嵌套的关系</p>
-<p>代码示例 👉</p>
-<pre><code class="js">&lt;script&gt;
-    let arr = [
-        &#123;
-            name: &quot;夜晚&quot;,
-            list: [&quot;🎑&quot;, &quot;🌠&quot;, &quot;🌚&quot;]
-        &#125;,
-        &#123;
-            name: &quot;白天&quot;,
-            list: [&quot;⛈️&quot;, &quot;🌤️&quot;, &quot;🌝&quot;]
-        &#125;
-    ]
-    let res = arr.flatMap(function (item) &#123;
-        return item.list
-    &#125;)
-
-    console.log(res);
-&lt;/script&gt;
-</code></pre>
-<pre><code>---控制台---
-Array(6) [&quot;🎑&quot;, &quot;🌠&quot;, &quot;🌚&quot;,&quot;⛈️&quot;, &quot;🌤️&quot;, &quot;🌝&quot;]
-</code></pre>
-<h2 id="fill-方法"><a href="#fill-方法" class="headerlink" title="fill 方法"></a>fill 方法</h2><blockquote>
-<p>是一种数组填充替换方法</p>
-</blockquote>
-<pre><code class="js">&lt;script&gt;
-  // 填充:
-  let arr = new Array(3).fill(&quot;hello&quot;)
-
-  console.log(&#39;1&#39;,arr);
-
-  // 替换: 后边继续添加参数 从哪个开始 从哪个结束
-  let arr1 = [11, 22, 33, 44, 55, 66]
-
-  console.log(&#39;2&#39;,arr1.fill(&#39;替换值&#39;, 0, 3))
-&lt;/script&gt;
-</code></pre>
-<pre><code>---控制台---
-1. Array(3) [&quot;hello&quot;,&quot;hello&quot;,&quot;hello&quot;]
-
-2. Array(6) [&quot;替换值&quot;,&quot;替换值&quot;,&quot;替换值&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;]
-</code></pre>
-<h2 id="find-findIndex（-findLast-findLastindex）"><a href="#find-findIndex（-findLast-findLastindex）" class="headerlink" title="find findIndex（ findLast findLastindex）"></a>find findIndex（ findLast findLastindex）</h2><p>find 方法就是从数组中找到符合条件的第一个数组元素</p>
-<p>findIndex 方法便是从数组中找到符合条件的第一个数组元素的下标</p>
-<p>findLast findLastIndex 顾名思义就是从该数组的后面开始</p>
-<p>代码示例 👉</p>
-<pre><code class="js">&lt;script&gt;
-    let arr = [11, 12, 13, 14, 15]
-
-    let res = arr.find(function (item) &#123;
-        return item &gt; 13
-    &#125;)
-
-    let resIndex = arr.findIndex(function (item) &#123;
-        return item &gt; 13
-    &#125;)
-
-    console.log(res, resIndex);
-&lt;/script&gt;
-</code></pre>
-
+<p>我们知道，封装一个好的数据结构是要用来提升性能和效率的，如上的简单封装代码中的 <code>shift</code> 方法，这个方法调用起来确实很方便，但事实上在内存划分的时候是性能消耗很大的，当一个数组的长度巨大时，每调用 <code>shift</code> 方法，数组的队头弹出一个元素后，函数内部的操作是，后面的元素都向前移动一位，进而形成新的数组，这样的内存消耗是巨大的。</p>
+<p>优化代码</p>
+<h1 id="队列结构的应用"><a href="#队列结构的应用" class="headerlink" title="队列结构的应用"></a>队列结构的应用</h1><h1 id="双端队列"><a href="#双端队列" class="headerlink" title="双端队列"></a>双端队列</h1>
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls"
                 data-autoplay="true">
@@ -455,7 +258,7 @@ Array(6) [&quot;🎑&quot;, &quot;🌠&quot;, &quot;🌚&quot;,&quot;⛈️&quot
             <div class="box sticky animated fadeInRight faster">
                 <div id="toc" class="subbox">
                     <h4>Contents</h4>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E6%89%A9%E5%B1%95"><span class="toc-number">1.</span> <span class="toc-text">数组扩展</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B1%95%E5%BC%80%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.1.</span> <span class="toc-text">... 展开运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E5%A4%8D%E5%88%B6%EF%BC%88%E6%B3%A8%E6%84%8F%E6%98%AF-%E6%B5%85%E5%A4%8D%E5%88%B6-%EF%BC%89"><span class="toc-number">1.1.1.</span> <span class="toc-text">数组的复制（注意是 浅复制 ）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E5%90%88%E5%B9%B6"><span class="toc-number">1.1.2.</span> <span class="toc-text">数组的合并</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8E%E8%A7%A3%E6%9E%84%E8%BF%9B%E8%A1%8C%E7%BB%93%E5%90%88"><span class="toc-number">1.1.3.</span> <span class="toc-text">与解构进行结合</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Array-from"><span class="toc-number">1.2.</span> <span class="toc-text">Array.from</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Array-of"><span class="toc-number">1.3.</span> <span class="toc-text">Array.of</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#flat-flatMap"><span class="toc-number">1.4.</span> <span class="toc-text">flat() flatMap()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fill-%E6%96%B9%E6%B3%95"><span class="toc-number">1.5.</span> <span class="toc-text">fill 方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#find-findIndex%EF%BC%88-findLast-findLastindex%EF%BC%89"><span class="toc-number">1.6.</span> <span class="toc-text">find findIndex（ findLast findLastindex）</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9D%E8%AF%86%E9%98%9F%E5%88%97%E7%BB%93%E6%9E%84"><span class="toc-number">1.</span> <span class="toc-text">初识队列结构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%98%9F%E5%88%97%E7%BB%93%E6%9E%84%E7%9A%84%E5%B0%81%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">队列结构的封装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%98%9F%E5%88%97%E7%BB%93%E6%9E%84%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-number">3.</span> <span class="toc-text">队列结构的应用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97"><span class="toc-number">4.</span> <span class="toc-text">双端队列</span></a></li></ol>
                 </div>
             </div>
             

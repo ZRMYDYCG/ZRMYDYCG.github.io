@@ -5,12 +5,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>JavaScript-数据结构与算法-栈结构 - WebDesiner-计流年</title>
+    <title>CSS架构之BEM设计模式 - WebDesiner-计流年</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="TriDiamond Obsidian,"> 
-    <meta name="description" content="栈结构初识栈结构栈(stack) 又名堆栈，它是一种运算受限的线性表。限定仅在表尾进行插入和删除操作的线性表。这一端被称为栈顶，相对地，把另一端称为栈底。向一个栈插入新元素又称作进栈、入栈或压栈，它,"> 
+    <meta name="description" content="为什么需要CSS架构？其实在日常开发CSS当中，会遇到许多的问题，使用设计模式能够很好的解决。例如在日常开发项目，需要组件化时，组件内部的class样式类管理就非常的杂乱。大部分公司的命名规则还是只,"> 
     <meta name="author" content="早起的闽儿"> 
     <link rel="alternative" href="atom.xml" title="WebDesiner-计流年" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -74,7 +74,7 @@
     <div class="navigation animated fadeIn fast delay-1s">
         <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://example.com">
         <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-        <h3 class="subtitle">JavaScript-数据结构与算法-栈结构</h3>
+        <h3 class="subtitle">CSS架构之BEM设计模式</h3>
         <div class="social">
             <!--        <div class="like-icon">-->
             <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -106,22 +106,22 @@
                 
                 <a href="javascript:;"><b>「 </b>Article<b> 」</b></a>
                 
-                June 28, 2023
+                June 29, 2023
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%A0%88%E7%BB%93%E6%9E%84.html" title="JavaScript-数据结构与算法-栈结构" class="">JavaScript-数据结构与算法-栈结构</a>
+            <h3 class="post-title animated fadeInDown"><a href="/post/CSS%E6%9E%B6%E6%9E%84%E4%B9%8BBEM%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html" title="CSS架构之BEM设计模式" class="">CSS架构之BEM设计模式</a>
             </h3>
             
             <p class="post-count animated fadeInDown">
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>Words count</i>
-                    5.7k
+                    3.3k
                 </span>
                 
                 
                 <span>
                     <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                    5 mins.
+                    3 mins.
                 </span>
                 
                 
@@ -134,7 +134,7 @@
             </p>
             
             
-            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" rel="tag">JavaScript数据结构与算法</a></li></ul>
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/ES6/" rel="tag">ES6</a></li></ul>
             
         </div>
     </div>
@@ -155,203 +155,86 @@
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn">
-            <h1 id="栈结构"><a href="#栈结构" class="headerlink" title="栈结构"></a>栈结构</h1><h2 id="初识栈结构"><a href="#初识栈结构" class="headerlink" title="初识栈结构"></a>初识栈结构</h2><p>栈(stack) 又名堆栈，<strong>它是一种运算受限的线性表</strong>。限定仅在表尾进行插入和删除操作的线性表。这一端被称为栈顶，相对地，把另一端称为栈底。向一个栈插入新元素又称作进栈、入栈或压栈，它是把新元素放到栈顶元素的上面，使之成为新的栈顶元素，从一个栈删除元素称作出栈或退栈，它是把栈顶元素删除掉使其相邻的元素成为新的栈顶元素。</p>
-<p>简而言之，栈是一种遵从后进先出（LIFO）原则的有序集合。新添加的或待删除的元素都保存在栈的 同一端，称作栈顶，另一端就叫栈底。在栈里，新元素都靠近栈顶，旧元素都接近栈底。 注：LIFO：last in first out 图例：</p>
-<p><img src="/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%A0%88%E7%BB%93%E6%9E%84/image-1.png" alt="进出栈"></p>
-<p>JavaScript 中可以通过数组实现栈数据结构。栈是一种遵循后进先出（LIFO）原则的数据结构，它只允许在栈顶进行插入和删除操作。</p>
-<h2 id="栈结构的封装"><a href="#栈结构的封装" class="headerlink" title="栈结构的封装"></a>栈结构的封装</h2><h3 id="栈声明方法举例"><a href="#栈声明方法举例" class="headerlink" title="栈声明方法举例"></a>栈声明方法举例</h3><p><code>push(element(s))：</code>添加一个（或几个）新元素到栈顶。</p>
-<p><code>pop()：</code>移除栈顶的元素，同时返回被移除的元素。</p>
-<p><code>peek()：</code>返回栈顶的元素，不对栈做任何修改（这个方法不会移除栈顶的元素，仅仅返 回它）。</p>
-<p><code>isEmpty()：</code>如果栈里没有任何元素就返回true，否则返回false。</p>
-<p><code>clear()：</code>移除栈里的所有元素。</p>
-<p><code>size()：</code>返回栈里的元素个数。这个方法和数组的length属性很类似。</p>
-<h3 id="封装-function"><a href="#封装-function" class="headerlink" title="封装-function"></a>封装-function</h3><p><strong>添加</strong></p>
-<p>实现添加的可以使用push。这个方法负责往栈里添加新元素，有一点很重要：该方法只添加元素到栈顶，也就是栈的末尾。 push 方法可以这样写：</p>
-<pre><code class="js">this.push = function(element)&#123; 
- items.push(element); 
-&#125;; 
-</code></pre>
-<p><strong>移除</strong></p>
-<p>接着来实现移除，主要用来移除栈里的元素，使用的是pop方法。 栈遵从LIFO原则，因此移出的是最后添加进去的元素。 栈的pop方法可以这样写：</p>
-<pre><code class="js">this.pop = function()&#123; 
- return items.pop(); 
-&#125;; 
-</code></pre>
-<p><strong>查看</strong></p>
-<p>查看栈顶元素<br>因为栈顶就是最后进入的元素，类内部是用数组保存元素的，所以访问数组的最后一个元素可以用 length - 1,或者使用 at(-1)</p>
-<pre><code class="js">this.peek = function()&#123; 
-//  return items[items.length-1]; 
-    return items.at(-1)
-&#125;; 
-</code></pre>
-<p><strong>检查栈是否为空</strong></p>
-<p>可以直接使用length &#x3D;&#x3D; 0判断，如果栈为空的话将返回true，否则就返回false</p>
-<pre><code class="js">this.isEmpty = function()&#123; 
- return items.length == 0; 
-&#125;; 
-</code></pre>
-<p><strong>检查栈的长度</strong></p>
-<p>类似于数组的length属性，我们也能实现栈的length。对于集合，最好用size代替length。 因为栈的内部使用数组保存元素，所以能简单地返回栈的长度</p>
-<pre><code class="js">this.size = function()&#123; 
- return items.length; 
-&#125;;
-</code></pre>
-<p>示例代码</p>
-<pre><code class="js">function Stack() &#123; 
-  //保存栈里的元素
-  let items = []; 
-   //添加新元素
-  this.push = function(element)&#123; 
-   items.push(element); 
-  &#125;; 
-  //移除元素
- this.pop = function()&#123; 
-  return items.pop(); 
- &#125;; 
- //查看栈顶元素
- this.peek = function()&#123; 
-   return items[items.length-1]; 
- &#125;; 
- //检查栈是否为空
- this.isEmpty = function()&#123; 
-   return items.length == 0; 
- &#125;; 
- //检查栈的长度
- this.size = function()&#123; 
-   return items.length; 
- &#125;;
- //各种属性和方法的声明
-&#125; 
-</code></pre>
-<h3 id="封装-Class"><a href="#封装-Class" class="headerlink" title="封装-Class"></a>封装-Class</h3><p>代码示例</p>
-<pre><code class="js">&lt;script&gt;
-    class Stack &#123;
-        constructor() &#123;
-            this.items = []
-        &#125;
-
-        pop() &#123;
-            return this.items.pop()
-        &#125;
-
-        push(data) &#123;
-            this.tiems.push(data)
-        &#125;
-
-        peek() &#123;
-            // return this.items[items.length - 1]
-            return this.item.at(-1)
-        &#125;
-
-        isEmpty() &#123;
-                return this.items.length === 0
-        &#125;
-
-        size() &#123;
-                return this.items.length
-        &#125;
-
-        clear() &#123;
-                this.items = []
-        &#125;
-
-        toString() &#123;
-                console.log(items.toString())
-        &#125;
-    &#125;
-
-    let stack = new Stack()
-&lt;/script&gt;
-</code></pre>
-<h2 id="栈结构的应用"><a href="#栈结构的应用" class="headerlink" title="栈结构的应用"></a>栈结构的应用</h2><p>封装栈结构来实现十进制到二进制的转换</p>
+            <h1 id="为什么需要CSS架构？"><a href="#为什么需要CSS架构？" class="headerlink" title="为什么需要CSS架构？"></a>为什么需要CSS架构？</h1><p>其实在日常开发CSS当中，会遇到许多的问题，使用设计模式能够很好的解决。例如在日常开发项目，需要组件化时，组件内部的class样式类管理就非常的杂乱。大部分公司的命名规则还是只有大小驼峰、使用英文等这些基础的命名规则。经常会自己都忘了自己命名的css是啥，使用设计模式就能很好的解决该问题。</p>
+<p>CSS架构也能让html与css更好的解耦，能更好的抽取样式中可复用的部分，使你的html代码更具语义，也符合了HTML5中想让日常开发更具有语义化的理念。了解这些设计模式无疑会使css代码更具模块化，块样式不依赖于页面上的其他元素，因此也较好的避免了遇到级联问题。多人协作的时候，也能高效避免命名重复问题。最重要是提取精华，灵活应用，更加的规范规模化，在达到提高效率的同时兼顾性能。</p>
+<p>最重要的是，不用再为命名CSS绞尽脑汁了。</p>
+<h1 id="BEM的简介"><a href="#BEM的简介" class="headerlink" title="BEM的简介"></a>BEM的简介</h1><p>BEM就是：</p>
+<ul>
+<li><p>B 代表：Block（块），独立实体，独立的意义，每个页面都可以看做是多个Block组成,见下图1-1；</p>
+</li>
+<li><p>E 代表：Element（元素），block 的一部分，没有独立意义，是组件下的一个元素，多个元素形成一个组件，见下图1-2；</p>
+</li>
+<li><p>M 代表：Modifier （修饰符），block 或 element 上的标记，是描述Block或Element的属性或状态，同一Block或Element可以有多个Modifier。</p>
+</li>
+</ul>
+<p>BEM全称BlockElementModifier是由Yandex（俄罗斯最著名的互联网企业）的开发团队提出的前端开发理论。通过Block、Element、Modifier来描述页面，通过 _ 与 – 连接 ，关键就是为了解决多人协作的命名问题。</p>
+<p><img src="/post/CSS%E6%9E%B6%E6%9E%84%E4%B9%8BBEM%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/image.png" alt="1-1block图解"></p>
+<p><img src="/post/CSS%E6%9E%B6%E6%9E%84%E4%B9%8BBEM%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/image-1.png" alt="1-2.Element图解"></p>
+<h1 id="BEM的基础使用"><a href="#BEM的基础使用" class="headerlink" title="BEM的基础使用"></a>BEM的基础使用</h1><h2 id="模块block（）"><a href="#模块block（）" class="headerlink" title="模块block（）"></a>模块block（）</h2><blockquote>
+<p>没有前缀，多个单词用 - 连接，是对一个组件名抽象。</p>
+</blockquote>
 <p>代码示例</p>
-<pre><code class="js">&lt;script&gt;
-    class Stack &#123;
-        constructor() &#123;
-            this.items = []
-        &#125;
-
-        pop() &#123;
-            return this.items.pop()
-        &#125;
-
-        push(data) &#123;
-            this.items.push(data)
-        &#125;
-
-        peek() &#123;
-            // return this.items[items.length - 1]
-            return this.item.at(-1)
-        &#125;
-
-        isEmpty() &#123;
-            return this.items.length === 0
-        &#125;
-
-        size() &#123;
-            return this.items.length
-        &#125;
-
-        clear() &#123;
-            this.items = []
-        &#125;
-
-        toString() &#123;
-            console.log(items.toString())
-        &#125;
-    &#125;
-
-    function convert(decNumber, base) &#123;
-        let remStack = new Stack()
-        let number = decNumber
-        let string = &quot;&quot;
-        let baseString = &quot;0123456789ABCDEF&quot;
-        while (number &gt; 0) &#123;
-            remStack.push(number % base)
-            number = Math.floor(number / base)
-        &#125;
-
-        while (!(remStack.isEmpty())) &#123;
-            string += remStack.pop()
-        &#125;
-
-        return string
-    &#125;
-
-    convert(50, 2) // 二进制转换
-    convert(50, 8) // 八进制转换
-    convert(500, 16) // 十六进制转换
-&lt;/script&gt;
+<pre><code class="html"> //一个普通列表的a标签
+ &lt;li&gt;&lt;a class=&#39;li-a&#39;&gt;...&lt;/a&gt;&lt;/li&gt;
+ 
+ //一个在导航栏的a标签
+ &lt;li&gt;&lt;a class=&#39;nav-li-a&#39;&gt;&lt;/a&gt;&lt;/li&gt;
+ 
+ //一个被选中的在导航栏的a标签
+ &lt;li&gt;&lt;a class=&#39;nav-li-a is-active&#39;&gt;&lt;/a&gt;&lt;/li&gt;
+ 
+ //一个在头部的图片
+ &lt;header&gt;
+    &lt;img class=&quot;header-img&quot; src=&quot;#&quot; alt=&quot;#&quot;&gt;
+ &lt;/header&gt;
 </code></pre>
-<pre><code>---控制台---
-convert(50, 2)
-110010
-convert(50, 8)
-62
-convert(500, 16)
-1F4       
+<h2 id="元素Element"><a href="#元素Element" class="headerlink" title="元素Element"></a>元素Element</h2><blockquote>
+<p>元素在模块之后，<code>可以有多个层级</code>，以 __ 连接。element 也不是死板的，是根据具体的需求演变的，<code>中间也可以使用 - 来演变</code></p>
+</blockquote>
+<p>代码示例</p>
+<pre><code class="html">//几个普通列表的a标签
+ &lt;li&gt;
+   &lt;a class=&#39;li-a__item&#39;&gt;...&lt;/a&gt;
+   &lt;a class=&#39;li-a__item&#39;&gt;...&lt;/a&gt;
+   &lt;a class=&#39;li-a__item&#39;&gt;...&lt;/a&gt;
+  &lt;/li&gt;
+ //几个在导航栏的a标签
+ &lt;li&gt;
+   &lt;a class=&#39;nav-li-a__item&#39;&gt;&lt;/a&gt;
+   &lt;a class=&#39;nav-li-a__item&#39;&gt;&lt;/a&gt;
+   &lt;a class=&#39;nav-li-a__item&#39;&gt;&lt;/a&gt;
+ &lt;/li&gt;
 </code></pre>
-<p><strong>实现进制转换关键点</strong></p>
-<p>辗转相除法</p>
-<pre><code>50 % 2   0
-25 % 2   1
-12 % 2   0
-6  % 2   0
-3  % 2   1
-1  % 2   1
+<h2 id="修饰Modifier"><a href="#修饰Modifier" class="headerlink" title="修饰Modifier"></a>修饰Modifier</h2><blockquote>
+<p>某元素、或者某模块特别的状态，必须有一个状态名和状态值，使用 _ 链接</p>
+</blockquote>
+<p>主要针对的是 Block 本身,是对于Block做修饰。例如有：</p>
+<ul>
+<li><p>颜色</p>
+</li>
+<li><p>大小</p>
+</li>
+<li><p>用途</p>
+</li>
+</ul>
+<p>代码示例</p>
+<pre><code class="html"> //一个用作logo的图片
+ &lt;header&gt;
+    &lt;img class=&quot;header-img_logo&quot; src=&quot;#&quot; alt=&quot;#&quot;&gt;
+ &lt;/header&gt;
 </code></pre>
-<p>110010</p>
-<pre><code>50 % 8  2
-6  % 8  6
-</code></pre>
-<p>62</p>
-<pre><code>500 % 16  4
-31  % 16  (15) =&gt; 对应 F
-1   % 16  1
-</code></pre>
-<p>1F4</p>
-<p><strong>实现16进制转换关键点</strong></p>
-<p>baseString &#x3D; “0123456789ABCDEF” 的设置</p>
+<h1 id="使用BEM的好处"><a href="#使用BEM的好处" class="headerlink" title="使用BEM的好处"></a>使用BEM的好处</h1><ul>
+<li><p>使html代码更具语义</p>
+</li>
+<li><p>使css代码更具模块化</p>
+</li>
+<li><p>多人协作的时候，也能高效避免命名重复问题</p>
+</li>
+<li><p>更加的规范规模化</p>
+</li>
+<li><p>减轻CSS命名烦恼</p>
+</li>
+</ul>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls"
@@ -401,7 +284,7 @@ convert(500, 16)
                     </dl>
                 </div>
                 <ul>
-                    <li><a href="/">24 <p>Articles</p></a></li>
+                    <li><a href="/">27 <p>Articles</p></a></li>
                     <li><a href="/categories">2 <p>Categories</p></a></li>
                     <li><a href="/tags">12 <p>Tags</p></a></li>
                 </ul>
@@ -412,7 +295,7 @@ convert(500, 16)
             <div class="box sticky animated fadeInRight faster">
                 <div id="toc" class="subbox">
                     <h4>Contents</h4>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%88%E7%BB%93%E6%9E%84"><span class="toc-number">1.</span> <span class="toc-text">栈结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E8%AF%86%E6%A0%88%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.</span> <span class="toc-text">初识栈结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%88%E7%BB%93%E6%9E%84%E7%9A%84%E5%B0%81%E8%A3%85"><span class="toc-number">1.2.</span> <span class="toc-text">栈结构的封装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%88%E5%A3%B0%E6%98%8E%E6%96%B9%E6%B3%95%E4%B8%BE%E4%BE%8B"><span class="toc-number">1.2.1.</span> <span class="toc-text">栈声明方法举例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%81%E8%A3%85-function"><span class="toc-number">1.2.2.</span> <span class="toc-text">封装-function</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%81%E8%A3%85-Class"><span class="toc-number">1.2.3.</span> <span class="toc-text">封装-Class</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%88%E7%BB%93%E6%9E%84%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-number">1.3.</span> <span class="toc-text">栈结构的应用</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81CSS%E6%9E%B6%E6%9E%84%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">为什么需要CSS架构？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#BEM%E7%9A%84%E7%AE%80%E4%BB%8B"><span class="toc-number">2.</span> <span class="toc-text">BEM的简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#BEM%E7%9A%84%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8"><span class="toc-number">3.</span> <span class="toc-text">BEM的基础使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97block%EF%BC%88%EF%BC%89"><span class="toc-number">3.1.</span> <span class="toc-text">模块block（）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%83%E7%B4%A0Element"><span class="toc-number">3.2.</span> <span class="toc-text">元素Element</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E9%A5%B0Modifier"><span class="toc-number">3.3.</span> <span class="toc-text">修饰Modifier</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8BEM%E7%9A%84%E5%A5%BD%E5%A4%84"><span class="toc-number">4.</span> <span class="toc-text">使用BEM的好处</span></a></li></ol>
                 </div>
             </div>
             
