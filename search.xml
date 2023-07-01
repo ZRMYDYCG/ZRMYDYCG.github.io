@@ -61,63 +61,6 @@
     
     
     <entry>
-      <title>Vuex技术</title>
-      <link href="/post/undefined.html"/>
-      <url>/post/undefined.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> Vue-Vuex技术 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>路由</title>
-      <link href="/post/Vue2-%E8%B7%AF%E7%94%B1.html"/>
-      <url>/post/Vue2-%E8%B7%AF%E7%94%B1.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> vue </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>axios-让数据燃起来</title>
-      <link href="/post/axios-%E8%AE%A9%E6%95%B0%E6%8D%AE%E7%87%83%E8%B5%B7%E6%9D%A5.html"/>
-      <url>/post/axios-%E8%AE%A9%E6%95%B0%E6%8D%AE%E7%87%83%E8%B5%B7%E6%9D%A5.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> axios </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>JavaScript-数据结构与算法-栈结构</title>
       <link href="/post/JavaScript-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%A0%88%E7%BB%93%E6%9E%84.html"/>
       <url>/post/JavaScript-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%A0%88%E7%BB%93%E6%9E%84.html</url>
@@ -137,25 +80,6 @@
     
     
     <entry>
-      <title>JavsScript设计模式</title>
-      <link href="/post/JavaScript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html"/>
-      <url>/post/JavaScript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> JavaScript设计模式 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>JavaScript 算法数据结构 - 数组结构</title>
       <link href="/post/JavaScript-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%95%B0%E7%BB%84%E7%BB%93%E6%9E%84.html"/>
       <url>/post/JavaScript-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%95%B0%E7%BB%84%E7%BB%93%E6%9E%84.html</url>
@@ -167,44 +91,6 @@
         <tags>
             
             <tag> JavaScript数据结构与算法 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>C语言算法数据结构</title>
-      <link href="/post/C%E8%AF%AD%E8%A8%80%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.html"/>
-      <url>/post/C%E8%AF%AD%E8%A8%80%E7%AE%97%E6%B3%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> C语言 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Python基础学习</title>
-      <link href="/post/Python%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0.html"/>
-      <url>/post/Python%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0.html</url>
-      
-        <content type="html"><![CDATA[<h1 id="Python-基础"><a href="#Python-基础" class="headerlink" title="Python 基础"></a>Python 基础</h1><h2 id="Python-初体验"><a href="#Python-初体验" class="headerlink" title="Python 初体验"></a>Python 初体验</h2><p>代码示例</p><pre><code class="python">temp = input(&quot;请输入：&quot;)guess = int(temp)if guess == 8:   print(&quot;你输入了 8&quot;)   print(&quot;哈哈哈哈，被我猜到了&quot;)else:   print(&quot;你输入的不是 8&quot;)   print(&quot;哈哈哈哈，我猜对了吧&quot;)print(&quot;游戏结束&quot;)</code></pre>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> Python </tag>
             
         </tags>
       
