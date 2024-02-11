@@ -9,10 +9,10 @@
 #！ @docs https://aurora.tridiamond.tech/guide/configuration.html
 #! ---------------------------------------------------------------
 site:
-  subtitle: 不要感受路,要赶路
+  subtitle: 琼台观的风
   author: 一小池勺
-  nick: 一勺
-  description: 琼台观的风,终会吹到舍身崖
+  nick: 如果你是开心的，其实这条路怎么走都没关系
+  description: 不要感受路，要赶路
   link: '/'
   language: en
   multi_language: true
@@ -62,12 +62,12 @@ menu:
 #! ---------------------------------------------------------------
 theme:
   dark_mode: true
-  profile_shape: diamond # support `circle`, `diamond`, `rounded`
+  profile_shape: circle # support `circle`, `diamond`, `rounded`
   feature: true
   gradient:
-    color_1: '#24c6dc'
-    color_2: '#5433ff'
-    color_3: '#ff0099'
+    color_1: '#d4c99e'
+    color_2: '#f9e498'
+    color_3: '#566127'
 
 #! ---------------------------------------------------------------
 #! Social Configs
@@ -128,7 +128,7 @@ gitalk:
 # Valine comment plugin (recommended!)
 # see https://valine.js.org/quickstart.html
 valine:
-  enable: false
+  enable: true
   app_id:
   app_key:
   avatar: ''
@@ -420,4 +420,6 @@ footer_links:
 #! ---------------------------------------------------------------
 shiki:
   enable: true
+  theme: aurora-future
+  customTheme: '/shiki/aurora-future.json'
   backgroundColor: "#1a1a1a"
