@@ -26,7 +26,7 @@ site:
     link: 'http://www.policebeian.gov.cn'
   # Start date of the blog YYY-MM-DD
   # 博客开始运行日期
-  started_date: 2023-11-29
+  started_date: 2023-08-01
   # Path unique identifier (文章 URL 唯一标识)
   # uid: use unique ID
   # slug: use generated slug base on title
@@ -65,7 +65,7 @@ theme:
   profile_shape: circle # support `circle`, `diamond`, `rounded`
   feature: true
   gradient:
-    color_1: '#d4c99e'
+    color_1: '#BC00FF'
     color_2: '#f9e498'
     color_3: '#566127'
 
