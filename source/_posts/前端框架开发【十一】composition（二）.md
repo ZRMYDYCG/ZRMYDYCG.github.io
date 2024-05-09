@@ -1,6 +1,5 @@
 ---
-layout: 前端框架开发【十一】composition（二）
-title: API（二）
+title: 前端框架开发【十一】composition（二）
 date: 2023-09-22 11:46:36
 tags:
   - VUE 入门

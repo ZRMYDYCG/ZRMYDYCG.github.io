@@ -63,7 +63,7 @@ s = "aaab", c = "b"
 
 ```javascript
 /**
-  @ 一小池勺 
+  @ 一小池勺
  * @param {string} s
  * @param {character} c
  * @return {number[]}

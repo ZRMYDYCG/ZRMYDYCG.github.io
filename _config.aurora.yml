@@ -14,7 +14,7 @@ site:
   nick: 如果你是开心的，其实这条路怎么走都没关系
   description: 不要感受路，要赶路
   link: '/'
-  language: en
+  language: cn
   multi_language: true
   logo: https://pic.imgdb.cn/item/65c33b629f345e8d03bf63e1.png
   avatar: https://pic.imgdb.cn/item/65c339bd9f345e8d03bb301d.jpg
@@ -65,9 +65,9 @@ theme:
   profile_shape: circle # support `circle`, `diamond`, `rounded`
   feature: true
   gradient:
-    color_1: '#BC00FF'
-    color_2: '#f9e498'
-    color_3: '#566127'
+    color_1: '#27E4EA'
+    color_2: '#EA2789'
+    color_3: '#8227EA'
 
 #! ---------------------------------------------------------------
 #! Social Configs
